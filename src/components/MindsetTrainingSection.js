@@ -9,7 +9,7 @@ const MindsetTrainingSection = () => {
         <Col md="6" className="mb-4 mb-md-0">
           <div className="ratio ratio-16x9">
             <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src="https://www.youtube.com/embed/tXous9-cFzA"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
