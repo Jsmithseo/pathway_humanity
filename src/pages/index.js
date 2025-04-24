@@ -3,6 +3,7 @@ import MainNavbar from "../components/MainNavBar";
 import MentalGameStepsGrid from "../components/MentalGameStepsGrid";
 import MindsetTrainingSection from "../components/MindsetTrainingSection"
 import NewsletterSignup from "../components/NewsletterSignup"
+import HomeGallery from "../components/HomeGallery"
 import Footer from "../components/Footer"
 import { Container, Row, Col, Button } from "reactstrap";
 import "../styles/Home.module.css"
@@ -42,7 +43,9 @@ export default function Home() {
           Mastering the Mental Game: Overcoming Negative Self-Talk in Young Athletes
         </h1>
         <MentalGameStepsGrid/>
+        <HomeGallery/>
         <NewsletterSignup/>
+       
         <Footer />
         
       </section>

@@ -4,6 +4,8 @@ import { Container, Row, Col, Card, CardBody, CardImg } from "reactstrap";
 import MainNavbar from "../components/MainNavBar"
 import Footer from "../components/Footer"
 // import kimberlieImg from "../assets/images/kimberlie.jpg";
+import Image from "next/image";
+
 import dennisImg from "../../public/images/dennis.jpg";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -18,7 +20,7 @@ const About = () => {
         <Row className="mb-5">
           <Col md="4" className="mb-4 mb-md-0">
             <Card className="border-0 shadow-sm h-100">
-              <CardImg top width="100%" src={dennisImg} alt="Kimberlie Flowers" />
+              <CardImg top width="100%" src="../../public/images/dennis.jpg" alt="Kimberlie Flowers" />
             </Card>
           </Col>
           <Col md="8">
