@@ -22,7 +22,7 @@ function MainNavbar() {
         <NavbarBrand href="/">
           {/* Replace with your logo image or text */}
           {/* <img src="/images/logo.png" alt="Logo" height="40" /> */}
-          ABC Mental Toughness
+          
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
