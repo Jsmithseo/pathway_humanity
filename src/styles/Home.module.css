@@ -178,3 +178,34 @@ a.secondary {
   background-repeat: no-repeat;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
+
+
+
+/* Force navbar container to be flex and center everything */
+.custom-navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Align nav items vertically center */
+.custom-navbar-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* Style nav links for consistent padding and spacing */
+.custom-nav-link {
+  padding: 0 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Logo styling */
+.custom-navbar-brand img {
+  max-height: 100px!important;
+  height: auto;
+  width: auto;
+}
