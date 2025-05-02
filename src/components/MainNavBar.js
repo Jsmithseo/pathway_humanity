@@ -1,59 +1,55 @@
-// src/components/MainNavbar.jsx
-import React, { useState } from 'react';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import {
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
   Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
-  Container
-} from 'reactstrap';
-import Image from 'next/image';
-import logo from '../../src/images/logo.png'; // adjust path as needed
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
 
-const MainNavbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
 
-  const toggle = () => setIsOpen(!isOpen);
-
-  return (
-    <Navbar color="light" light expand="md" className="py-3 shadow-sm">
-      <Container fluid className="px-4">
-        <NavbarBrand href="/" className="d-flex align-items-center">
-          <Image
-            src={logo}
-            alt="Logo"
-            width={140}
-            height={50}
-            style={{ height: 'auto', width: 'auto', maxHeight: '150px' }}
-            priority
-          />
-        </NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="ms-auto d-flex align-items-center" navbar>
-            <NavItem>
-              <NavLink href="/about" className="px-3">
-                About Us
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/programs" className="px-3">
-                Programs
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/contact" className="px-3">
-                Contact
-              </NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Container>
-    </Navbar>
-  );
-};
-
-export default MainNavbar;
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">ABC Mental Toughness</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/about/">About</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/programs">Programs</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/contact">Contact</NavLink>
+              </NavItem>
+         
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
+  }
+}
