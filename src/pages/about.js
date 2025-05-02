@@ -20,13 +20,16 @@ const About = () => {
           <Row className="mb-5">
             <Col md="6" className="mb-4 mb-md-0">
               <Card className="border-0 shadow-sm h-100 text-center p-3">
+                <center>
                 <Image
                   src={kimImg}
                   alt="Kimberlie Flowers"
-                  width={150}
-                  height={150}
-                  style={{ objectFit: "cover", borderRadius: "50%" }}
+                  width={300}
+                  height={300}
+                  style={{ borderRadius: "75%" }}
                 />
+                </center>
+            
                 <CardBody>
                   <h4 className="fw-bold mt-3">Kimberlie Flowers, MS LMFT</h4>
                   <p>
@@ -42,13 +45,16 @@ const About = () => {
 
             <Col md="6">
               <Card className="border-0 shadow-sm h-100 text-center p-3">
+                <center>
                 <Image
                   src={dennisImg}
                   alt="Dennis Belisle"
-                  width={150}
-                  height={150}
-                  style={{ objectFit: "cover", borderRadius: "50%" }}
+                  width={300}
+                  height={300}
+                  style={{ borderRadius: "75%" }}
                 />
+                </center>
+          
                 <CardBody>
                   <h4 className="fw-bold mt-3">Dennis Belisle, USSF, NSCAA, FIFA, FBF, IOC</h4>
                   <p>
