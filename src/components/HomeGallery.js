@@ -23,7 +23,8 @@ const HomeGallery = () => {
         </div>
         <Row>
           {images.map((src, index) => (
-            <Col xs="6" sm="4" md="3" className="mb-4" key={index}>
+            <Col xs="12" sm="12" md="3" className="mb-4" key={index}>
+              <center>
               <img
                 src={src}
                 alt={`Gallery image ${index + 1}`}
@@ -31,6 +32,8 @@ const HomeGallery = () => {
                 className="rounded shadow-sm"
                 onClick={() => toggleModal(src)}
               />
+              </center>
+
             </Col>
           ))}
         </Row>
