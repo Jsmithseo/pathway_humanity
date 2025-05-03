@@ -6,6 +6,7 @@ import NewsletterSignup from "../components/NewsletterSignup"
 import HomeGallery from "../components/HomeGallery"
 import Footer from "../components/Footer"
 import { Container, Row, Col, Button } from "reactstrap";
+import Link from "next/link";
 import "../styles/Home.module.css"
 // import Feature from "../components/landing-page/feature/feature";
 // import Newsletter from "../components/landing-page/newsletter/page";
@@ -27,9 +28,11 @@ export default function Home() {
             {/* <p className="lead text-black-50 mb-5">
             I'm finding new ways to motivate myself without any extra pressure. I'm just playing.
             </p> */}
-            <Button color="light" size="lg" className="fw-bold">
-              Start Training
+          <Link href="/contact" passHref legacyBehavior>
+             <Button color="light" size="lg" className="fw-bold">
+          Start Training
             </Button>
+         </Link>
           </Col>
         </Row>
       </Container>
