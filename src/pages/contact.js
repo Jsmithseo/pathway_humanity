@@ -50,7 +50,7 @@ const Contact = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
-          Authorization: `Bearer YOUR_CONSTANT_CONTACT_ACCESS_TOKEN`,
+          Authorization: `Bearer ${process.env.CONSTANT_CONTACT_ACCESS_TOKEN}`
         },
         body: payload.toString(),
       });
