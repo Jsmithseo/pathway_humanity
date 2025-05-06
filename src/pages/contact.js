@@ -1,5 +1,3 @@
-// src/components/ContactForm.jsx
-
 import React, { useState } from "react";
 import {
   Container,
@@ -24,6 +22,7 @@ const Contact = () => {
     interest: "",
     message: ""
   });
+
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
 
@@ -37,9 +36,8 @@ const Contact = () => {
     setSubmitted(false);
     setError(null);
 
-    const hubspotPortalId = "242706412"; // Replace with your HubSpot portal ID
-    const hubspotFormId = "5c15f205-186a-42a7-9102-a8692f7bb927";     //  Replace with your HubSpot form ID
-
+    const hubspotPortalId = "48503737";
+    const hubspotFormId = "d9992bc7-1a6e-4ea6-b1f6-95d5da114d30";
     const hubspotEndpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${hubspotPortalId}/${hubspotFormId}`;
 
     const payload = {
@@ -48,30 +46,32 @@ const Contact = () => {
         { name: "lastname", value: formData.lastName },
         { name: "email", value: formData.email },
         { name: "interest", value: formData.interest },
-        { name: "message", value: formData.message }
+        { name: "message", value: formData.message },
       ],
-      context: {
-        pageUri: window.location.href,
-        pageName: document.title
-      }
     };
 
     try {
       const response = await fetch(hubspotEndpoint, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
         setSubmitted(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          interest: "",
+          message: ""
+        });
       } else {
         const errorData = await response.json();
-        setError(errorData.message || "HubSpot submission failed.");
+        setError(errorData.message || "Submission failed.");
       }
     } catch (err) {
+      console.error("HubSpot error:", err);
       setError("An error occurred. Please try again later.");
     }
   };
@@ -180,7 +180,6 @@ const Contact = () => {
             </Col>
           </Row>
         </Container>
-        <div style={{ height: "300px" }}></div>
       </section>
       <Footer />
     </>
