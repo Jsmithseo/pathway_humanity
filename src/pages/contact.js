@@ -36,8 +36,8 @@ const Contact = () => {
     setSubmitted(false);
     setError(null);
 
-    const hubspotPortalId = "48503737";
-    const hubspotFormId = "d9992bc7-1a6e-4ea6-b1f6-95d5da114d30";
+    const hubspotPortalId = "242706412";
+    const hubspotFormId = "5c15f205-186a-42a7-9102-a8692f7bb927";
     const hubspotEndpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${hubspotPortalId}/${hubspotFormId}`;
 
     const payload = {
