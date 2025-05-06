@@ -4,14 +4,17 @@ import MainNavbar from "../components/MainNavBar";
 import Footer from "../components/Footer";
 import { Container, Row, Col, Card, CardBody, CardTitle, CardText, Button } from "reactstrap";
 
+
+
 const posts = [
-  {
-    id: 1,
-    title: "The top 10 negative self - talk barriers leading to performance plateaus and how to overcome them.",
-    excerpt: "Discover techniques for building mental resilience and reframing negative thoughts in competitive environments.",
-    slug: "/blog/overcoming-negative-self-talk"
-  }
-];
+    {
+      id: 1,
+      title: "The top 10 negative self - talk barriers leading to performance plateaus and how to overcome them.",
+      excerpt: "Discover techniques for building mental resilience and reframing negative thoughts in competitive environments.",
+      slug: "/blog/blog1"
+      
+    }
+  ];
 
 export default function BlogPage() {
   return (
