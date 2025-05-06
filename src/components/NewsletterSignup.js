@@ -1,5 +1,3 @@
-// src/components/NewsletterSignup.jsx
-
 import React, { useState } from "react";
 import { Container, Row, Col, Form, FormGroup, Label, Input, Button, Alert } from "reactstrap";
 
@@ -22,28 +20,34 @@ const NewsletterSignup = () => {
     setSubmitted(false);
     setError(null);
 
-    const payload = new URLSearchParams();
-    payload.append("email", formData.email);
-    payload.append("first_name", formData.firstName);
-    payload.append("last_name", formData.lastName);
+    const portalId = "242706412"; // ✅ Your HubSpot portal ID
+    const formId = "0f8e7bfe-c586-497e-97e2-42f94db71e14"; // ✅ Replace with your newsletter form ID
+    const hubspotUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+
+    const payload = {
+      fields: [
+        { name: "firstname", value: formData.firstName },
+        { name: "lastname", value: formData.lastName },
+        { name: "email", value: formData.email },
+      ],
+    };
 
     try {
-      const response = await fetch("https://api.constantcontact.com/client/api_endpoint", {
+      const response = await fetch(hubspotUrl, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          Authorization: `Bearer YOUR_CONSTANT_CONTACT_ACCESS_TOKEN`,
-        },
-        body: payload.toString(),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
         setSubmitted(true);
+        setFormData({ firstName: "", lastName: "", email: "" });
       } else {
-        const errorData = await response.json();
-        setError(errorData.error || "Submission failed.");
+        const data = await response.json();
+        setError(data.message || "Submission failed.");
       }
     } catch (err) {
+      console.error("HubSpot error:", err);
       setError("An error occurred. Please try again later.");
     }
   };
