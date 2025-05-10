@@ -26,7 +26,7 @@ const About = () => {
                   alt="Kimberlie Flowers"
                   width={150}
                   height={150}
-                  style={{ borderRadius: "75%" }}
+                  style={{ borderRadius: "100%" }}
                 />
                 </center>
             
@@ -51,7 +51,7 @@ const About = () => {
                   alt="Dennis Belisle"
                   width={150}
                   height={150}
-                  style={{ borderRadius: "75%" }}
+                  style={{ borderRadius: "100%" }}
                 />
                 </center>
           
