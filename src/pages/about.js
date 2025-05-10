@@ -24,8 +24,8 @@ const About = () => {
                 <Image
                   src={kimImg}
                   alt="Kimberlie Flowers"
-                  width={300}
-                  height={300}
+                  width={150}
+                  height={150}
                   style={{ borderRadius: "75%" }}
                 />
                 </center>
@@ -49,8 +49,8 @@ const About = () => {
                 <Image
                   src={dennisImg}
                   alt="Dennis Belisle"
-                  width={300}
-                  height={300}
+                  width={150}
+                  height={150}
                   style={{ borderRadius: "75%" }}
                 />
                 </center>
