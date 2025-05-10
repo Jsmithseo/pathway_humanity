@@ -30,7 +30,7 @@ export default function Home() {
             </p> */}
           <Link href="https://calendly.com/dennis-abcmentaltoughness/30min" passHref legacyBehavior>
              <Button color="light" size="lg" className="fw-bold">
-          Start Training
+          Schedule A Call
             </Button>
          </Link>
           </Col>
