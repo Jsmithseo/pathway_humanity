@@ -28,7 +28,7 @@ export default function Home() {
             {/* <p className="lead text-black-50 mb-5">
             I'm finding new ways to motivate myself without any extra pressure. I'm just playing.
             </p> */}
-          <Link href="/contact" passHref legacyBehavior>
+          <Link href="https://calendly.com/dennis-abcmentaltoughness/30min" passHref legacyBehavior>
              <Button color="light" size="lg" className="fw-bold">
           Start Training
             </Button>
