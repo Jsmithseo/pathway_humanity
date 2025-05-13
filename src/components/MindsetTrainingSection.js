@@ -28,7 +28,7 @@ const MindsetTrainingSection = () => {
             a more refined, mature approach to performance.
           </p>
           <p>
-            The goal is to provide a foundation of mental and coping skills that
+            This process provides the foundation of mental and coping skills that
             will give young athletes the best chance to perform and excel in any moment,
             regardless of the competition—and this alone is a great reason for
             conducting mental skills training.
