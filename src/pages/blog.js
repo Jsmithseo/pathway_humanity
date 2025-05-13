@@ -13,7 +13,13 @@ const posts = [
       excerpt: "Discover techniques for building mental resilience and reframing negative thoughts in competitive environments.",
       slug: "/blog/blog1"
       
-    }
+    },
+    {
+        id: 2,
+        title: "The #1 Thing Holding Back Youth Soccer Players (And It's Not What You Think)",
+        excerpt: "Learn why awareness—not more training—is the key to unlocking your young athlete’s full potential on the field.",
+        slug: "/blog/blog2"
+      }
   ];
 
 export default function BlogPage() {
