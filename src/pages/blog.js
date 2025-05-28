@@ -19,6 +19,12 @@ const posts = [
         title: "The #1 Thing Holding Back Youth Soccer Players (And It's Not What You Think)",
         excerpt: "Learn why awareness—not more training—is the key to unlocking your young athlete’s full potential on the field.",
         slug: "/blog/blog2"
+      },
+      {
+        id: 3,
+        title: "Stress, Emotions, and Coping in Youth Sports",
+        excerpt: "Explore how mental stress impacts young athletes and why emotional regulation and coping strategies are essential for youth sports success.",
+        slug: "/blog/blog3"
       }
   ];
 
