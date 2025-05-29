@@ -15,7 +15,7 @@ const Assessment = () => {
                   Our free Confidence & Coping Skills Assessment helps you understand how your child responds to stress, challenges, and social situations. Take the Assessment today and receive personalized guidance to support your child’s growth.
                 </CardText>
                 <Button color="primary" href="/quiz" className="fw-bold">
-                  Take the Assessment
+                  Take the assessment
                 </Button>
               </CardBody>
             </Card>
