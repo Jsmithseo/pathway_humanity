@@ -8,9 +8,7 @@ import Footer from "../components/Footer"
 import { Container, Row, Col, Button } from "reactstrap";
 import Link from "next/link";
 import "../styles/Home.module.css"
-// import Feature from "../components/landing-page/feature/feature";
-// import Newsletter from "../components/landing-page/newsletter/page";
-// import InfoCardGrid from "./InfoCardComponents/InfoCardGrid";
+import Assessment from "../components/Assessment";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Home() {
@@ -46,6 +44,9 @@ export default function Home() {
           Mastering the Mental Game: Overcoming Negative Self-Talk in Young Athletes
         </h1>
         <MentalGameStepsGrid/>
+        <center>
+        <Assessment/>
+        </center>
         <HomeGallery/>
         <NewsletterSignup/>
        
