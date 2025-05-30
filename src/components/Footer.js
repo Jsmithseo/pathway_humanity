@@ -25,6 +25,11 @@ const Footer = () => {
               <NavItem>
                 <NavLink href="/blog" className="text-dark fw-semibold">Blog</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="https://www.instagram.com/itsabcmentaltoughness/" className="text-dark fw-semibold">
+                  Instagram
+                </NavLink>
+              </NavItem>
             </Nav>
           </Col>
         </Row>
