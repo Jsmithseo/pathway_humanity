@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hotjar/browser": "^1.0.9",
     "bootstrap": "^5.3.5",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.1",
