@@ -18,14 +18,10 @@ export default function Home() {
     <div className="hero-section d-flex align-items-center">
       <Container>
         <Row className="justify-content-center text-center">
-          <Col lg="10">
-            <h1 className="display-3 text-white fw-bold mb-4">
-           " I'm finding new ways to motivate myself without any extra pressure. I'm just playing."
-
+          <Col lg="12">
+            <h1 className="display-4 text-white fw-bold mb-4">
+            We help young athletes who struggle with doubt, fear, and negative thoughts by giving them tools to handle physical, psychological, and emotional stress in youth sports.
             </h1>
-            {/* <p className="lead text-black-50 mb-5">
-            I'm finding new ways to motivate myself without any extra pressure. I'm just playing.
-            </p> */}
           <Link href="https://calendly.com/dennis-abcmentaltoughness/30min" passHref legacyBehavior>
              <Button color="light" size="lg" className="fw-bold">
           Schedule A Call
