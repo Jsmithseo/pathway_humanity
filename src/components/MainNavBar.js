@@ -41,7 +41,7 @@ export default class Example extends React.Component {
                 <NavLink href="/about/">About</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/programs">Programs</NavLink>
+                <NavLink href="/programs">Start Training</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/contact">Contact</NavLink>
