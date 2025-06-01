@@ -26,7 +26,7 @@ const Footer = () => {
                 <NavLink href="/blog" className="text-dark fw-semibold">Blog</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://www.instagram.com/itsabcmentaltoughness/" className="text-dark fw-semibold">
+                <NavLink href="https://www.instagram.com/abcmentaltoughness/" className="text-dark fw-semibold">
                   Instagram
                 </NavLink>
               </NavItem>
