@@ -36,7 +36,8 @@ export default class Example extends React.Component {
           <NavbarBrand href="/">ABC Mental Toughness</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            {/* Left-aligned nav links */}
+            <Nav navbar className="me-auto">
               <NavItem>
                 <NavLink href="/about/">About</NavLink>
               </NavItem>
@@ -47,7 +48,6 @@ export default class Example extends React.Component {
                 <NavLink href="/contact">Contact</NavLink>
               </NavItem>
 
-              {/* Assessment Dropdown */}
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Assessments
@@ -71,6 +71,15 @@ export default class Example extends React.Component {
               </NavItem>
               <NavItem>
                 <NavLink href="/events">Events</NavLink>
+              </NavItem>
+            </Nav>
+
+            {/* Right-aligned phone number */}
+            <Nav navbar className="ms-auto">
+              <NavItem>
+                <NavLink href="tel:+19418007140" className="fw-bold">
+                +1 (941) 800-7140
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>
