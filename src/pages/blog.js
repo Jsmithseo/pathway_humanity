@@ -25,6 +25,12 @@ const posts = [
         title: "Stress, Emotions, and Coping in Youth Sports",
         excerpt: "Explore how mental stress impacts young athletes and why emotional regulation and coping strategies are essential for youth sports success.",
         slug: "/blog/blog3"
+      },
+      {
+        id: 4,
+        title: "Grit Mindset: Prioritizing Process, Strength, and Achievement",
+        excerpt: "Most people chase the trophy without truly embracing the grind—yet real growth happens when you prioritize daily effort over instant success.",
+        slug: "/blog/blog4"
       }
   ];
 
