@@ -31,6 +31,12 @@ const posts = [
         title: "Grit Mindset: Prioritizing Process, Strength, and Achievement",
         excerpt: "Most people chase the trophy without truly embracing the grind—yet real growth happens when you prioritize daily effort over instant success.",
         slug: "/blog/blog4"
+      }, 
+      {
+        id: 5,
+        title: "The Fearless Young Athlete",
+        excerpt: "A fearless young athlete learns to surrender emotions, embrace self-reflection, and let go of fear. Use these hands-on assignments to build confidence, overcome mental barriers, and thrive both on and off the field.",
+        slug: "/blog/blog5"
       }
   ];
 
