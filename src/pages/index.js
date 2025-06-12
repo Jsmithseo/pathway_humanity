@@ -27,7 +27,7 @@ export default function Home() {
 
               {/* Buttons side by side */}
               <div className="d-flex justify-content-center gap-3">
-                <Link
+                {/* <Link
                   href="https://calendly.com/dennis-abcmentaltoughness/30min"
                   passHref
                   legacyBehavior
@@ -35,7 +35,7 @@ export default function Home() {
                   <Button color="primary" size="lg" className="fw-bold">
                     Schedule A Call
                   </Button>
-                </Link>
+                </Link> */}
 
                 <Link href="/contact" passHref legacyBehavior>
                   <Button color="success" size="lg" className="fw-bold">
