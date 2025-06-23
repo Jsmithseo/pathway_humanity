@@ -8,7 +8,7 @@ export default function FearlessYoungAthlete() {
   return (
     <>
       <Head>
-        <title>The Fearless Young Athlete | ABC Mental Toughness</title>
+        <title>Chapter 1: The Fearless Young Athlete</title>
         <meta name="description" content="Tools and assignments to help young athletes overcome fear and build confidence." />
       </Head>
 
@@ -17,7 +17,7 @@ export default function FearlessYoungAthlete() {
       <Container className="py-5 blog-content">
         <Row>
           <Col md={{ size: 10, offset: 1 }}>
-            <h1 className="mb-4 text-center">The Fearless Young Athlete</h1>
+            <h1 className="mb-4 text-center">Chapter 1: The Fearless Young Athlete</h1>
 
             <p>
               There are certain places a young athlete must go into to find success. There are some emotions you must surrender to,

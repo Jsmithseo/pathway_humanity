@@ -34,10 +34,18 @@ const posts = [
       }, 
       {
         id: 5,
-        title: "The Fearless Young Athlete",
+        title: " Chapter 1: The Fearless Young Athlete",
         excerpt: "A fearless young athlete learns to surrender emotions, embrace self-reflection, and let go of fear. Use these hands-on assignments to build confidence, overcome mental barriers, and thrive both on and off the field.",
         slug: "/blog/blog5"
+      },
+      {
+        id: 6,
+        title: "Chapter 2: The Fearless Young Athlete",
+        excerpt: "Fear isn’t the enemy—inactivity is. In this chapter, young athletes learn to understand, manage, and transform fear into fuel. Includes a powerful personal story and a guided journaling assignment to help athletes reconnect with their WHY.",
+        slug: "/blog/blog6"
       }
+      
+      
   ];
 
 export default function BlogPage() {
