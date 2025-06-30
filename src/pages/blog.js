@@ -43,6 +43,12 @@ const posts = [
         title: "Chapter 2: The Fearless Young Athlete",
         excerpt: "Fear isn’t the enemy—inactivity is. In this chapter, young athletes learn to understand, manage, and transform fear into fuel. Includes a powerful personal story and a guided journaling assignment to help athletes reconnect with their WHY.",
         slug: "/blog/blog6"
+      },
+      {
+        id: 7,
+        title: "Chapter 2: The Fearless Young Athlete",
+        excerpt: "Fear isn’t the enemy—inactivity is. In this chapter, young athletes learn to understand, manage, and transform fear into fuel. Includes a powerful personal story and a guided journaling assignment to help athletes reconnect with their WHY.",
+        slug: "/blog/blog7"
       }
       
       
