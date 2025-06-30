@@ -46,8 +46,8 @@ const posts = [
       },
       {
         id: 7,
-        title: "Chapter 2: The Fearless Young Athlete",
-        excerpt: "Fear isn’t the enemy—inactivity is. In this chapter, young athletes learn to understand, manage, and transform fear into fuel. Includes a powerful personal story and a guided journaling assignment to help athletes reconnect with their WHY.",
+        title: "Tips for Tryouts: How to Stand Out and Make the Team",
+        excerpt: "Have you ever been in a situation where you desperately wanted to make a team, but you had to go through a grueling tryout period? In the tryout, you are accompanied by 40 or 50 players with the exact same goal.",
         slug: "/blog/blog7"
       }
       
