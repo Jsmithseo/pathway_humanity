@@ -49,6 +49,12 @@ const posts = [
         title: "Tips for Tryouts: How to Stand Out and Make the Team",
         excerpt: "Have you ever been in a situation where you desperately wanted to make a team, but you had to go through a grueling tryout period? In the tryout, you are accompanied by 40 or 50 players with the exact same goal.",
         slug: "/blog/blog7"
+      },
+      {
+        id: 8,
+        title: "R.A.C.E. Formula for Mental Toughness",
+        excerpt: "Discover the R.A.C.E. Formula — a proven method for building mental toughness in athletes and performers. Learn how to overcome mental blocks, silence negative thoughts, and unlock your ideal performance state.",
+        slug: "/blog/blog8"
       }
       
       
