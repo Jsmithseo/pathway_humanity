@@ -1,90 +1,67 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import React, { useState } from 'react';
+import Link from 'next/link';
 import {
-  Collapse,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
+  NavbarToggler,
+  Collapse,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  Button
 } from 'reactstrap';
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props);
+const MainNavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-  render() {
-    return (
-      <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">ABC Mental Toughness</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            {/* Left-aligned nav links */}
-            <Nav navbar className="me-auto">
-              <NavItem>
-                <NavLink href="/about/">About</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/programs">Start Training</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/contact">Contact</NavLink>
-              </NavItem>
+  const toggle = () => setIsOpen(!isOpen);
 
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Assessments
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    <NavLink href="/quiz" className="p-0">
-                      Parent Quiz
-                    </NavLink>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <NavLink href="/coachquiz" className="p-0">
-                      Coach Quiz
-                    </NavLink>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+  return (
+    <Navbar expand="md" light color="white" className="px-3 shadow-sm sticky-top">
+      <NavbarBrand href="/" className="d-flex align-items-center gap-2">
+        <img
+          src="../images/pathway_logo.jpg"
+          alt="Logo Placeholder"
+          style={{ width: 75, height: 75, borderRadius: 8 }}
+        />
+        <span style={{ fontWeight: 'bold', color: '#0078A8' }}>Pathway Humanity</span>
+      </NavbarBrand>
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar>
+        <Nav className="ms-auto align-items-center" navbar>
+          <NavItem>
+            <Link href="/" passHref legacyBehavior>
+              <a className="nav-link">Home</a>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="#about" passHref legacyBehavior>
+              <a className="nav-link">About</a>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="#services" passHref legacyBehavior>
+              <a className="nav-link">Services</a>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="#stories" passHref legacyBehavior>
+              <a className="nav-link">Stories</a>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="#contact" passHref legacyBehavior>
+              <a className="nav-link">Contact</a>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="#contact" passHref legacyBehavior>
+              <Button color="success" className="ms-3 fw-bold">Get Help</Button>
+            </Link>
+          </NavItem>
+        </Nav>
+      </Collapse>
+    </Navbar>
+  );
+};
 
-              <NavItem>
-                <NavLink href="/blog">Blog</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/events">Events</NavLink>
-              </NavItem>
-            </Nav>
-
-            {/* Right-aligned phone number */}
-            <Nav navbar className="ms-auto">
-              <NavItem>
-                <NavLink href="tel:+19418007140" className="fw-bold">
-                +1 (941) 800-7140
-                </NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
-    );
-  }
-}
+export default MainNavBar;
