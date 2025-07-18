@@ -41,6 +41,9 @@ export default function Home() {
           background-size: cover;
           background-color: #e9f6fa;
         }
+        a.ms-3.fw-bold.btn.btn-success {
+          background-color: #65b32e;
+        }
         .hero-content {
           background: rgba(255,255,255,0.85);
           padding: 48px 32px;
@@ -62,7 +65,7 @@ export default function Home() {
           color: #222;
         }
         .hero-content .btn {
-          background: #0078A8;
+          background: #1d7acb;
           color: #fff;
           padding: 12px 24px;
           border-radius: 4px;

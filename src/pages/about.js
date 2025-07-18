@@ -7,15 +7,15 @@ import Footer from "../components/Footer";
 
 // Partner/Client logos
 const PARTNER_LOGOS = [
-  "/logos/hacsj.png",
-  "/logos/airforce.png",
-  "/logos/veterans.png",
-  "/logos/byblack.png",
-  "/logos/cagov.png",
-  "/logos/usforest.png",
-  "/logos/usadigital.png",
-  "/logos/noh2o.png",
-  "/logos/hubzone.png",
+  "/logo1.png",
+  "/logo2.png",
+  "/logo3.png",
+  "/logo4.png",
+  "/logo5.png",
+  "/logo6.png",
+  "/logo7.png",
+  "/logo8.png",
+  "/logo9.png",
 ];
 
 export default function About() {
@@ -26,7 +26,7 @@ export default function About() {
       {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.25)), url('/about-hero.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.25)), url('/about.jpg') center/cover no-repeat`,
           minHeight: 240,
           display: "flex",
           alignItems: "center",
@@ -70,11 +70,6 @@ export default function About() {
               margin: "0 auto",
               marginTop: 8
             }}>
-              <img
-                src="/growth-hero.jpg"
-                alt="Growth Journey"
-                style={{ width: "100%", minHeight: 120, objectFit: "cover" }}
-              />
             </div>
           </Col>
         </Row>
@@ -201,7 +196,7 @@ export default function About() {
           </Col>
           <Col md={4} className="text-center p-0">
             <img
-              src="/job-seeker.png"
+              src="/job-seeker.jpg"
               alt="Job Seeker"
               style={{
                 maxHeight: 200,
