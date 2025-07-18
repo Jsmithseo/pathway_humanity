@@ -1,4 +1,8 @@
 import MainNavBar from '../components/MainNavBar';
+import SolutionsSection from '../components/SolutionsSection';
+import ClientsAndPatientsSection from "../components/ClientsAndPatientsSection";
+import ResearchStatsSection from "../components/ResearchStatsSection";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -12,124 +16,13 @@ export default function Home() {
           <a className="btn" href="#">Learn More</a>
         </div>
       </section>
+      <SolutionsSection/>
+      <ClientsAndPatientsSection/>
+      <ResearchStatsSection/>
 
-      <section className="about">
-        <div className="section-title">Our Mission</div>
-        <p>We are deeply committed to serving the most vulnerable and often overlooked segments of our community...</p>
-      </section>
 
-      <section className="services">
-        <div className="section-title">Our Services</div>
-        <div className="features">
-          <div className="feature">
-            <h3>Outpatient Treatment</h3>
-            <ul><li>Comprehensive evidence-based programs.</li></ul>
-          </div>
-          <div className="feature">
-            <h3>Therapy & Counseling</h3>
-            <ul><li>Licensed and certified specialists.</li></ul>
-          </div>
-          <div className="feature">
-            <h3>Empowerment Programs</h3>
-            <ul><li>Career and housing support services.</li></ul>
-          </div>
-        </div>
-      </section>
 
-      <section className="stories">
-        <div className="section-title">Success Stories</div>
-        <div className="stories-cards">
-          <div className="story-card">
-            <img src="https://placehold.co/300x160" alt="Story Placeholder" />
-            <h3>John’s Journey to Recovery</h3>
-            <p>With our integrated support, John broke free from addiction and found stable employment.</p>
-          </div>
-          <div className="story-card">
-            <img src="https://placehold.co/300x160" alt="Story Placeholder" />
-            <h3>Maria’s Path to Independence</h3>
-            <p>Maria overcame homelessness and now mentors others in her community.</p>
-          </div>
-          <div className="story-card">
-            <img src="https://placehold.co/300x160" alt="Story Placeholder" />
-            <h3>Veteran Support Success</h3>
-            <p>Our tailored programs empowered a veteran to regain confidence and purpose.</p>
-          </div>
-        </div>
-      </section>
 
-      <section className="testimonials">
-        <div className="section-title">What Clients Say</div>
-        <div className="testimonials-cards">
-          <div className="testimonial-card">
-            <p>"Pathway Humanity gave me hope when I had none."</p><span>- Alex R.</span>
-          </div>
-          <div className="testimonial-card">
-            <p>"The counseling and career support changed my life."</p><span>- Nina T.</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="faq">
-        <div className="section-title">Frequently Asked Questions</div>
-        <ul>
-          <li><strong>What services do you offer?</strong> We provide mental health treatment, substance use support, career counseling, and transitional housing.</li>
-          <li><strong>Who is eligible?</strong> Individuals from underrepresented groups, homeless, low-income, and veterans.</li>
-          <li><strong>How do I get started?</strong> Click 'Get Help' or fill the contact form at the bottom.</li>
-        </ul>
-      </section>
-
-      <section className="newsletter">
-        <div className="section-title">Stay Connected</div>
-        <p>Subscribe to our newsletter for the latest updates and resources.</p>
-        <input type="email" placeholder="Your email address" />
-        <button>Subscribe</button>
-      </section>
-
-      <section className="map">
-        <div className="section-title">Programs by Region</div>
-        <img src="https://placehold.co/800x300" alt="Map Placeholder" />
-      </section>
-
-      <section className="gallery">
-        <div className="section-title">Gallery</div>
-        <div className="gallery">
-          <img src="https://placehold.co/120x100" alt="Gallery Placeholder" />
-          <img src="https://placehold.co/120x100" alt="Gallery Placeholder" />
-          <img src="https://placehold.co/120x100" alt="Gallery Placeholder" />
-          <img src="https://placehold.co/120x100" alt="Gallery Placeholder" />
-        </div>
-      </section>
-
-      <section className="stats">
-        <div><span>1.2k+</span> Programs Completed</div>
-        <div><span>100</span> Weekly Sessions</div>
-        <div><span>480</span> Global Partners</div>
-        <div><span>1.4m</span> Lives Impacted</div>
-      </section>
-
-      <footer>
-        <div className="footer-cols">
-          <div className="footer-col">
-            <h4>About Us</h4>
-            <p>Pathway Humanity is a social purpose corporation providing holistic care and community support.</p>
-          </div>
-          <div className="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Stories</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>Contact</h4>
-            <p>123 Main St<br />City, State<br />(555) 555-5555<br />info@pathwayhumanity.org</p>
-          </div>
-        </div>
-        <div className="footer-bottom">© 2025 Pathway Humanity • <a href="#">Privacy</a> • <a href="#">Terms</a></div>
-      </footer>
 
       <style jsx global>{`
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -208,7 +101,7 @@ export default function Home() {
         .stats { background: #F9F9F9; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; padding: 60px 40px; }
         .stats div { text-align: center; }
         .stats div span { display: block; font-size: 24px; font-weight: bold; color: #0078A8; }
-        footer { background: #1D2C3A; color: #fff; padding: 60px 40px; }
+        footer { padding: 60px 40px; }
         .footer-cols { display: flex; flex-wrap: wrap; gap: 40px; }
         .footer-col { flex: 1; min-width: 200px; }
         .footer-col h4 { margin-bottom: 12px; font-size: 16px; color: #fff; }
@@ -233,6 +126,7 @@ export default function Home() {
           .footer-cols { flex-direction: column; }
         }
       `}</style>
+      <Footer/>
     </>
   );
 }

@@ -8,7 +8,7 @@ export default function SolutionsSection() {
         Measurement-Based Care powers everything we do. Across all types of clinical settings, to the workplace or campus, our best-in-class technology strengthens the entire ecosystem of behavioral health services.
       </p>
       <div className="solutions-cards">
-        <div className="solution-card intake">
+        <div className="solution-card intake rounded p-4">
           <h3>Client Intake</h3>
           <hr />
           <p>
@@ -18,7 +18,7 @@ export default function SolutionsSection() {
             Learn More <span className="arrow">→</span>
           </a>
         </div>
-        <div className="solution-card mbc">
+        <div className="solution-card mbc rounded p-4">
           <h3>MBC Platform</h3>
           <hr />
           <p>
@@ -28,7 +28,7 @@ export default function SolutionsSection() {
             Learn More <span className="arrow">→</span>
           </a>
         </div>
-        <div className="solution-card pop-health">
+        <div className="solution-card pop-health rounded p-10">
           <h3>Population Health</h3>
           <hr />
           <p>
@@ -79,13 +79,13 @@ export default function SolutionsSection() {
           min-height: 350px;
         }
         .solution-card.intake {
-          background: #166943;
+          background: #14C9D6;
         }
         .solution-card.mbc {
-          background: #393B95;
+          background: #65B32E;
         }
         .solution-card.pop-health {
-          background: #A11919;
+          background: #1C7ACB;
         }
         .solution-card h3 {
           font-size: 2rem;

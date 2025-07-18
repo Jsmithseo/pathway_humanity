@@ -34,28 +34,28 @@ const MainNavBar = () => {
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="#about" passHref legacyBehavior>
-              <a className="nav-link">About</a>
+            <Link href="social-purpose-initiatives" passHref legacyBehavior>
+              <a className="nav-link">Social Purpose Initiatives</a>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="#services" passHref legacyBehavior>
-              <a className="nav-link">Services</a>
+              <a className="nav-link">Employers</a>
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="#stories" passHref legacyBehavior>
-              <a className="nav-link">Stories</a>
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link href="#contact" passHref legacyBehavior>
-              <a className="nav-link">Contact</a>
+            <Link href="/applicants" passHref legacyBehavior>
+              <a className="nav-link">Applicants</a>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="#contact" passHref legacyBehavior>
-              <Button color="success" className="ms-3 fw-bold">Get Help</Button>
+              <a className="nav-link">About Us</a>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="#contact" passHref legacyBehavior>
+              <Button color="success" className="ms-3 fw-bold">Seeking Job</Button>
             </Link>
           </NavItem>
         </Nav>

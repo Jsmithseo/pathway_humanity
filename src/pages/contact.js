@@ -1,189 +1,183 @@
-import React, { useState } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  Button,
-  Alert
-} from "reactstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import MainNavbar from "../components/MainNavBar";
+// pages/contact.js
+
+import React from "react";
+import { Container, Row, Col, Button, Form, FormGroup, Input, Label, Card, CardBody } from "reactstrap";
+import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    interest: "",
-    message: ""
-  });
+// HERO IMAGE URL (change as needed)
+const HERO_IMAGE = "contact-image.jpg"; // Add your own image in /public
 
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(null);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitted(false);
-    setError(null);
-
-    const hubspotPortalId = "242706412";
-    const hubspotFormId = "5c15f205-186a-42a7-9102-a8692f7bb927";
-    const hubspotEndpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${hubspotPortalId}/${hubspotFormId}`;
-
-    const payload = {
-      fields: [
-        { name: "firstname", value: formData.firstName },
-        { name: "lastname", value: formData.lastName },
-        { name: "email", value: formData.email },
-        { name: "interest", value: formData.interest },
-        { name: "message", value: formData.message },
-      ],
-    };
-
-    try {
-      const response = await fetch(hubspotEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (response.ok) {
-        setSubmitted(true);
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          interest: "",
-          message: ""
-        });
-      } else {
-        const errorData = await response.json();
-        setError(errorData.message || "Submission failed.");
-      }
-    } catch (err) {
-      console.error("HubSpot error:", err);
-      setError("An error occurred. Please try again later.");
-    }
-  };
-
+export default function Contact() {
   return (
     <>
-      <MainNavbar />
-      <section className="py-5" style={{ backgroundColor: '#f9f9f7' }}>
+      <MainNavBar />
+
+      {/* HERO SECTION */}
+      <div
+        style={{
+          background: `linear-gradient(rgba(42,48,56,.3),rgba(42,48,56,.4)), url('/contact-image.jpg') center/cover no-repeat`,
+          minHeight: 220,
+          display: "flex",
+          alignItems: "center"
+        }}
+      >
         <Container>
-          <Row className="justify-content-center mb-4">
-            <Col lg="8" className="text-center">
-              <h2 className="fw-bold">Contact ABC Mental Toughness</h2>
-              <p className="text-muted">
-                Want to work with us or have a question? Reach out below and we'll get back to you.
+          <Row>
+            <Col md={8} lg={6} className="bg-dark bg-opacity-50 p-4 shadow-lg">
+              <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.5rem" }}>
+                Contact Us
+              </h1>
+              <p className="text-white fs-5 mb-0">
+                Contact us easily and have access to a world of customized HR solutions,
+                individualized assistance, and industry expertise.
               </p>
             </Col>
           </Row>
-          <Row className="justify-content-center">
-            <Col md="8">
-              {submitted ? (
-                <Alert color="success">Thanks for reaching out! We'll be in touch shortly.</Alert>
-              ) : (
-                <Form onSubmit={handleSubmit} className="bg-white text-dark rounded p-4 shadow">
-                  {error && <Alert color="danger">{error}</Alert>}
-                  <Row>
-                    <Col md="6">
+        </Container>
+      </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+      {/* FORM SECTION */}
+      <Container style={{ marginTop: "-80px", marginBottom: "60px" }}>
+        <Row className="justify-content-center">
+          <Col md={10} lg={8}>
+            <Card className="shadow-lg rounded-4 border-0" style={{ padding: "36px 18px" }}>
+              <CardBody>
+                <Form>
+                  <Row className="mb-3">
+                    <Col md={6}>
                       <FormGroup>
-                        <Label for="firstName">First Name</Label>
-                        <Input
-                          type="text"
-                          name="firstName"
-                          id="firstName"
-                          value={formData.firstName}
-                          onChange={handleChange}
-                          required
-                        />
+                        <Input type="select" defaultValue="">
+                          <option value="">Please Select</option>
+                          <option>General Inquiry</option>
+                          <option>Client Support</option>
+                          <option>Job Application</option>
+                        </Input>
                       </FormGroup>
                     </Col>
-                    <Col md="6">
+                    <Col md={6}>
                       <FormGroup>
-                        <Label for="lastName">Last Name</Label>
-                        <Input
-                          type="text"
-                          name="lastName"
-                          id="lastName"
-                          value={formData.lastName}
-                          onChange={handleChange}
-                          required
-                        />
+                        <Input placeholder="Position Title" />
                       </FormGroup>
                     </Col>
                   </Row>
-
-                  <FormGroup>
-                    <Label for="email">Email</Label>
-                    <Input
-                      type="email"
-                      name="email"
-                      id="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
+                  <Row className="mb-3">
+                    <Col md={6}>
+                      <FormGroup>
+                        <Input type="select" defaultValue="">
+                          <option value="">Position Type</option>
+                          <option>Full-Time</option>
+                          <option>Part-Time</option>
+                          <option>Contract</option>
+                        </Input>
+                      </FormGroup>
+                    </Col>
+                    <Col md={6}>
+                      <FormGroup>
+                        <Input placeholder="Location" />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <FormGroup className="mb-3">
+                    <Input type="textarea" rows={2} placeholder="Note" />
                   </FormGroup>
-
-                  <FormGroup>
-                    <Label for="interest">I'm Interested In</Label>
-                    <Input
-                      type="select"
-                      name="interest"
-                      id="interest"
-                      value={formData.interest}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Select an option</option>
-                      <option value="Youth Training Programs">Youth Training Programs</option>
-                      <option value="1-on-1 Coaching">1-on-1 Coaching</option>
-                      <option value="Team Workshops">Team Workshops</option>
-                      <option value="Speaking Engagements">Speaking Engagements</option>
-                      <option value="Partnership Opportunities">Partnership Opportunities</option>
-                      <option value="General Inquiry">General Inquiry</option>
-                    </Input>
+                  <Row className="mb-3">
+                    <Col md={6}>
+                      <FormGroup>
+                        <Input placeholder="First Name" />
+                      </FormGroup>
+                    </Col>
+                    <Col md={6}>
+                      <FormGroup>
+                        <Input placeholder="Last Name" />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row className="mb-3">
+                    <Col md={6}>
+                      <FormGroup>
+                        <Input placeholder="Company" />
+                      </FormGroup>
+                    </Col>
+                    <Col md={6}>
+                      <FormGroup>
+                        <Input placeholder="Phone" />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row className="mb-3">
+                    <Col md={6}>
+                      <FormGroup>
+                        <Input placeholder="Email" type="email" />
+                      </FormGroup>
+                    </Col>
+                    <Col md={6}>
+                      <FormGroup>
+                        <Input placeholder="Subject" />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <FormGroup className="mb-3">
+                    <Input type="textarea" rows={2} placeholder="Message" />
                   </FormGroup>
-
-                  <FormGroup>
-                    <Label for="message">Message</Label>
-                    <Input
-                      type="textarea"
-                      name="message"
-                      id="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows="5"
-                      placeholder="Tell us more about how we can help..."
-                    />
+                  <FormGroup className="mb-4">
+                    {/* reCAPTCHA placeholder (replace with react-google-recaptcha if integrating) */}
+                    <div style={{ background: "#fafbfc", padding: "10px 16px", borderRadius: 8, display: "flex", alignItems: "center", width: 220 }}>
+                      <input type="checkbox" style={{ width: 20, height: 20, marginRight: 12 }} />
+                      <span style={{ color: "#555", fontSize: 16 }}>I'm not a robot</span>
+                    </div>
                   </FormGroup>
-
-                  <div className="text-center">
-                    <Button color="primary" size="lg" className="fw-bold px-5">
-                      Send Message
-                    </Button>
-                  </div>
+                  <Button color="info" className="px-4 py-2 rounded-3" style={{ fontWeight: 600 }}>
+                    SEND MESSAGE
+                  </Button>
                 </Form>
-              )}
-            </Col>
-          </Row>
-        </Container>
-      </section>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+
+      {/* FEATURE / HERO MISSION SECTION */}
+      <Container className="py-5">
+        <Row className="align-items-center">
+          <Col md={6}>
+            <h6 className="text-success fw-bold mb-2" style={{ letterSpacing: 1 }}>OUR TEAM</h6>
+            <h2 className="fw-bold mb-3" style={{ color: "#32b147", fontSize: "2.2rem", lineHeight: 1.2 }}>
+              Partner with Us to Access Top Talent and Achieve Your Business Goals
+            </h2>
+            <p style={{ fontSize: 18, color: "#3569b2" }}>
+              Discover the value of strategic HR alliances and have access to the elite
+              talent that drives the success of your firm. Trust our knowledge to
+              confidently accomplish your business objectives.
+            </p>
+            <Button color="info" className="rounded-3 px-4 py-2 fw-bold">
+              DISCOVER MORE
+            </Button>
+          </Col>
+          <Col md={6} className="text-center">
+            {/* Curved image effect (clip-path) */}
+            <div style={{
+              width: "92%",
+              margin: "0 auto",
+              overflow: "hidden",
+              borderRadius: "40px 120px 60px 120px / 60px 120px 60px 120px"
+            }}>
+              <img
+                src="/team-partner.jpg" // Add your image to /public
+                alt="Partner Team"
+                style={{ width: "100%", display: "block" }}
+              />
+            </div>
+          </Col>
+        </Row>
+      </Container>
+
       <Footer />
     </>
   );
-};
-
-export default Contact;
+}

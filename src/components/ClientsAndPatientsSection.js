@@ -12,38 +12,14 @@ export default function ClientsAndPatientsSection() {
           empowering them to better understand their mental health and collaborate throughout the care process.
         </p>
         <a className="learn-link" href="#">Learn More <span className="arrow">→</span></a>
-        <div className="carousel-dots">
-          <span className="dot active"></span>
-          <span className="dot"></span>
-          <span className="dot"></span>
-          <span className="dot"></span>
-        </div>
       </div>
-      <div className="right">
+      <div className="">
         <div className="image-wrapper">
           <img
-            src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+            src="listening.jpg"
             alt="Clients and Patients"
             className="main-img"
           />
-          <div className="at-risk">
-            <span className="label">AT RISK PATIENTS</span>
-            <span className="number">3</span>
-          </div>
-          <div className="therapist-note">
-            <div className="therapist-pic">
-              <img
-                src="https://randomuser.me/api/portraits/women/44.jpg"
-                alt="Therapist"
-              />
-            </div>
-            <div className="note-text">
-              <span className="note-label">THERAPIST NOTE</span>
-              <p>
-                Based on your assessment response this week, it looks like you experienced increased anxiety around social events. Do you want to talk about that?
-              </p>
-            </div>
-          </div>
         </div>
       </div>
       <style jsx>{`
@@ -116,14 +92,7 @@ export default function ClientsAndPatientsSection() {
           background: #1a7c43;
         }
 
-        .right {
-          flex: 1.3;
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          background: #fff;
-          padding: 0;
-        }
+    
         .image-wrapper {
           position: relative;
           width: 100%;

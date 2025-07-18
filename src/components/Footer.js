@@ -1,41 +1,52 @@
-// src/components/Footer.jsx
-
 import React from "react";
-import { Container, Row, Col, Nav, NavItem, NavLink } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
-const Footer = () => {
-  return (
-    <footer style={{ backgroundColor: '#f9f9f7' }} className="py-4 border-top">
-      <Container>
-        <Row className="align-items-center">
-          <Col md="6" className="text-center text-md-start mb-3 mb-md-0">
-            <strong>ABC Mental Toughness</strong> © {new Date().getFullYear()}
-          </Col>
-          <Col md="6">
-            <Nav className="justify-content-center justify-content-md-end">
-              <NavItem>
-                <NavLink href="/about" className="text-dark fw-semibold">About</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/programs" className="text-dark fw-semibold">Programs</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/contact" className="text-dark fw-semibold">Contact</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/blog" className="text-dark fw-semibold">Blog</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://www.instagram.com/abcmentaltoughness/" className="text-dark fw-semibold">
-                  Instagram
-                </NavLink>
-              </NavItem>
-            </Nav>
-          </Col>
-        </Row>
-      </Container>
-    </footer>
-  );
-};
+const Footer = () => (
+  <footer className="bg-white border-top border-secondary pt-5 pb-3">
+    <Container>
+      <Row className="mb-4">
+        <Col md={3} className="mb-4 mb-md-0">
+        <p>Transforming the way businesses manage their workforce. Pathway Humanity, your trusted HR advisor in Concord, CA.</p>
+        </Col>
+        <Col md={3} className="mb-4 mb-md-0">
+          <h6 className="fw-bold text-success mb-3">Solutions</h6>
+          <ul className="list-unstyled small">
+            <li><a href="#">Measurement-Based Care</a></li>
+            <li><a href="#">Client Intake</a></li>
+            <li><a href="#">Pop Health</a></li>
+          </ul>
+        </Col>
+        <Col md={3} className="mb-4 mb-md-0">
+          <h6 className="fw-bold text-success mb-3">Company</h6>
+          <ul className="list-unstyled small">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Applicants</a></li>
+            <li><a href="#">Employers</a></li>
+          </ul>
+        </Col>
+        <Col md={3} className="d-flex flex-column align-items-center">
+          <div className="text-center small mb-2">
+            Privacy and security are the foundation of everything we do.
+          </div>
+        </Col>
+      </Row>
+      <hr />
+      <Row className="align-items-center text-center text-md-start">
+        <Col md={6} className="small text-muted">
+          Copyright 2025 Pathway Humanity SPC. All rights reserved.
+        </Col>
+        <Col md={6} className="d-flex justify-content-center justify-content-md-end gap-3 small">
+          <a href="#" className="text-decoration-none text-secondary">Accessibility</a>
+          <span className="text-success">|</span>
+          <a href="#" className="text-decoration-none text-secondary">Privacy</a>
+          <span className="text-success">|</span>
+          <a href="#" className="text-decoration-none text-secondary">Terms of Use</a>
+        </Col>
+      </Row>
+    </Container>
+  </footer>
+);
 
 export default Footer;

@@ -49,7 +49,6 @@ export default function ResearchStatsSection() {
             <div>
               <span className="stat-label">HIGHER OVERALL IMPROVEMENT IN CLINICAL SYMPTOMS</span>
             </div>
-            <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="User 1" className="stat-img" />
           </div>
         </div>
         {/* Card 2 */}
@@ -64,7 +63,6 @@ export default function ResearchStatsSection() {
             <div>
               <span className="stat-label">HIGHER LIKELIHOOD THAT A CLIENT EXPERIENCES RELIABLE CHANGE</span>
             </div>
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User 2" className="stat-img" />
           </div>
         </div>
         {/* Card 3 */}
@@ -79,7 +77,6 @@ export default function ResearchStatsSection() {
             <div>
               <span className="stat-label">REDUCTION IN NO-SHOW & CANCELLATION RATES</span>
             </div>
-            <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="User 3" className="stat-img" />
           </div>
         </div>
       </div>
