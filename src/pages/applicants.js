@@ -37,7 +37,7 @@ export default function Applicants() {
       {/* Hero Section */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.25)), url('/applicants-hero.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.25)), url('images/hero_image1.jpg') center/cover no-repeat`,
           minHeight: 240,
           display: "flex",
           alignItems: "center",
@@ -103,7 +103,7 @@ export default function Applicants() {
           </Col>
           <Col md={4} className="text-center p-0">
             <img
-              src="/job-seeker.jpg" // Put your own job seeker image in /public
+              src="/hero_image1.jpg" // Put your own job seeker image in /public
               alt="Job Seeker"
               style={{
                 maxHeight: 200,

@@ -34,8 +34,11 @@ export default function ResearchStatsSection() {
     <section className="research-section">
       <h2 className="research-title">What the Research Says</h2>
       <p className="research-desc">
-        Measurement-Based Care is improving the lives of people in care and significantly enhancing clinical outcomes. Take a look for yourself:
-      </p>
+      Measurement-Based Care (MBC) revolutionizes mental healthcare by integrating patient data and
+objective measures into clinical practice. This data-driven approach empowers clinicians and individuals
+to make informed treatment decisions, continuously monitor progress, and personalize well-being paths.
+Benefits include enhanced symptom reduction, increased remission rates, and greater patient satisfaction.
+The evidence is compelling:      </p>
       <div className="research-cards">
         {/* Card 1 */}
         <div className="research-card stat-green">
@@ -54,7 +57,7 @@ export default function ResearchStatsSection() {
         {/* Card 2 */}
         <div className="research-card stat-red">
           <div className="stat-top stat-bg-2">
-            <span className="stat-number" style={{ color: "#A11919" }}>
+            <span className="stat-number" style={{ color: "#000" }}>
               <span style={{ fontSize: "2.1rem", marginRight: 4 }}>&#8593;</span>
               <AnimatedNumber to={3.5} decimals={1} suffix="x" />
             </span>
@@ -68,7 +71,7 @@ export default function ResearchStatsSection() {
         {/* Card 3 */}
         <div className="research-card stat-purple">
           <div className="stat-top stat-bg-3">
-            <span className="stat-number" style={{ color: "#393B95" }}>
+            <span className="stat-number" style={{ color: "#000" }}>
               <span style={{ fontSize: "2.1rem", marginRight: 4 }}>&#8595;</span>
               <AnimatedNumber to={40} suffix="%" />
             </span>
@@ -128,11 +131,10 @@ export default function ResearchStatsSection() {
           padding-left: 32px;
           padding-top: 8px;
           background: #f7e6d1;
-          color: #1a7c43;
         }
         .stat-bg-1 { background: #f7e6d1; }
-        .stat-bg-2 { background: #e2e7f7; }
-        .stat-bg-3 { background: #f7e6f7; }
+        .stat-bg-2 { background: #f7e6d1;; }
+        .stat-bg-3 { background: #; }
 
         .stat-bottom {
           display: flex;
@@ -140,15 +142,15 @@ export default function ResearchStatsSection() {
           padding: 0;
         }
         .stat-green-bottom {
-          background: #166943;
+          background: #15c9d6;
           color: #fff;
         }
         .stat-red-bottom {
-          background: #A11919;
+          background: #65b32e;
           color: #fff;
         }
         .stat-purple-bottom {
-          background: #393B95;
+          background:  #1d7acb;
           color: #fff;
         }
         .stat-label {
@@ -168,11 +170,10 @@ export default function ResearchStatsSection() {
         }
         /* Middle card overrides */
         .stat-red .stat-top {
-          background: #e2e7f7;
+          background: #;
           color: #A11919;
         }
         .stat-purple .stat-top {
-          background: #f7e6f7;
           color: #393B95;
         }
         @media (max-width: 1100px) {

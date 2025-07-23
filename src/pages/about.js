@@ -26,7 +26,7 @@ export default function About() {
       {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.25)), url('/about.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.25)), url('/hero_image3.jpg') center/cover no-repeat`,
           minHeight: 240,
           display: "flex",
           alignItems: "center",

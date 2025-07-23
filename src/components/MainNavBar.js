@@ -7,7 +7,11 @@ import {
   Collapse,
   Nav,
   NavItem,
-  Button
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
 } from 'reactstrap';
 
 const MainNavBar = () => {
@@ -34,13 +38,8 @@ const MainNavBar = () => {
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="social-purpose-initiatives" passHref legacyBehavior>
-              <a className="nav-link">Social Purpose Initiatives</a>
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link href="#services" passHref legacyBehavior>
-              <a className="nav-link">Employers</a>
+            <Link href="/workforce" passHref legacyBehavior>
+              <a className="nav-link">Workforce Development Initiatives</a>
             </Link>
           </NavItem>
           <NavItem>
@@ -49,15 +48,38 @@ const MainNavBar = () => {
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="#contact" passHref legacyBehavior>
+            <Link href="/employers" passHref legacyBehavior>
+              <a className="nav-link">Employers</a>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="/about" passHref legacyBehavior>
               <a className="nav-link">About Us</a>
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="#contact" passHref legacyBehavior>
-              <Button color="success" className="ms-3 fw-bold">Seeking Job</Button>
+            <Link href="/social-purpose-initiatives" passHref legacyBehavior>
+              <a className="nav-link">Social Purpose Initiatives</a>
             </Link>
           </NavItem>
+          {/* Events Dropdown */}
+          <UncontrolledDropdown nav inNavbar>
+            <DropdownToggle nav caret>
+              Events
+            </DropdownToggle>
+            <DropdownMenu end>
+              <DropdownItem>
+                <Link href="/mentorship" passHref legacyBehavior>
+                  <a className="dropdown-item">Mentorship</a>
+                </Link>
+              </DropdownItem>
+              <DropdownItem>
+                <Link href="/calendar" passHref legacyBehavior>
+                  <a className="dropdown-item">Calendar Page</a>
+                </Link>
+              </DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
         </Nav>
       </Collapse>
     </Navbar>

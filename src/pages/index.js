@@ -12,7 +12,8 @@ export default function Home() {
       <section className="hero">
         <div className="hero-content">
           <h1>Pathway Humanity: Nurturing Well-being and Empowering Futures</h1>
-          <p>Pathway Humanity is a dedicated social purpose corporation committed to providing comprehensive mental illness and substance use disorder treatment.</p>
+          <p>At Pathway Humanity, we are dedicated to cultivating individual and community well-being. We
+empower individuals and foster environments where growth, stability, and positive contribution flourish.</p>
           <a className="btn" href="#">Learn More</a>
         </div>
       </section>

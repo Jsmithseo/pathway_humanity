@@ -9,17 +9,19 @@ export default function SolutionsSection() {
       </p>
       <div className="solutions-cards">
         <div className="solution-card intake rounded p-4">
-          <h3>Client Intake</h3>
+          <h3>Mental Health &amp; Addiction Recovery:</h3>
           <hr />
           <p>
-            Intake and waitlist management, simplified. A custom platform that fits your organization’s workflow. Automate your intake process to remove procedural tasks and leverage client-reported data to prioritize care for those who need it most.
+          ○ Comprehensive mental illness and substance use disorder treatment from highly qualified
+            psychiatrists and licensed/certified counselors.
+○           Evidence-based treatment for underlying socio-economic challenges.
           </p>
           <a href="#" className="learn-more">
             Learn More <span className="arrow">→</span>
           </a>
         </div>
         <div className="solution-card mbc rounded p-4">
-          <h3>MBC Platform</h3>
+          <h3>Vital Transitional Housing Support:</h3>
           <hr />
           <p>
             Measurement-Based Care, easier than ever before. Capture high-quality data from clients throughout treatment to help inform clinical decision making, increase engagement, and improve outcomes.
@@ -29,7 +31,7 @@ export default function SolutionsSection() {
           </a>
         </div>
         <div className="solution-card pop-health rounded p-10">
-          <h3>Population Health</h3>
+          <h3>Empowering Job Seekers:</h3>
           <hr />
           <p>
             Every resource, all in one place. A stepped-care hub for the campus, workplace, and more. Provide your community immediate access to wellness resources and care options. Leverage usage and outcome data to improve the support you offer.
