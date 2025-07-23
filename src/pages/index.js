@@ -46,7 +46,7 @@ export default function Home() {
             At Pathway Humanity, we are dedicated to cultivating individual and community well-being. We
             empower individuals and foster environments where growth, stability, and positive contribution flourish.
           </p>
-          <a className="btn" href="#">Learn More</a>
+          <a className="btn" href="/mission">Learn More</a>
         </div>
       </section>
 

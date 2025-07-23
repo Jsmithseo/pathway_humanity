@@ -1,84 +1,103 @@
-// pages/applicants.js
+// pages/employers.js
 
 import React from "react";
-import { Container, Row, Col, Button, Card, CardBody, CardTitle, CardText, Badge, Input } from "reactstrap";
+import { Container, Row, Col, Card, CardBody, Button } from "reactstrap";
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
 
-// Mock data (replace with real data or fetch from your backend)
-const positions = [
+// HR Consulting Features
+const FEATURES = [
   {
-    type: "Open Positions",
-    location: "Oakland, California",
-    title: "Substance Abuse Disorder Treatment Therapist",
-    badge: "Open Positions",
-    jobType: "Full Time",
-    heading: "Licensed Substance Disorder Treatment Therapist",
-    description:
-      "Pathway Humanity is seeking a compassionate and dedicated Substance Abuse Treatment Therapist to join our team in providing high-quality care to individuals struggling with substance abuse and addiction. The successful candidate will provide individual, group, and family therapy, conduct assessments, develop treatment plans, and collaborate with a multidisciplinary team to support clients in their recovery journey.",
+    title: "Talent Acquisition & Retention",
+    desc: "Identify, attract, and retain top talent with proven strategies for effective recruitment, onboarding, and employee engagement."
   },
   {
-    type: "Full Time",
-    location: "Oakland, California",
-    title: "Case Manager",
-    badge: "Full Time",
-    jobType: "Full Time",
-    heading: "Case Manager",
-    description:
-      "Pathway Humanity’s Therapeutic Housing Program is actively seeking a compassionate and dedicated Case Manager to join our team in providing essential housing and mental health services to homeless and low-income individuals struggling with substance abuse and mental health disorders.",
+    title: "Employee Relations Management",
+    desc: "Guidance and support for fostering positive communication, conflict resolution, and a supportive workplace culture."
   },
+  {
+    title: "Policy Development & Implementation",
+    desc: "Develop and implement clear, fair, and compliant HR policies that encourage best practices and ensure a safe work environment."
+  },
+  {
+    title: "Organizational Growth & Development",
+    desc: "Assess HR needs, identify areas for improvement, and implement strategies for growth, efficiency, and success."
+  },
+  {
+    title: "Workplace Optimization",
+    desc: "Create productive, harmonious, and thriving work environments that help your business achieve its objectives and enhance employee satisfaction."
+  }
 ];
 
-export default function Applicants() {
+export default function Employers() {
   return (
     <>
       <MainNavBar />
 
-      {/* Hero Section */}
+      {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.25)), url('images/hero_image2.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.18)), url('/about.jpg') center/cover no-repeat`,
           minHeight: 240,
           display: "flex",
           alignItems: "center",
-          justifyContent: "center"
+          justifyContent: "center",
         }}
       >
         <Container>
-          <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.5rem", textAlign: "center" }}>
-            Applicants
+          <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.3rem", textAlign: "center" }}>
+            Employers
           </h1>
-          <p className="text-white fs-5 mb-0 text-center">
-            Discover your dream job with ease - browse our vast range of career opportunities
-            and discover how we can assist you in taking the next step in your professional journey.
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 720, margin: "0 auto" }}>
+            Strategic Human Resources Consulting: Cultivating Productive Work Environments
           </p>
         </Container>
       </div>
 
-      {/* Job Cards */}
+      {/* MAIN CONTENT CARD */}
       <Container className="my-5">
-        <Row className="gy-4">
-          {positions.map((pos, idx) => (
-            <Col md={6} key={idx}>
-              <Card className="shadow-sm border-0 rounded-4 h-100">
+        <Row className="gy-4 justify-content-center">
+          <Col md={10} lg={8}>
+            <Card className="shadow-sm border-0 rounded-4 h-100">
+              <CardBody>
+                <h3 className="fw-bold mb-3" style={{ color: "#228d6e" }}>
+                  Optimize Your Workforce with Pathway Humanity
+                </h3>
+                <p style={{ fontSize: 17 }}>
+                  Beyond individual support, Pathway Humanity extends its expertise to businesses through our human resources consulting services. We offer tailored solutions designed to foster productive, harmonious, and thriving work environments.
+                </p>
+                <ul style={{ fontSize: 16, marginBottom: 18 }}>
+                  <li>
+                    <b>Talent Acquisition and Retention:</b> We assist businesses in identifying, attracting, and retaining top talent, developing strategies for effective recruitment, onboarding, and employee engagement.
+                  </li>
+                  <li>
+                    <b>Employee Relations Management:</b> We provide guidance and support in managing employee relations, fostering positive communication, conflict resolution, and creating a supportive workplace culture.
+                  </li>
+                  <li>
+                    <b>Policy Development and Implementation:</b> We help organizations develop and implement clear, fair, and compliant HR policies that promote best practices and ensure a safe and respectful work environment.
+                  </li>
+                  <li>
+                    <b>Organizational Growth and Development:</b> We partner with businesses to assess their HR needs, identify areas for improvement, and implement strategies that support organizational growth, efficiency, and overall success.
+                  </li>
+                </ul>
+                <p style={{ fontSize: 17 }}>
+                  By optimizing their human capital, businesses can achieve their objectives, enhance employee satisfaction, and cultivate a dynamic and productive workforce.
+                </p>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+
+      {/* FEATURES SECTION */}
+      <Container className="mb-5">
+        <Row className="gy-4 justify-content-center">
+          {FEATURES.map((feature, idx) => (
+            <Col xs={12} md={6} lg={4} key={idx}>
+              <Card className="h-100 shadow-sm border-0 rounded-4">
                 <CardBody>
-                  <div className="d-flex align-items-center mb-2">
-                    <Badge color="success" pill className="me-2" style={{ fontWeight: 500, fontSize: 14, background: "#e8f7ea", color: "#4cb050" }}>
-                      {pos.badge}
-                    </Badge>
-                    <span className="text-muted" style={{ fontSize: 13 }}>{pos.location}</span>
-                  </div>
-                  <CardTitle tag="h5" className="fw-bold mb-2" style={{ color: "#228d6e" }}>
-                    {pos.title}
-                  </CardTitle>
-                  <CardText>
-                    <strong style={{ color: "#34977b", fontSize: 17 }}>{pos.heading}</strong>
-                    <br />
-                    <span style={{ fontSize: 15 }}>{pos.description}</span>
-                  </CardText>
-                  <Button color="info" className="px-4 rounded-3 fw-bold">
-                    MORE DETAIL
-                  </Button>
+                  <h5 className="fw-bold mb-2" style={{ color: "#1c7acb" }}>{feature.title}</h5>
+                  <p style={{ fontSize: 16 }}>{feature.desc}</p>
                 </CardBody>
               </Card>
             </Col>
@@ -86,25 +105,24 @@ export default function Applicants() {
         </Row>
       </Container>
 
-      {/* Career Callout */}
+      {/* CALL TO ACTION / CTA */}
       <Container className="my-5">
         <Row className="align-items-center g-0" style={{ background: "#f7fafd", borderRadius: 16, overflow: "hidden" }}>
           <Col md={8} className="p-4">
             <h4 className="fw-bold mb-2" style={{ color: "#2e9701" }}>
-              Unlock Your Career Potential: Explore Our Exciting Job Listings Today!
+              Ready to grow your team?
             </h4>
             <p className="mb-3" style={{ fontSize: 16 }}>
-              If you are interested in a career shift, we urge you to read our extensive job listings to
-              discover new and exciting possibilities that may be a perfect match for your talents and expertise.
+              Connect with us to discover how our HR expertise can help your business attract, retain, and empower the talent you need to thrive.
             </p>
             <Button color="success" className="fw-bold px-4 rounded-3">
-              APPLY NOW
+              CONTACT US
             </Button>
           </Col>
           <Col md={4} className="text-center p-0">
             <img
-              src="/hero_image1.jpg" // Put your own job seeker image in /public
-              alt="Job Seeker"
+              src="/about.jpg"
+              alt="Teamwork"
               style={{
                 maxHeight: 200,
                 width: "auto",
@@ -115,7 +133,7 @@ export default function Applicants() {
         </Row>
       </Container>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }

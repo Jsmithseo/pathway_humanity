@@ -1,32 +1,32 @@
 // pages/applicants.js
 
 import React from "react";
-import { Container, Row, Col, Button, Card, CardBody, CardTitle, CardText, Badge, Input } from "reactstrap";
+import { Container, Row, Col, Card, CardBody, Button } from "reactstrap";
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
 
-// Mock data (replace with real data or fetch from your backend)
-const positions = [
+// Features to support the copy
+const FEATURES = [
   {
-    type: "Open Positions",
-    location: "Oakland, California",
-    title: "Substance Abuse Disorder Treatment Therapist",
-    badge: "Open Positions",
-    jobType: "Full Time",
-    heading: "Licensed Substance Disorder Treatment Therapist",
-    description:
-      "Pathway Humanity is seeking a compassionate and dedicated Substance Abuse Treatment Therapist to join our team in providing high-quality care to individuals struggling with substance abuse and addiction. The successful candidate will provide individual, group, and family therapy, conduct assessments, develop treatment plans, and collaborate with a multidisciplinary team to support clients in their recovery journey.",
+    title: "Simplifies Job Search",
+    desc: "A comprehensive and intuitive way to explore career opportunities with just a few clicks."
   },
   {
-    type: "Full Time",
-    location: "Oakland, California",
-    title: "Case Manager",
-    badge: "Full Time",
-    jobType: "Full Time",
-    heading: "Case Manager",
-    description:
-      "Pathway Humanity’s Therapeutic Housing Program is actively seeking a compassionate and dedicated Case Manager to join our team in providing essential housing and mental health services to homeless and low-income individuals struggling with substance abuse and mental health disorders.",
+    title: "Skill-Matching",
+    desc: "Align your skills and passions with roles that foster personal and professional growth."
   },
+  {
+    title: "Diverse Opportunities",
+    desc: "Our continuously updated database caters to professionals, recent graduates, and career changers."
+  },
+  {
+    title: "Informed Decisions",
+    desc: "Access detailed job descriptions, company profiles, and industry insights to make smart choices."
+  },
+  {
+    title: "Trusted Partner",
+    desc: "We’re your guide and ally, supporting you in seizing your dream job and advancing your career."
+  }
 ];
 
 export default function Applicants() {
@@ -34,51 +34,56 @@ export default function Applicants() {
     <>
       <MainNavBar />
 
-      {/* Hero Section */}
+      {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.25)), url('images/hero_image1.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.18)), url('/about.jpg') center/cover no-repeat`,
           minHeight: 240,
           display: "flex",
           alignItems: "center",
-          justifyContent: "center"
+          justifyContent: "center",
         }}
       >
         <Container>
-          <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.5rem", textAlign: "center" }}>
+          <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.3rem", textAlign: "center" }}>
             Applicants
           </h1>
-          <p className="text-white fs-5 mb-0 text-center">
-            Discover your dream job with ease - browse our vast range of career opportunities
-            and discover how we can assist you in taking the next step in your professional journey.
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 720, margin: "0 auto" }}>
+            Explore a wide range of career opportunities and find your ideal professional path with ease.
           </p>
         </Container>
       </div>
 
-      {/* Job Cards */}
+      {/* MAIN CONTENT CARD */}
       <Container className="my-5">
-        <Row className="gy-4">
-          {positions.map((pos, idx) => (
-            <Col md={6} key={idx}>
-              <Card className="shadow-sm border-0 rounded-4 h-100">
+        <Row className="gy-4 justify-content-center">
+          <Col md={10} lg={8}>
+            <Card className="shadow-sm border-0 rounded-4 h-100">
+              <CardBody>
+                <h3 className="fw-bold mb-3" style={{ color: "#228d6e" }}>
+                  Find Your Future with Pathway Humanity
+                </h3>
+                <p style={{ fontSize: 17 }}>
+                  Our platform simplifies job discovery, aligning your skills and aspirations with roles that foster growth. Whether you&#39;re a seasoned professional or a recent graduate, our extensive database is continuously updated with fresh opportunities.
+                </p>
+                <p style={{ fontSize: 17 }}>
+                  Beyond browsing, we offer detailed job descriptions, company profiles, and industry insights. Let us be your trusted partner, providing the guidance and support to confidently take the next step in your career. Your dream job awaits, and we&#39;re here to help you seize it.
+                </p>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+
+      {/* FEATURES SECTION */}
+      <Container className="mb-5">
+        <Row className="gy-4 justify-content-center">
+          {FEATURES.map((feature, idx) => (
+            <Col xs={12} md={6} lg={4} key={idx}>
+              <Card className="h-100 shadow-sm border-0 rounded-4">
                 <CardBody>
-                  <div className="d-flex align-items-center mb-2">
-                    <Badge color="success" pill className="me-2" style={{ fontWeight: 500, fontSize: 14, background: "#e8f7ea", color: "#4cb050" }}>
-                      {pos.badge}
-                    </Badge>
-                    <span className="text-muted" style={{ fontSize: 13 }}>{pos.location}</span>
-                  </div>
-                  <CardTitle tag="h5" className="fw-bold mb-2" style={{ color: "#228d6e" }}>
-                    {pos.title}
-                  </CardTitle>
-                  <CardText>
-                    <strong style={{ color: "#34977b", fontSize: 17 }}>{pos.heading}</strong>
-                    <br />
-                    <span style={{ fontSize: 15 }}>{pos.description}</span>
-                  </CardText>
-                  <Button color="info" className="px-4 rounded-3 fw-bold">
-                    MORE DETAIL
-                  </Button>
+                  <h5 className="fw-bold mb-2" style={{ color: "#1c7acb" }}>{feature.title}</h5>
+                  <p style={{ fontSize: 16 }}>{feature.desc}</p>
                 </CardBody>
               </Card>
             </Col>
@@ -86,24 +91,23 @@ export default function Applicants() {
         </Row>
       </Container>
 
-      {/* Career Callout */}
+      {/* CALL TO ACTION / CTA */}
       <Container className="my-5">
         <Row className="align-items-center g-0" style={{ background: "#f7fafd", borderRadius: 16, overflow: "hidden" }}>
           <Col md={8} className="p-4">
             <h4 className="fw-bold mb-2" style={{ color: "#2e9701" }}>
-              Unlock Your Career Potential: Explore Our Exciting Job Listings Today!
+              Ready to start your journey?
             </h4>
             <p className="mb-3" style={{ fontSize: 16 }}>
-              If you are interested in a career shift, we urge you to read our extensive job listings to
-              discover new and exciting possibilities that may be a perfect match for your talents and expertise.
+              Browse our live job listings or reach out to our team for personalized career guidance. Your dream job is just a click away!
             </p>
             <Button color="success" className="fw-bold px-4 rounded-3">
-              APPLY NOW
+              EXPLORE JOBS
             </Button>
           </Col>
           <Col md={4} className="text-center p-0">
             <img
-              src="/hero_image1.jpg" // Put your own job seeker image in /public
+              src="/job-seeker.jpg"
               alt="Job Seeker"
               style={{
                 maxHeight: 200,
@@ -115,7 +119,7 @@ export default function Applicants() {
         </Row>
       </Container>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }

@@ -1,7 +1,7 @@
-// pages/about.js
+// pages/workforce-development.js
 
 import React from "react";
-import { Container, Row, Col, Button, Card, CardBody, Input } from "reactstrap";
+import { Container, Row, Col, Button, Card, CardBody } from "reactstrap";
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
 
@@ -18,7 +18,7 @@ const PARTNER_LOGOS = [
   "/logo9.png",
 ];
 
-export default function Workforce() {
+export default function WorkforceDevelopment() {
   return (
     <>
       <MainNavBar />
@@ -26,7 +26,7 @@ export default function Workforce() {
       {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.25)), url('/hero_image3.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.18)), url('/about.jpg') center/cover no-repeat`,
           minHeight: 240,
           display: "flex",
           alignItems: "center",
@@ -34,74 +34,50 @@ export default function Workforce() {
         }}
       >
         <Container>
-          <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.5rem", textAlign: "center" }}>
-            About Us
+          <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.4rem", textAlign: "center" }}>
+            Workforce Development Initiatives
           </h1>
-          <p className="text-white fs-5 mb-0 text-center">
-            Pathway Humanity is a one-stop destination for companies looking for human resources solutions that are both effective and efficient.
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 800, margin: "0 auto" }}>
+            Nurturing Well-being and Empowering Futures
           </p>
         </Container>
       </div>
 
-      {/* WHO WE ARE */}
+      {/* MAIN CONTENT CARD */}
       <Container className="my-5">
-        <Row className="align-items-center gy-4">
-          <Col md={7}>
-            <h6 className="fw-bold mb-2" style={{ color: "#8cc63f", letterSpacing: 1 }}>WHO WE ARE</h6>
-            <h2 className="fw-bold mb-3" style={{ color: "#26813d", fontSize: "2rem" }}>
-              Here’s to growth and happiness in every person’s career journey
-            </h2>
-            <p style={{ fontSize: 17 }}>
-              <b>DeNay Ramsey</b> is the president and founder of Pathway Humanity Personnel, a human resources consulting and staffing firm. DeNay is a veteran of motivating others to perform at their highest level and managing contracts that resolve concerns for government agencies and businesses. His passion is creating opportunities for people who have gone through financial hardship, traumatic experiences and who encountered unfair judgment. DeNay draws on their entrepreneurship from his passion for helping people experience personal growth and believing that everyone is good at something when given the right opportunity. He has been a businesswoman for 15 years and in that timeframe DeNay has helped over 500 people experience life changing opportunities. Having worked with clients of all sizes, DeNay is an expert who helps organizations scale their businesses and organizations. DeNay believes that connecting with the customer is the foundation of any great strategy. He helped the Department of Veterans Affairs grow recruitment initiatives through their development and implementation of a comprehensive, tailored hiring plan. DeNay holds a degree in business administration, a certification in Human Resources Management from California State University, East Bay and is a Certified Associate in Project Management. You can contact DeNay at <a href="mailto:denay@pathwayhumanity.com">denay@pathwayhumanity.com</a>.
-            </p>
-            <Button color="info" className="rounded-3 px-4 py-2 fw-bold mt-3">
-              DISCOVER MORE
-            </Button>
-          </Col>
-          <Col md={3} className="text-center">
-            <div className="bg-white p-4 rounded-4 shadow mb-4 d-inline-block">
-              <div className="fw-bold" style={{ fontSize: 36, color: "#8cc63f" }}>25+</div>
-              <div className="text-secondary" style={{ fontSize: 16 }}>YEARS OF EXPERIENCE</div>
-            </div>
-            <div style={{
-              overflow: "hidden",
-              borderRadius: "40px 120px 60px 120px / 60px 120px 60px 120px",
-              width: 190,
-              margin: "0 auto",
-              marginTop: 8
-            }}>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-
-      {/* OUR VALUE */}
-      <Container className="mb-5">
-        <Row>
-          <Col md={6}>
-            <h6 className="fw-bold mb-2" style={{ color: "#8cc63f" }}>OUR VALUE</h6>
-            <h3 className="fw-bold mb-3" style={{ color: "#32b147" }}>
-              Empowering Organizations Through Innovative HR Solutions
-            </h3>
-            <p>
-              At Pathway Humanity, we think that maximizing human potential is the key to organizational success. This is why we are committed to providing innovative, customized HR solutions that enable organizations to achieve their objectives.
-            </p>
-          </Col>
-          <Col md={6}>
-            <Card className="border-0 shadow-sm mb-3">
-              <CardBody className="d-flex flex-wrap gap-3 justify-content-between">
-                <div className="flex-fill text-center">
-                  <div className="fw-bold text-primary mb-2">Our Vision</div>
-                  <p className="text-secondary mb-0" style={{ fontSize: 15 }}>
-                    Our vision is to ensure that the hiring process for businesses goes as smoothly as possible.
-                  </p>
-                </div>
-                <div className="flex-fill text-center">
-                  <div className="fw-bold text-success mb-2">Our Mission</div>
-                  <p className="text-secondary mb-0" style={{ fontSize: 15 }}>
-                    Providing innovative HR solutions that enable companies to realize their full potential.
-                  </p>
-                </div>
+        <Row className="gy-4 justify-content-center">
+          <Col md={10} lg={8}>
+            <Card className="shadow-sm border-0 rounded-4 h-100">
+              <CardBody>
+                <h3 className="fw-bold mb-3" style={{ color: "#228d6e" }}>
+                  Pathway Humanity: Nurturing Well-being and Empowering Futures
+                </h3>
+                <p style={{ fontSize: 17 }}>
+                  Pathway Humanity is a dedicated organization committed to cultivating individual and community well-being through a robust and comprehensive suite of services. Our foundational belief lies in empowering individuals and fostering environments where growth, stability, and positive contribution flourish.
+                </p>
+                <h4 className="fw-bold mt-4 mb-3" style={{ color: "#2e9701" }}>
+                  Empowering Job Seekers: A Path to Meaningful Employment
+                </h4>
+                <p style={{ fontSize: 17 }}>
+                  At the core of our mission is the empowerment of job seekers. We understand that securing meaningful employment is a cornerstone of individual and family stability. Our expert career counseling services are meticulously designed to guide individuals through every stage of their professional journey. This includes:
+                </p>
+                <ul style={{ fontSize: 16, marginBottom: 18 }}>
+                  <li>
+                    <b>Skill Development and Enhancement:</b> We help individuals identify existing strengths and develop new skills relevant to today&#39;s evolving job market, offering workshops and resources to bridge skill gaps.
+                  </li>
+                  <li>
+                    <b>Strategic Resume Building:</b> Our counselors work one-on-one with job seekers to craft compelling resumes that effectively highlight their experience, qualifications, and potential, making them stand out to prospective employers.
+                  </li>
+                  <li>
+                    <b>Effective Interview Preparation:</b> We equip individuals with the confidence and strategies needed to excel in interviews, covering everything from common interview questions to mock interviews and personalized feedback.
+                  </li>
+                  <li>
+                    <b>Targeted Job Search Strategies:</b> We provide guidance on navigating job boards, networking opportunities, and connecting with employers that align with individual career goals and aspirations.
+                  </li>
+                </ul>
+                <p style={{ fontSize: 17 }}>
+                  Our holistic approach ensures that job seekers are not just finding a job, but securing employment that is sustainable, fulfilling, and contributes to their long-term career aspirations.
+                </p>
               </CardBody>
             </Card>
           </Col>
@@ -130,74 +106,34 @@ export default function Workforce() {
             </Col>
             <Col md={5} className="d-flex flex-column justify-content-center">
               <h2 className="fw-bold mb-3" style={{ color: "#3498db", fontSize: "2.1rem" }}>
-                Best Staffing Services In Concord
+                Trusted by Top Employers
               </h2>
               <p style={{ fontSize: 17, color: "#555" }}>
-                Pathway Humanity takes great pleasure in being able to help businesses of all sizes and in all fields with their staffing needs. Our professional staff has extensive experience in filling temporary, temp-to-hire, and permanent positions for a wide variety of businesses. Our dedication to each of our clients and the highest standards in the industry have made us the top choice for staffing services in Concord.
+                Pathway Humanity partners with leading businesses, nonprofits, and community organizations to create sustainable workforce solutions and career pathways for all.
               </p>
             </Col>
           </Row>
         </Container>
       </div>
 
-      {/* LET'S CONNECT */}
-      <div style={{ background: "#19344a", padding: "60px 0" }}>
-        <Container>
-          <Row>
-            <Col md={7}>
-              <h3 className="fw-bold text-white mb-3">
-                Let's Connect: Contact Us For Tailored HR Solutions And Exciting Career Opportunities
-              </h3>
-              <p className="text-white-50 mb-4" style={{ fontSize: 16 }}>
-                Whether you are an employer seeking exceptional candidates or a job seeker looking for your ideal position, we are here to assist you. Get in touch with us right away to learn how we can collaborate with you to achieve your HR objectives.
-              </p>
-              <Button color="info" className="rounded-3 px-4 py-2 fw-bold">
-                DISCOVER MORE
-              </Button>
-            </Col>
-            <Col md={5}>
-              <Row className="mt-3">
-                <Col xs={6} className="text-center mb-3">
-                  <div className="fw-bold text-success" style={{ fontSize: 28 }}>107K+</div>
-                  <div className="text-white-50">Member Active</div>
-                </Col>
-                <Col xs={6} className="text-center mb-3">
-                  <div className="fw-bold text-success" style={{ fontSize: 28 }}>2K+</div>
-                  <div className="text-white-50">Companies</div>
-                </Col>
-                <Col xs={6} className="text-center mb-3">
-                  <div className="fw-bold text-success" style={{ fontSize: 28 }}>53+</div>
-                  <div className="text-white-50">Expert Trainers</div>
-                </Col>
-                <Col xs={6} className="text-center mb-3">
-                  <div className="fw-bold text-success" style={{ fontSize: 28 }}>2+</div>
-                  <div className="text-white-50">Years of Experience</div>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-
-      {/* CAREER CALL OUT */}
+      {/* CALL TO ACTION / CTA */}
       <Container className="my-5">
         <Row className="align-items-center g-0" style={{ background: "#f7fafd", borderRadius: 16, overflow: "hidden" }}>
           <Col md={8} className="p-4">
             <h4 className="fw-bold mb-2" style={{ color: "#2e9701" }}>
-              Unlock Your Career Potential: Explore Our Exciting Job Listings Today!
+              Ready to take the next step?
             </h4>
             <p className="mb-3" style={{ fontSize: 16 }}>
-              If you are interested in a career shift, we urge you to read our extensive job listings to
-              discover new and exciting possibilities that may be a perfect match for your talents and expertise.
+              Let Pathway Humanity guide you to new opportunities and help you build a brighter, more stable future. Explore our services and resources or connect with our career counselors today.
             </p>
             <Button color="success" className="fw-bold px-4 rounded-3">
-              APPLY NOW
+              CONTACT US
             </Button>
           </Col>
           <Col md={4} className="text-center p-0">
             <img
-              src="/job-seeker.jpg"
-              alt="Job Seeker"
+              src="/about.jpg"
+              alt="Workforce Development"
               style={{
                 maxHeight: 200,
                 width: "auto",
