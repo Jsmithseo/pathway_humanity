@@ -38,8 +38,20 @@ const MainNavBar = () => {
             </Link>
           </NavItem>
           <NavItem>
+            <Link href="/mission" passHref legacyBehavior>
+              <a className="nav-link">Mission</a>
+            </Link>
+          </NavItem>
+          <NavItem>
             <Link href="/workforce" passHref legacyBehavior>
               <a className="nav-link">Workforce Development Initiatives</a>
+            </Link>
+            
+          </NavItem>
+            
+          <NavItem>
+            <Link href="/social-purpose-initiatives" passHref legacyBehavior>
+              <a className="nav-link">Social Purpose Initiatives</a>
             </Link>
           </NavItem>
           <NavItem>
@@ -52,16 +64,7 @@ const MainNavBar = () => {
               <a className="nav-link">Employers</a>
             </Link>
           </NavItem>
-          <NavItem>
-            <Link href="/about" passHref legacyBehavior>
-              <a className="nav-link">About Us</a>
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link href="/social-purpose-initiatives" passHref legacyBehavior>
-              <a className="nav-link">Social Purpose Initiatives</a>
-            </Link>
-          </NavItem>
+ 
           {/* Events Dropdown */}
           <UncontrolledDropdown nav inNavbar>
             <DropdownToggle nav caret>
@@ -80,6 +83,11 @@ const MainNavBar = () => {
               </DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
+          <NavItem>
+            <Link href="/about" passHref legacyBehavior>
+              <a className="nav-link">About Us</a>
+            </Link>
+          </NavItem>
         </Nav>
       </Collapse>
     </Navbar>

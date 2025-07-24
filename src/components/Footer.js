@@ -8,22 +8,22 @@ const Footer = () => (
         <Col md={3} className="mb-4 mb-md-0">
         <p>Transforming the way businesses manage their workforce. Pathway Humanity, your trusted HR advisor in Concord, CA.</p>
         </Col>
-        <Col md={3} className="mb-4 mb-md-0">
+        {/* <Col md={3} className="mb-4 mb-md-0">
           <h6 className="fw-bold text-success mb-3">Solutions</h6>
           <ul className="list-unstyled small">
             <li><a href="#">Measurement-Based Care</a></li>
             <li><a href="#">Client Intake</a></li>
             <li><a href="#">Pop Health</a></li>
           </ul>
-        </Col>
+        </Col> */}
         <Col md={3} className="mb-4 mb-md-0">
           <h6 className="fw-bold text-success mb-3">Company</h6>
           <ul className="list-unstyled small">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Applicants</a></li>
-            <li><a href="#">Employers</a></li>
+            <li><a href="/mission">Mission</a></li>
+            <li><a href="/workforce">Workforce Development Initiatives</a></li>
+            <li><a href="/social-purpose-initiatives">Social Purpose Initiatives</a></li>
+            <li><a href="/applicants">Applicants</a></li>
+            <li><a href="/employers">Employers</a></li>
           </ul>
         </Col>
         <Col md={3} className="d-flex flex-column align-items-center">

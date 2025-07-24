@@ -11,11 +11,11 @@ export default function SolutionsSection() {
         <div className="solution-card intake rounded p-4">
           <h3>Mental Health &amp; Addiction Recovery:</h3>
           <hr />
-          <p>
-          ○ Comprehensive mental illness and substance use disorder treatment from highly qualified
+          <div>
+          Comprehensive mental illness and substance use disorder treatment from highly qualified
             psychiatrists and licensed/certified counselors.
-○           Evidence-based treatment for underlying socio-economic challenges.
-          </p>
+         Evidence-based treatment for underlying socio-economic challenges.
+          </div>
           <a href="#" className="learn-more">
             Learn More <span className="arrow">→</span>
           </a>
