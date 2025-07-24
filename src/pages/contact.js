@@ -1,14 +1,72 @@
-// pages/contact.js
-
-import React from "react";
-import { Container, Row, Col, Button, Form, FormGroup, Input, Label, Card, CardBody } from "reactstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Card, CardBody, Button, Form, FormGroup, Input, Label, Alert, Spinner } from "reactstrap";
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
 
-// HERO IMAGE URL (change as needed)
-const HERO_IMAGE = "contact-image.jpg"; // Add your own image in /public
+const HUBSPOT_PORTAL_ID = "YOUR_PORTAL_ID"; // <-- Replace!
+const HUBSPOT_FORM_ID = "YOUR_FORM_ID";     // <-- Replace!
 
 export default function Contact() {
+  const [fields, setFields] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    message: "",
+    subject: "",
+    company: ""
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleChange = (e) => {
+    setFields({ ...fields, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSubmitting(true);
+
+    // HubSpot API endpoint
+    const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
+
+    // Format fields for HubSpot
+    const data = {
+      fields: Object.entries(fields).map(([name, value]) => ({ name, value }))
+    };
+
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        setFields({
+          firstname: "",
+          lastname: "",
+          email: "",
+          phone: "",
+          message: "",
+          subject: "",
+          company: ""
+        });
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setError("Failed to submit form. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <>
       <MainNavBar />
@@ -16,163 +74,141 @@ export default function Contact() {
       {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.3),rgba(42,48,56,.4)), url('/contact-image.jpg') center/cover no-repeat`,
-          minHeight: 600,
+          background: `linear-gradient(rgba(42,48,56,.35),rgba(42,48,56,.22)), url('/images/contact-hero.jpg') center/cover no-repeat`,
+          minHeight: 520,
           display: "flex",
-          alignItems: "center"
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <Container>
-          <Row>
-            <Col md={8} lg={6} className="bg-dark bg-opacity-50 p-4 shadow-lg">
-              <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.5rem" }}>
-                Contact Us
-              </h1>
-              <p className="text-white fs-5 mb-0">
-                Contact us easily and have access to a world of customized HR solutions,
-                individualized assistance, and industry expertise.
-              </p>
-            </Col>
-          </Row>
+          <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.3rem", textAlign: "center" }}>
+            Contact Us
+          </h1>
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 700, margin: "0 auto" }}>
+            Let’s start a conversation about your needs. Reach out and a member of our team will respond promptly.
+          </p>
         </Container>
       </div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-      {/* FORM SECTION */}
-      <Container style={{ marginTop: "-80px", marginBottom: "60px" }}>
-        <Row className="justify-content-center">
+
+      {/* MAIN CONTENT CARD with Custom Form */}
+      <Container className="my-5">
+        <Row className="gy-4 justify-content-center">
           <Col md={10} lg={8}>
-            <Card className="shadow-lg rounded-4 border-0" style={{ padding: "36px 18px" }}>
+            <Card className="shadow-sm border-0 rounded-4 h-100">
               <CardBody>
-                <Form>
-                  <Row className="mb-3">
-                    <Col md={6}>
-                      <FormGroup>
-                        <Input type="select" defaultValue="">
-                          <option value="">Please Select</option>
-                          <option>General Inquiry</option>
-                          <option>Client Support</option>
-                          <option>Job Application</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Input placeholder="Position Title" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row className="mb-3">
-                    <Col md={6}>
-                      <FormGroup>
-                        <Input type="select" defaultValue="">
-                          <option value="">Position Type</option>
-                          <option>Full-Time</option>
-                          <option>Part-Time</option>
-                          <option>Contract</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Input placeholder="Location" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <FormGroup className="mb-3">
-                    <Input type="textarea" rows={2} placeholder="Note" />
-                  </FormGroup>
-                  <Row className="mb-3">
-                    <Col md={6}>
-                      <FormGroup>
-                        <Input placeholder="First Name" />
-                      </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Input placeholder="Last Name" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row className="mb-3">
-                    <Col md={6}>
-                      <FormGroup>
-                        <Input placeholder="Company" />
-                      </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Input placeholder="Phone" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row className="mb-3">
-                    <Col md={6}>
-                      <FormGroup>
-                        <Input placeholder="Email" type="email" />
-                      </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Input placeholder="Subject" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <FormGroup className="mb-3">
-                    <Input type="textarea" rows={2} placeholder="Message" />
-                  </FormGroup>
-                  <FormGroup className="mb-4">
-                    {/* reCAPTCHA placeholder (replace with react-google-recaptcha if integrating) */}
-                    <div style={{ background: "#fafbfc", padding: "10px 16px", borderRadius: 8, display: "flex", alignItems: "center", width: 220 }}>
-                      <input type="checkbox" style={{ width: 20, height: 20, marginRight: 12 }} />
-                      <span style={{ color: "#555", fontSize: 16 }}>I'm not a robot</span>
-                    </div>
-                  </FormGroup>
-                  <Button color="info" className="px-4 py-2 rounded-3" style={{ fontWeight: 600 }}>
-                    SEND MESSAGE
-                  </Button>
-                </Form>
+                <h3 className="fw-bold mb-3" style={{ color: "#228d6e" }}>
+                  Get in Touch
+                </h3>
+                <p style={{ fontSize: 17 }}>
+                  Have a question, want to book a consultation, or just need more info? Fill out the form below and we’ll get right back to you.
+                </p>
+                {submitted ? (
+                  <Alert color="success">
+                    Thank you! Your message has been received. We'll be in touch soon.
+                  </Alert>
+                ) : (
+                  <Form onSubmit={handleSubmit}>
+                    <Row>
+                      <Col md={6}>
+                        <FormGroup>
+                          <Label for="firstname">First Name</Label>
+                          <Input
+                            type="text"
+                            name="firstname"
+                            id="firstname"
+                            required
+                            value={fields.firstname}
+                            onChange={handleChange}
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col md={6}>
+                        <FormGroup>
+                          <Label for="lastname">Last Name</Label>
+                          <Input
+                            type="text"
+                            name="lastname"
+                            id="lastname"
+                            required
+                            value={fields.lastname}
+                            onChange={handleChange}
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col md={6}>
+                        <FormGroup>
+                          <Label for="email">Email</Label>
+                          <Input
+                            type="email"
+                            name="email"
+                            id="email"
+                            required
+                            value={fields.email}
+                            onChange={handleChange}
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col md={6}>
+                        <FormGroup>
+                          <Label for="phone">Phone</Label>
+                          <Input
+                            type="text"
+                            name="phone"
+                            id="phone"
+                            value={fields.phone}
+                            onChange={handleChange}
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <FormGroup>
+                      <Label for="company">Company</Label>
+                      <Input
+                        type="text"
+                        name="company"
+                        id="company"
+                        value={fields.company}
+                        onChange={handleChange}
+                      />
+                    </FormGroup>
+                    <FormGroup>
+                      <Label for="subject">Subject</Label>
+                      <Input
+                        type="text"
+                        name="subject"
+                        id="subject"
+                        value={fields.subject}
+                        onChange={handleChange}
+                      />
+                    </FormGroup>
+                    <FormGroup>
+                      <Label for="message">Message</Label>
+                      <Input
+                        type="textarea"
+                        name="message"
+                        id="message"
+                        rows={4}
+                        required
+                        value={fields.message}
+                        onChange={handleChange}
+                      />
+                    </FormGroup>
+                    {error && <Alert color="danger">{error}</Alert>}
+                    <Button
+                      color="primary"
+                      type="submit"
+                      className="px-4 py-2"
+                      disabled={submitting}
+                    >
+                      {submitting ? <Spinner size="sm" /> : "Send Message"}
+                    </Button>
+                  </Form>
+                )}
               </CardBody>
             </Card>
-          </Col>
-        </Row>
-      </Container>
-
-      {/* FEATURE / HERO MISSION SECTION */}
-      <Container className="py-5">
-        <Row className="align-items-center">
-          <Col md={6}>
-            <h6 className="text-success fw-bold mb-2" style={{ letterSpacing: 1 }}>OUR TEAM</h6>
-            <h2 className="fw-bold mb-3" style={{ color: "#32b147", fontSize: "2.2rem", lineHeight: 1.2 }}>
-              Partner with Us to Access Top Talent and Achieve Your Business Goals
-            </h2>
-            <p style={{ fontSize: 18, color: "#3569b2" }}>
-              Discover the value of strategic HR alliances and have access to the elite
-              talent that drives the success of your firm. Trust our knowledge to
-              confidently accomplish your business objectives.
-            </p>
-            <Button color="info" className="rounded-3 px-4 py-2 fw-bold">
-              DISCOVER MORE
-            </Button>
-          </Col>
-          <Col md={6} className="text-center">
-            {/* Curved image effect (clip-path) */}
-            <div style={{
-              width: "92%",
-              margin: "0 auto",
-              overflow: "hidden",
-              borderRadius: "40px 120px 60px 120px / 60px 120px 60px 120px"
-            }}>
-              <img
-                src="/team-partner.jpg" // Add your image to /public
-                alt="Partner Team"
-                style={{ width: "100%", display: "block" }}
-              />
-            </div>
           </Col>
         </Row>
       </Container>

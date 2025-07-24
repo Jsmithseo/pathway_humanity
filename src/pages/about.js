@@ -4,6 +4,7 @@ import React from "react";
 import { Container, Row, Col, Card, CardBody, Button } from "reactstrap";
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -67,9 +68,11 @@ export default function About() {
             <p className="mb-3" style={{ fontSize: 16 }}>
               Whether you need support or want to help others transform their lives, Pathway Humanity is here for you. Reach out to learn more or get involved.
             </p>
-            <Button color="success" className="fw-bold px-4 rounded-3">
-              CONTACT US
-            </Button>
+            <Link href="/contact" passHref legacyBehavior>
+              <Button color="success" className="fw-bold px-4 rounded-3">
+                CONTACT US
+              </Button>
+            </Link>
           </Col>
           {/* <Col md={4} className="text-center p-0">
             <img
