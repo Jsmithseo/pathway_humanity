@@ -56,7 +56,7 @@ export default function Home() {
       >
         <Container>
           <Row className="justify-content-center">
-            <Col md={10} lg={8}>
+            <Col md={12} lg={12}>
               <h1 className="fw-bold mb-3" style={{ fontSize: "2.3rem", letterSpacing: 1 }}>
                 Welcome to Pathway Humanity
               </h1>
@@ -297,8 +297,8 @@ export default function Home() {
         }
 
         .welcome-section {
-          background: linear-gradient(rgba(30,60,80,.7),rgba(50,177,71,.6)), url('/about.jpg') center/cover no-repeat;
-          color: #fff;
+          // background: linear-gradient(rgba(30,60,80,.7),rgba(50,177,71,.6)), url('/about.jpg') center/cover no-repeat;
+          color: #000;
           min-height: 360px;
           display: flex;
           align-items: center;

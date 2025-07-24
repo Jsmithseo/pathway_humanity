@@ -14,7 +14,7 @@ export default function About() {
       <div
         style={{
           background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.18)), url('/about.jpg') center/cover no-repeat`,
-          minHeight: 240,
+          minHeight: 600,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

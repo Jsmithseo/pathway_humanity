@@ -14,7 +14,7 @@ export default function OpioidAwareness() {
       <div
         style={{
           background: `linear-gradient(rgba(42,48,56,.45),rgba(30,60,80,.16)), url('/about.jpg') center/cover no-repeat`,
-          minHeight: 260,
+          minHeight: 600,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

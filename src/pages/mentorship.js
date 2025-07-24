@@ -14,7 +14,7 @@ export default function Mentorship() {
       <div
         style={{
           background: `linear-gradient(rgba(42,48,56,.28),rgba(30,60,80,.18)), url('/about.jpg') center/cover no-repeat`,
-          minHeight: 240,
+          minHeight: 600,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

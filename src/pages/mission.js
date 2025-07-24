@@ -13,8 +13,8 @@ export default function Mission() {
       {/* Hero Section */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.35),rgba(42,48,56,.25)), url('/about.jpg') center/cover no-repeat`,
-          minHeight: 240,
+          background: `linear-gradient(rgba(42,48,56,.35),rgba(42,48,56,.25)), url('/about.jpg') center/cover no-repeat; `,
+          minHeight: 600,
           display: "flex",
           alignItems: "center",
           justifyContent: "center"

@@ -17,7 +17,7 @@ export default function Contact() {
       <div
         style={{
           background: `linear-gradient(rgba(42,48,56,.3),rgba(42,48,56,.4)), url('/contact-image.jpg') center/cover no-repeat`,
-          minHeight: 220,
+          minHeight: 600,
           display: "flex",
           alignItems: "center"
         }}
