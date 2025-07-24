@@ -13,7 +13,7 @@ export default function Mentorship() {
       {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.28),rgba(30,60,80,.18)), url('/about.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.28),rgba(30,60,80,.18)), url('images/hero_image8.jpg') center/cover no-repeat`,
           minHeight: 600,
           display: "flex",
           alignItems: "center",

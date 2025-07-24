@@ -37,7 +37,7 @@ export default function Applicants() {
       {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.18)), url('/about.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.18)), url('/images/hero_image6.jpg') center/cover no-repeat`,
           minHeight: 600,
           display: "flex",
           alignItems: "center",
@@ -94,7 +94,7 @@ export default function Applicants() {
       {/* CALL TO ACTION / CTA */}
       <Container className="my-5">
         <Row className="align-items-center g-0" style={{ background: "#f7fafd", borderRadius: 16, overflow: "hidden" }}>
-          <Col md={8} className="p-4">
+          <Col md={12} className="p-4">
             <h4 className="fw-bold mb-2" style={{ color: "#2e9701" }}>
               Ready to start your journey?
             </h4>
@@ -105,7 +105,7 @@ export default function Applicants() {
               EXPLORE JOBS
             </Button>
           </Col>
-          <Col md={4} className="text-center p-0">
+          {/* <Col md={4} className="text-center p-0">
             <img
               src="/job-seeker.jpg"
               alt="Job Seeker"
@@ -115,7 +115,7 @@ export default function Applicants() {
                 objectFit: "contain"
               }}
             />
-          </Col>
+          </Col> */}
         </Row>
       </Container>
 

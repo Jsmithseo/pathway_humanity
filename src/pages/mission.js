@@ -13,7 +13,7 @@ export default function Mission() {
       {/* Hero Section */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.35),rgba(42,48,56,.25)), url('/about.jpg') center/cover no-repeat; `,
+          background: `linear-gradient(rgba(42,48,56,.35),rgba(42,48,56,.25)), url('/hero_image1.jpg') center/cover no-repeat; `,
           minHeight: 600,
           display: "flex",
           alignItems: "center",
@@ -76,7 +76,7 @@ export default function Mission() {
       {/* (Optional) Mission Callout */}
       <Container className="my-5">
         <Row className="align-items-center g-0" style={{ background: "#f7fafd", borderRadius: 16, overflow: "hidden" }}>
-          <Col md={8} className="p-4">
+          <Col md={12} className="p-4">
             <h4 className="fw-bold mb-2" style={{ color: "#2e9701" }}>
               Dedicated to Serving Those in Need
             </h4>
@@ -86,17 +86,6 @@ export default function Mission() {
             <Button color="success" className="fw-bold px-4 rounded-3">
               CONTACT US
             </Button>
-          </Col>
-          <Col md={4} className="text-center p-0">
-            <img
-              src="/about.jpg"
-              alt="Pathway Humanity"
-              style={{
-                maxHeight: 200,
-                width: "auto",
-                objectFit: "contain"
-              }}
-            />
           </Col>
         </Row>
       </Container>
