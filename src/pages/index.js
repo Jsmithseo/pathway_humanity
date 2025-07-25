@@ -98,7 +98,7 @@ export default function Home() {
               </CardBody>
             </Card>
           </Col>
-          {/* Block 2 */}
+          {/* Block 2 - VITAL TRANSITIONAL HOUSING SUPPORT */}
           <Col md={6}>
             <Card className="border-0 shadow h-100">
               <CardBody>
@@ -110,6 +110,24 @@ export default function Home() {
                 </ul>
                 <p>
                   Pathway Humanity provides transitional housing, offering safe, stable, and profoundly supportive environments. Our program is designed to empower individuals and families as they actively work towards achieving lasting self-sufficiency. We understand that the journey to independence requires more than just a roof over one's head; it necessitates a comprehensive approach that nurtures growth, stability, and well-being.
+                </p>
+                <h5 className="mt-3 mb-2" style={{ color: "#2e9701" }}>A Foundation for Lasting Self-Sufficiency</h5>
+                <p>
+                  Pathway Humanity is dedicated to providing vital transitional housing, creating safe, stable, and profoundly supportive environments for individuals and families on their journey towards lasting self-sufficiency. We recognize that true independence extends far beyond merely securing a place to live; it encompasses a holistic approach that cultivates personal growth, fosters stability, and enhances overall well-being.
+                </p>
+                <p>
+                  Our comprehensive program is meticulously designed to empower residents at every step. We offer more than just a roof over their heads; we provide a structured and nurturing community where individuals can rebuild their lives with dignity and purpose. This includes:
+                </p>
+                <ul>
+                  <li><b>Safe and Secure Living Spaces:</b> Our housing units are maintained to the highest standards, offering a sense of security and peace of mind, essential for healing and progress.</li>
+                  <li><b>Personalized Support Services:</b> Each resident or family receives individualized attention, including case management, goal setting, and connection to vital community resources.</li>
+                  <li><b>Life Skills Development:</b> We offer workshops and training in areas such as financial literacy, job searching, parenting skills, and healthy living, equipping residents with the tools they need to thrive independently.</li>
+                  <li><b>Mental Health and Wellness Resources:</b> Recognizing the profound impact of well-being on stability, we facilitate access to counseling, support groups, and stress management techniques.</li>
+                  <li><b>Educational and Vocational Opportunities:</b> We assist residents in pursuing educational goals, vocational training, and career development to enhance their long-term economic stability.</li>
+                  <li><b>Community Integration:</b> We encourage positive community engagement, fostering a sense of belonging and reducing social isolation.</li>
+                </ul>
+                <p>
+                  At Pathway Humanity, we believe in the inherent strength and resilience of every individual. Our transitional housing program is not merely a temporary stop; it is a springboard to a brighter future, empowering individuals and families to break cycles of instability and achieve sustainable independence. We are committed to nurturing an environment where hope flourishes, potential is realized, and self-sufficiency becomes an enduring reality.
                 </p>
               </CardBody>
             </Card>
