@@ -297,7 +297,7 @@ export default function Home() {
           min-height: 500px;
           display: flex;
           align-items: center;
-          background-image: url('/images/hero_image.jpg');
+          background-image: url('/images/hero_image_home.jpg');
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
