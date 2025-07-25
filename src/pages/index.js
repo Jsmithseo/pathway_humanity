@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import MainNavBar from '../components/MainNavBar';
 import Footer from "../components/Footer";
-import { Container, Row, Col, Card, CardBody } from "reactstrap";
+import { Container, Row, Col, Card, CardBody, Button } from "reactstrap";
 
 // Animated number component
 function AnimatedNumber({ to, duration = 1500, decimals = 0, prefix = "", suffix = "" }) {
@@ -33,6 +33,40 @@ function AnimatedNumber({ to, duration = 1500, decimals = 0, prefix = "", suffix
   );
 }
 
+// ToggleCard component
+function ToggleCard({ title, color, children }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <Card className="border-0 shadow h-100">
+      <CardBody>
+        <h4 className="fw-bold mb-3" style={{ color }}>{title}</h4>
+        <div className={`toggle-content ${isOpen ? "open" : "collapsed"}`}>
+          {children}
+        </div>
+        <Button
+          color="link"
+          className="p-0 mt-2 fw-bold"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? "Show Less ▲" : "Read More ▼"}
+        </Button>
+      </CardBody>
+      <style jsx>{`
+        .toggle-content.collapsed {
+          max-height: 140px;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+        .toggle-content.open {
+          max-height: 2000px;
+          transition: max-height 0.4s ease;
+        }
+      `}</style>
+    </Card>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -51,9 +85,7 @@ export default function Home() {
       </section>
 
       {/* WELCOME / MISSION SECTION */}
-      <section
-        className="welcome-section"
-      >
+      <section className="welcome-section">
         <Container>
           <Row className="justify-content-center">
             <Col md={12} lg={12}>
@@ -78,110 +110,101 @@ export default function Home() {
         <Row className="g-4">
           {/* Block 1 */}
           <Col md={6}>
-            <Card className="border-0 shadow h-100">
-              <CardBody>
-                <h4 className="fw-bold mb-3" style={{ color: "#14c9d6" }}>Mental Health & Addiction Recovery</h4>
-                <ul>
-                  <li>
-                    <b>Comprehensive mental illness and substance use disorder treatment</b> from highly qualified psychiatrists and licensed/certified counselors.
-                  </li>
-                  <li>
-                    <b>Evidence-based treatment</b> for underlying socio-economic challenges.
-                  </li>
-                </ul>
-                <p>
-                  <b>Comprehensive Mental Illness and Substance Use Disorder Treatment:</b> We provide an integrated and holistic approach to mental health and substance use disorder treatment. Our team comprises highly qualified, board-certified psychiatrists and licensed/certified counselors who are experts in their respective fields. We offer a full spectrum of services, including individualized therapy, group counseling, medication management, and specialized programs for co-occurring disorders. Our treatment plans are tailored to meet the unique needs of each individual, fostering a supportive and confidential environment for healing and recovery.
-                </p>
-                <p>
-                  <b>Evidence-Based Treatment for Underlying Socio-Economic Challenges:</b> Recognizing that mental health and substance use often intersect with socio-economic factors, we offer evidence-based interventions to address these underlying challenges. Our approach includes practical support and resources for issues such as housing instability, unemployment, lack of access to education, and food insecurity. We connect individuals with community resources, provide vocational training and job placement assistance, and offer financial literacy education. By addressing these fundamental needs, we aim to create a stable foundation that supports long-term recovery and overall well-being.
-                </p>
-              </CardBody>
-            </Card>
+            <ToggleCard title="Mental Health & Addiction Recovery" color="#14c9d6">
+              <ul>
+                <li>
+                  <b>Comprehensive mental illness and substance use disorder treatment</b> from highly qualified psychiatrists and licensed/certified counselors.
+                </li>
+                <li>
+                  <b>Evidence-based treatment</b> for underlying socio-economic challenges.
+                </li>
+              </ul>
+              <p>
+                <b>Comprehensive Mental Illness and Substance Use Disorder Treatment:</b> We provide an integrated and holistic approach to mental health and substance use disorder treatment. Our team comprises highly qualified, board-certified psychiatrists and licensed/certified counselors who are experts in their respective fields. We offer a full spectrum of services, including individualized therapy, group counseling, medication management, and specialized programs for co-occurring disorders. Our treatment plans are tailored to meet the unique needs of each individual, fostering a supportive and confidential environment for healing and recovery.
+              </p>
+              <p>
+                <b>Evidence-Based Treatment for Underlying Socio-Economic Challenges:</b> Recognizing that mental health and substance use often intersect with socio-economic factors, we offer evidence-based interventions to address these underlying challenges. Our approach includes practical support and resources for issues such as housing instability, unemployment, lack of access to education, and food insecurity. We connect individuals with community resources, provide vocational training and job placement assistance, and offer financial literacy education. By addressing these fundamental needs, we aim to create a stable foundation that supports long-term recovery and overall well-being.
+              </p>
+            </ToggleCard>
           </Col>
-          {/* Block 2 - VITAL TRANSITIONAL HOUSING SUPPORT */}
+
+          {/* Block 2 */}
           <Col md={6}>
-            <Card className="border-0 shadow h-100">
-              <CardBody>
-                <h4 className="fw-bold mb-3" style={{ color: "#65b32e" }}>Vital Transitional Housing Support</h4>
-                <ul>
-                  <li>
-                    <b>Safe, stable, and supportive environments</b> for individuals and families working towards self-sufficiency.
-                  </li>
-                </ul>
-                <p>
-                  Pathway Humanity provides transitional housing, offering safe, stable, and profoundly supportive environments. Our program is designed to empower individuals and families as they actively work towards achieving lasting self-sufficiency. We understand that the journey to independence requires more than just a roof over one's head; it necessitates a comprehensive approach that nurtures growth, stability, and well-being.
-                </p>
-                <h5 className="mt-3 mb-2" style={{ color: "#2e9701" }}>A Foundation for Lasting Self-Sufficiency</h5>
-                <p>
-                  Pathway Humanity is dedicated to providing vital transitional housing, creating safe, stable, and profoundly supportive environments for individuals and families on their journey towards lasting self-sufficiency. We recognize that true independence extends far beyond merely securing a place to live; it encompasses a holistic approach that cultivates personal growth, fosters stability, and enhances overall well-being.
-                </p>
-                <p>
-                  Our comprehensive program is meticulously designed to empower residents at every step. We offer more than just a roof over their heads; we provide a structured and nurturing community where individuals can rebuild their lives with dignity and purpose. This includes:
-                </p>
-                <ul>
-                  <li><b>Safe and Secure Living Spaces:</b> Our housing units are maintained to the highest standards, offering a sense of security and peace of mind, essential for healing and progress.</li>
-                  <li><b>Personalized Support Services:</b> Each resident or family receives individualized attention, including case management, goal setting, and connection to vital community resources.</li>
-                  <li><b>Life Skills Development:</b> We offer workshops and training in areas such as financial literacy, job searching, parenting skills, and healthy living, equipping residents with the tools they need to thrive independently.</li>
-                  <li><b>Mental Health and Wellness Resources:</b> Recognizing the profound impact of well-being on stability, we facilitate access to counseling, support groups, and stress management techniques.</li>
-                  <li><b>Educational and Vocational Opportunities:</b> We assist residents in pursuing educational goals, vocational training, and career development to enhance their long-term economic stability.</li>
-                  <li><b>Community Integration:</b> We encourage positive community engagement, fostering a sense of belonging and reducing social isolation.</li>
-                </ul>
-                <p>
-                  At Pathway Humanity, we believe in the inherent strength and resilience of every individual. Our transitional housing program is not merely a temporary stop; it is a springboard to a brighter future, empowering individuals and families to break cycles of instability and achieve sustainable independence. We are committed to nurturing an environment where hope flourishes, potential is realized, and self-sufficiency becomes an enduring reality.
-                </p>
-              </CardBody>
-            </Card>
+            <ToggleCard title="Vital Transitional Housing Support" color="#65b32e">
+              <ul>
+                <li>
+                  <b>Safe, stable, and supportive environments</b> for individuals and families working towards self-sufficiency.
+                </li>
+              </ul>
+              <p>
+                Pathway Humanity provides transitional housing, offering safe, stable, and profoundly supportive environments. Our program is designed to empower individuals and families as they actively work towards achieving lasting self-sufficiency. We understand that the journey to independence requires more than just a roof over one's head; it necessitates a comprehensive approach that nurtures growth, stability, and well-being.
+              </p>
+              <h5 className="mt-3 mb-2" style={{ color: "#2e9701" }}>A Foundation for Lasting Self-Sufficiency</h5>
+              <p>
+                Pathway Humanity is dedicated to providing vital transitional housing, creating safe, stable, and profoundly supportive environments for individuals and families on their journey towards lasting self-sufficiency. We recognize that true independence extends far beyond merely securing a place to live; it encompasses a holistic approach that cultivates personal growth, fosters stability, and enhances overall well-being.
+              </p>
+              <p>
+                Our comprehensive program is meticulously designed to empower residents at every step. We offer more than just a roof over their heads; we provide a structured and nurturing community where individuals can rebuild their lives with dignity and purpose. This includes:
+              </p>
+              <ul>
+                <li><b>Safe and Secure Living Spaces:</b> Our housing units are maintained to the highest standards, offering a sense of security and peace of mind, essential for healing and progress.</li>
+                <li><b>Personalized Support Services:</b> Each resident or family receives individualized attention, including case management, goal setting, and connection to vital community resources.</li>
+                <li><b>Life Skills Development:</b> We offer workshops and training in areas such as financial literacy, job searching, parenting skills, and healthy living, equipping residents with the tools they need to thrive independently.</li>
+                <li><b>Mental Health and Wellness Resources:</b> Recognizing the profound impact of well-being on stability, we facilitate access to counseling, support groups, and stress management techniques.</li>
+                <li><b>Educational and Vocational Opportunities:</b> We assist residents in pursuing educational goals, vocational training, and career development to enhance their long-term economic stability.</li>
+                <li><b>Community Integration:</b> We encourage positive community engagement, fostering a sense of belonging and reducing social isolation.</li>
+              </ul>
+              <p>
+                At Pathway Humanity, we believe in the inherent strength and resilience of every individual. Our transitional housing program is not merely a temporary stop; it is a springboard to a brighter future, empowering individuals and families to break cycles of instability and achieve sustainable independence. We are committed to nurturing an environment where hope flourishes, potential is realized, and self-sufficiency becomes an enduring reality.
+              </p>
+            </ToggleCard>
           </Col>
+
           {/* Block 3 */}
           <Col md={6}>
-            <Card className="border-0 shadow h-100">
-              <CardBody>
-                <h4 className="fw-bold mb-3" style={{ color: "#1c7acb" }}>Empowering Job Seekers</h4>
-                <ul>
-                  <li>Skill Development & Enhancement</li>
-                  <li>Strategic Resume Building</li>
-                  <li>Effective Interview Preparation</li>
-                  <li>Targeted Job Search Strategies</li>
-                  <li>Temporary-to-Permanent Job Placement</li>
-                </ul>
-                <p>
-                  At Pathway Humanity, we are dedicated to fostering significant career growth for our clients. We achieve this through a comprehensive and multi-faceted approach, focusing on key areas that are crucial for professional advancement in today's competitive job market.
-                </p>
-                <ul>
-                  <li><b>Skill Development & Enhancement:</b> Tailored programs designed to identify and cultivate new skills, ensuring our clients remain competitive.</li>
-                  <li><b>Strategic Resume Building:</b> Compelling resumes that align with career aspirations and target industries.</li>
-                  <li><b>Effective Interview Preparation:</b> Confidence and techniques for interview excellence, including mock sessions and feedback.</li>
-                  <li><b>Targeted Job Search Strategies:</b> Proactive job search methodologies and professional networking.</li>
-                  <li><b>Temporary-to-Permanent Job Placement:</b> Connecting clients with roles that lead to long-term stability.</li>
-                </ul>
-              </CardBody>
-            </Card>
+            <ToggleCard title="Empowering Job Seekers" color="#1c7acb">
+              <ul>
+                <li>Skill Development & Enhancement</li>
+                <li>Strategic Resume Building</li>
+                <li>Effective Interview Preparation</li>
+                <li>Targeted Job Search Strategies</li>
+                <li>Temporary-to-Permanent Job Placement</li>
+              </ul>
+              <p>
+                At Pathway Humanity, we are dedicated to fostering significant career growth for our clients. We achieve this through a comprehensive and multi-faceted approach, focusing on key areas that are crucial for professional advancement in today's competitive job market.
+              </p>
+              <ul>
+                <li><b>Skill Development & Enhancement:</b> Tailored programs designed to identify and cultivate new skills, ensuring our clients remain competitive.</li>
+                <li><b>Strategic Resume Building:</b> Compelling resumes that align with career aspirations and target industries.</li>
+                <li><b>Effective Interview Preparation:</b> Confidence and techniques for interview excellence, including mock sessions and feedback.</li>
+                <li><b>Targeted Job Search Strategies:</b> Proactive job search methodologies and professional networking.</li>
+                <li><b>Temporary-to-Permanent Job Placement:</b> Connecting clients with roles that lead to long-term stability.</li>
+              </ul>
+            </ToggleCard>
           </Col>
+
           {/* Block 4 */}
           <Col md={6}>
-            <Card className="border-0 shadow h-100">
-              <CardBody>
-                <h4 className="fw-bold mb-3" style={{ color: "#14c9d6" }}>Strategic Human Resources Consulting</h4>
-                <ul>
-                  <li>Talent Acquisition & Retention</li>
-                  <li>Employee Relations Management</li>
-                  <li>Policy Development & Implementation</li>
-                  <li>Organizational Growth & Development</li>
-                  <li>Salary Surveys & Benchmarking</li>
-                  <li>Financial literacy education</li>
-                  <li>Access to vital community resources</li>
-                </ul>
-                <p>
-                  Pathway Humanity specializes in comprehensive business-to-business (B2B) human resources consulting services. We empower organizations to thrive through our expertise across a broad spectrum of critical HR functions.
-                </p>
-                <ul>
-                  <li><b>Talent Acquisition & Retention:</b> Robust strategies for attracting and engaging top talent.</li>
-                  <li><b>Employee Relations Management:</b> Expert support for conflict resolution and performance management.</li>
-                  <li><b>Policy Development & Implementation:</b> Crafting and communicating compliant, effective HR policies.</li>
-                  <li><b>Organizational Growth & Development:</b> Strategies for sustainable growth, change management, and leadership development.</li>
-                </ul>
-              </CardBody>
-            </Card>
+            <ToggleCard title="Strategic Human Resources Consulting" color="#14c9d6">
+              <ul>
+                <li>Talent Acquisition & Retention</li>
+                <li>Employee Relations Management</li>
+                <li>Policy Development & Implementation</li>
+                <li>Organizational Growth & Development</li>
+                <li>Salary Surveys & Benchmarking</li>
+                <li>Financial literacy education</li>
+                <li>Access to vital community resources</li>
+              </ul>
+              <p>
+                Pathway Humanity specializes in comprehensive business-to-business (B2B) human resources consulting services. We empower organizations to thrive through our expertise across a broad spectrum of critical HR functions.
+              </p>
+              <ul>
+                <li><b>Talent Acquisition & Retention:</b> Robust strategies for attracting and engaging top talent.</li>
+                <li><b>Employee Relations Management:</b> Expert support for conflict resolution and performance management.</li>
+                <li><b>Policy Development & Implementation:</b> Crafting and communicating compliant, effective HR policies.</li>
+                <li><b>Organizational Growth & Development:</b> Strategies for sustainable growth, change management, and leadership development.</li>
+              </ul>
+            </ToggleCard>
           </Col>
         </Row>
       </Container>
@@ -315,7 +338,6 @@ export default function Home() {
         }
 
         .welcome-section {
-          // background: linear-gradient(rgba(30,60,80,.7),rgba(50,177,71,.6)), url('/about.jpg') center/cover no-repeat;
           color: #000;
           min-height: 360px;
           display: flex;
