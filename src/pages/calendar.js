@@ -37,7 +37,7 @@ export default function CalendarPage() {
       {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.20),rgba(30,60,80,.14)), url('/about.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.80),rgba(30,60,80,.80)), url('/about.jpg') center/cover no-repeat`,
           minHeight: 600,
           display: "flex",
           alignItems: "center",

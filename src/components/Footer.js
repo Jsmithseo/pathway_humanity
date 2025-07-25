@@ -6,7 +6,7 @@ const Footer = () => (
     <Container>
       <Row className="mb-4">
         <Col md={3} className="mb-4 mb-md-0">
-        <p>Transforming the way businesses manage their workforce. Pathway Humanity, your trusted HR advisor in Concord, CA.</p>
+        <p>At Pathway Humanity, we team up with people, communities, and groups to help them reach their full potential, no matter where they're starting from. We're all about making change for the better.</p>
         </Col>
         {/* <Col md={3} className="mb-4 mb-md-0">
           <h6 className="fw-bold text-success mb-3">Solutions</h6>

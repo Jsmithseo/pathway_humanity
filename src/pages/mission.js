@@ -4,6 +4,7 @@ import React from "react";
 import { Container, Row, Col, Card, CardBody, Button } from "reactstrap";
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 export default function Mission() {
   return (
@@ -13,7 +14,7 @@ export default function Mission() {
       {/* Hero Section */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.35),rgba(42,48,56,.25)), url('/hero_image1.jpg') center/cover no-repeat; `,
+          background: `linear-gradient(rgba(42,48,56,.80),rgba(42,48,56,.80)), url('/hero_image1.jpg') center/cover no-repeat`,
           minHeight: 600,
           display: "flex",
           alignItems: "center",
@@ -83,9 +84,11 @@ export default function Mission() {
             <p className="mb-3" style={{ fontSize: 16 }}>
               Our holistic approach and evidence-based programs are designed to help every client find renewed hope and self-sufficiency. If you or a loved one need support, we are here for you.
             </p>
-            <Button color="success" className="fw-bold px-4 rounded-3">
-              CONTACT US
-            </Button>
+            <Link href="/contact" passHref legacyBehavior>
+              <Button color="success" className="fw-bold px-4 rounded-3">
+                CONTACT US
+              </Button>
+            </Link>
           </Col>
         </Row>
       </Container>

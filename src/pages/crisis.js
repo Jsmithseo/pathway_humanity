@@ -13,7 +13,7 @@ export default function OpioidAwareness() {
       {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.45),rgba(30,60,80,.16)), url('/about.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.80),rgba(30,60,80,.80)), url('/about.jpg') center/cover no-repeat`,
           minHeight: 600,
           display: "flex",
           alignItems: "center",
