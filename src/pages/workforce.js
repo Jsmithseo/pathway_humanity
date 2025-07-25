@@ -1,9 +1,8 @@
-// pages/workforce-development.js
-
 import React from "react";
 import { Container, Row, Col, Button, Card, CardBody } from "reactstrap";
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 // Partner/Client logos
 const PARTNER_LOGOS = [
@@ -126,9 +125,11 @@ export default function WorkforceDevelopment() {
             <p className="mb-3" style={{ fontSize: 16 }}>
               Let Pathway Humanity guide you to new opportunities and help you build a brighter, more stable future. Explore our services and resources or connect with our career counselors today.
             </p>
-            <Button color="success" className="fw-bold px-4 rounded-3">
-              CONTACT US
-            </Button>
+            <Link href="/contact" passHref legacyBehavior>
+              <Button color="success" className="fw-bold px-4 rounded-3">
+                CONTACT US
+              </Button>
+            </Link>
           </Col>
           {/* <Col md={4} className="text-center p-0">
             <img

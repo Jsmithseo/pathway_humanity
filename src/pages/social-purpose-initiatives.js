@@ -1,6 +1,7 @@
 // pages/social-purpose-initiatives.js
 
 import React from "react";
+import Link from "next/link";
 import { Container, Row, Col, Card, CardBody, Button } from "reactstrap";
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
@@ -13,7 +14,7 @@ export default function SocialPurposeInitiatives() {
       {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.18)), url('images/hero_image7.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.30),rgba(42,48,56,.18)), url('/images/hero_image7.jpg') center/cover no-repeat`,
           minHeight: 600,
           display: "flex",
           alignItems: "center",
@@ -76,21 +77,12 @@ export default function SocialPurposeInitiatives() {
             <p className="mb-3" style={{ fontSize: 16 }}>
               If you share our commitment to social justice and transformation, connect with Pathway Humanity to learn more about our programs and how you can make a difference.
             </p>
-            <Button color="success" className="fw-bold px-4 rounded-3">
-              CONTACT US
-            </Button>
+            <Link href="/contact" passHref>
+              <Button color="success" className="fw-bold px-4 rounded-3">
+                CONTACT US
+              </Button>
+            </Link>
           </Col>
-          {/* <Col md={4} className="text-center p-0">
-            <img
-              src="/about.jpg"
-              alt="Social Purpose"
-              style={{
-                maxHeight: 200,
-                width: "auto",
-                objectFit: "contain"
-              }}
-            />
-          </Col> */}
         </Row>
       </Container>
 
