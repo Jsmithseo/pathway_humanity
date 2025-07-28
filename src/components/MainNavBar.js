@@ -7,7 +7,6 @@ import {
   Collapse,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -19,6 +18,11 @@ const MainNavBar = () => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const navLinkStyle = {
+    fontSize: '1.1rem', // Increased font size
+    fontWeight: '500',  // Slightly bolder for better readability
+  };
+
   return (
     <Navbar expand="md" light color="white" className="px-3 shadow-sm sticky-top">
       <NavbarBrand href="/" className="d-flex align-items-center gap-2">
@@ -27,47 +31,42 @@ const MainNavBar = () => {
           alt="Logo Placeholder"
           style={{ width: 75, height: 75, borderRadius: 8 }}
         />
-        <span style={{ fontWeight: 'bold', color: '#0078A8' }}>Pathway Humanity</span>
+        <span style={{ fontWeight: 'bold', color: '#0078A8', fontSize: '1.25rem' }}>
+          Pathway Humanity
+        </span>
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ms-auto align-items-center" navbar>
           <NavItem>
-            <Link href="/" passHref legacyBehavior>
-              <a className="nav-link">Home</a>
-            </Link>
-          </NavItem>
-          <NavItem>
             <Link href="/mission" passHref legacyBehavior>
-              <a className="nav-link">Mission</a>
+              <a className="nav-link" style={navLinkStyle}>Mission</a>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="/workforce" passHref legacyBehavior>
-              <a className="nav-link">Workforce Development Initiatives</a>
+              <a className="nav-link" style={navLinkStyle}>Workforce Development Initiatives</a>
             </Link>
-            
           </NavItem>
-            
           <NavItem>
             <Link href="/social-purpose-initiatives" passHref legacyBehavior>
-              <a className="nav-link">Social Purpose Initiatives</a>
+              <a className="nav-link" style={navLinkStyle}>Social Purpose Initiatives</a>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="/applicants" passHref legacyBehavior>
-              <a className="nav-link">Applicants</a>
+              <a className="nav-link" style={navLinkStyle}>Applicants</a>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="/employers" passHref legacyBehavior>
-              <a className="nav-link">Employers</a>
+              <a className="nav-link" style={navLinkStyle}>Employers</a>
             </Link>
           </NavItem>
- 
+
           {/* Events Dropdown */}
           <UncontrolledDropdown nav inNavbar>
-            <DropdownToggle nav caret>
+            <DropdownToggle nav caret style={navLinkStyle}>
               Events
             </DropdownToggle>
             <DropdownMenu end>
@@ -83,9 +82,15 @@ const MainNavBar = () => {
               </DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
+
           <NavItem>
             <Link href="/about" passHref legacyBehavior>
-              <a className="nav-link">About Us</a>
+              <a className="nav-link" style={navLinkStyle}>About Us</a>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="/blog" passHref legacyBehavior>
+              <a className="nav-link" style={navLinkStyle}>Blog</a>
             </Link>
           </NavItem>
         </Nav>

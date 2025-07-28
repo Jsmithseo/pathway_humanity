@@ -7,60 +7,33 @@ import { Container, Row, Col, Card, CardBody, CardTitle, CardText, Button, CardI
 const posts = [
   {
     id: 1,
-    title: "The top 10 negative self - talk barriers leading to performance plateaus and how to overcome them.",
-    excerpt: "Discover techniques for building mental resilience and reframing negative thoughts in competitive environments.",
+    title: "Bay Area Food Insecurity: A Crisis in the Midst of Plenty",
     slug: "/blog/blog1",
-    image: "/images/blog1.jpg" // Add your blog image here
+    image: "/images/blog1.jpg",
+    date: "July 10, 2025"
   },
   {
     id: 2,
-    title: "The #1 Thing Holding Back Youth Soccer Players (And It's Not What You Think)",
-    excerpt: "Learn why awareness—not more training—is the key to unlocking your young athlete’s full potential on the field.",
+    title: "Mentoring is important to helping our youth",
     slug: "/blog/blog2",
-    image: "/images/blog2.jpg"
+    image: "/images/blog2.jpg",
+    date: "July 12, 2025"
   },
   {
     id: 3,
-    title: "Stress, Emotions, and Coping in Youth Sports",
+    title: "What is Transitional Housing?",
     excerpt: "Explore how mental stress impacts young athletes and why emotional regulation and coping strategies are essential for youth sports success.",
     slug: "/blog/blog3",
-    image: "/images/blog3.jpg"
+    image: "/images/blog3.jpg",
+    date: "July 15, 2025"
   },
   {
     id: 4,
-    title: "Grit Mindset: Prioritizing Process, Strength, and Achievement",
-    excerpt: "Most people chase the trophy without truly embracing the grind—yet real growth happens when you prioritize daily effort over instant success.",
+    title: "How Do Recruitment Agencies Work: Examining Their Role",
     slug: "/blog/blog4",
-    image: "/images/blog4.jpg"
+    image: "/images/blog4.jpg",
+    date: "July 20, 2025"
   },
-  {
-    id: 5,
-    title: "Chapter 1: The Fearless Young Athlete",
-    excerpt: "A fearless young athlete learns to surrender emotions, embrace self-reflection, and let go of fear. Use these hands-on assignments to build confidence, overcome mental barriers, and thrive both on and off the field.",
-    slug: "/blog/blog5",
-    image: "/images/blog5.jpg"
-  },
-  {
-    id: 6,
-    title: "Chapter 2: The Fearless Young Athlete",
-    excerpt: "Fear isn’t the enemy—inactivity is. In this chapter, young athletes learn to understand, manage, and transform fear into fuel. Includes a powerful personal story and a guided journaling assignment to help athletes reconnect with their WHY.",
-    slug: "/blog/blog6",
-    image: "/images/blog6.jpg"
-  },
-  {
-    id: 7,
-    title: "Tips for Tryouts: How to Stand Out and Make the Team",
-    excerpt: "Have you ever been in a situation where you desperately wanted to make a team, but you had to go through a grueling tryout period? In the tryout, you are accompanied by 40 or 50 players with the exact same goal.",
-    slug: "/blog/blog7",
-    image: "/images/blog7.jpg"
-  },
-  {
-    id: 8,
-    title: "R.A.C.E. Formula for Mental Toughness",
-    excerpt: "Discover the R.A.C.E. Formula — a proven method for building mental toughness in athletes and performers. Learn how to overcome mental blocks, silence negative thoughts, and unlock your ideal performance state.",
-    slug: "/blog/blog8",
-    image: "/images/blog8.jpg"
-  }
 ];
 
 export default function BlogPage() {
@@ -78,9 +51,28 @@ export default function BlogPage() {
               <Card className="h-100 shadow-sm">
                 {post.image && <CardImg top width="100%" src={post.image} alt={post.title} />}
                 <CardBody>
+                  <span
+                    className="badge rounded-pill mb-3"
+                    style={{
+                      backgroundColor: "#20c997", // Teal
+                      color: "#fff",
+                      padding: "0.5rem 1rem",
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    {post.date}
+                  </span>
                   <CardTitle tag="h5">{post.title}</CardTitle>
-                  <CardText>{post.excerpt}</CardText>
-                  <Button color="primary" href={post.slug}>Read More</Button>
+                  {post.excerpt && <CardText>{post.excerpt}</CardText>}
+                  <Button
+                    style={{
+                      backgroundColor: "#20c997",
+                      borderColor: "#20c997",
+                    }}
+                    href={post.slug}
+                  >
+                    Read More
+                  </Button>
                 </CardBody>
               </Card>
             </Col>
