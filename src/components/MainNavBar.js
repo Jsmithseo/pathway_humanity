@@ -96,6 +96,7 @@ const MainNavBar = () => {
           <NavItem>
             <Link href="/contact" passHref legacyBehavior>
               <a className="nav-link" style={navLinkStyle}>Contact</a>
+              
             </Link>
           </NavItem>
         </Nav>
