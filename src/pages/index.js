@@ -294,7 +294,7 @@ export default function Home() {
 
         /* HERO SECTION */
         .hero {
-          min-height: 500px;
+          min-height: 1000px;
           display: flex;
           align-items: center;
           background-image: url('/images/hero_image_home.jpg');
@@ -305,9 +305,9 @@ export default function Home() {
         }
         .hero-content {
           background: rgba(255,255,255,0.85);
-          padding: 48px 32px;
+          padding: 8px 32px;
           border-radius: 10px;
-          max-width: 540px;
+          max-width: 470px;
           margin-left: 6vw;
           box-shadow: 0 6px 32px rgba(0,0,0,0.08);
           text-align: left;
@@ -349,7 +349,7 @@ export default function Home() {
         .research-section {
           max-width: 1240px;
           margin: 0 auto;
-          padding: 80px 20px 60px 20px;
+          padding: 20px 20px 60px 20px;
           text-align: center;
         }
         .research-title {

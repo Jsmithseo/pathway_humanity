@@ -14,7 +14,7 @@ export default function Mission() {
       {/* Hero Section */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.80),rgba(42,48,56,.80)), url('/hero_image1.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.40),rgba(42,48,56,.40)), url('/hero_image1.jpg') center/cover no-repeat`,
           minHeight: 600,
           display: "flex",
           alignItems: "center",

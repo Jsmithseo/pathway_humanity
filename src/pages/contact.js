@@ -1,5 +1,18 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Card, CardBody, Button, Form, FormGroup, Input, Label, Alert, Spinner } from "reactstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  CardBody,
+  Button,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Alert,
+  Spinner,
+} from "reactstrap";
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
 
@@ -14,7 +27,7 @@ export default function Contact() {
     phone: "",
     message: "",
     subject: "",
-    company: ""
+    company: "",
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -29,21 +42,19 @@ export default function Contact() {
     setError("");
     setSubmitting(true);
 
-    // HubSpot API endpoint
     const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
 
-    // Format fields for HubSpot
     const data = {
-      fields: Object.entries(fields).map(([name, value]) => ({ name, value }))
+      fields: Object.entries(fields).map(([name, value]) => ({ name, value })),
     };
 
     try {
       const res = await fetch(endpoint, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       });
 
       if (res.ok) {
@@ -55,7 +66,7 @@ export default function Contact() {
           phone: "",
           message: "",
           subject: "",
-          company: ""
+          company: "",
         });
       } else {
         setError("Something went wrong. Please try again.");
@@ -74,8 +85,8 @@ export default function Contact() {
       {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.35),rgba(42,48,56,.22)), url('/images/contact-hero.jpg') center/cover no-repeat`,
-          minHeight: 520,
+          background: `linear-gradient(rgba(42,48,56,.40),rgba(42,48,56,.40)), url('images/hero_contact.jpg') center/cover no-repeat`,
+          minHeight: 800,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -90,6 +101,8 @@ export default function Contact() {
           </p>
         </Container>
       </div>
+
+   
 
       {/* MAIN CONTENT CARD with Custom Form */}
       <Container className="my-5">
@@ -209,6 +222,35 @@ export default function Contact() {
                 )}
               </CardBody>
             </Card>
+          </Col>
+        </Row>
+      </Container>
+         {/* CONTACT INFO & MAP */}
+         <Container className="mt-5 mb-5">
+        <Row className="justify-content-center text-center">
+          <Col md={8}>
+            <h3 className="fw-bold mb-3" style={{ color: "#1c7acb" }}>
+              Our Office
+            </h3>
+            <p>
+              1320 Willow Pass Road, Suite 624<br />
+              Concord, CA 94520<br />
+              <b>Phone:</b> (888) 710-7760
+            </p>
+          </Col>
+        </Row>
+        <Row className="justify-content-center mt-4">
+          <Col md={10}>
+            <iframe
+              title="Office Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.713720782543!2d-122.0360949!3d37.9729938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085637a2eb0a6ed%3A0x9c05e1a9d9dc7b7!2s1320%20Willow%20Pass%20Rd%20Suite%20624%2C%20Concord%2C%20CA%2094520!5e0!3m2!1sen!2sus!4v1692225938935!5m2!1sen!2sus"
+              width="100%"
+              height="350"
+              style={{ border: 0, borderRadius: "8px" }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </Col>
         </Row>
       </Container>

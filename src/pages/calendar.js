@@ -37,7 +37,7 @@ export default function CalendarPage() {
       {/* HERO SECTION */}
       <div
         style={{
-          background: `linear-gradient(rgba(42,48,56,.80),rgba(30,60,80,.80)), url('/about.jpg') center/cover no-repeat`,
+          background: `linear-gradient(rgba(42,48,56,.40),rgba(30,60,80,.40)), url('/about.jpg') center/cover no-repeat`,
           minHeight: 600,
           display: "flex",
           alignItems: "center",
@@ -84,45 +84,7 @@ export default function CalendarPage() {
         </Row>
       </Container>
 
-      {/* CALENDAR CONTENT */}
-      <Container className="my-5">
-        <Row className="justify-content-center">
-          <Col md={10} lg={8}>
-            <Card className="shadow-sm border-0 rounded-4 h-100 p-3 p-md-4">
-              <CardBody>
-                <h3 className="fw-bold mb-3" style={{ color: "#1c7acb" }}>
-                  Upcoming Events & Registration
-                </h3>
-                <p style={{ fontSize: 17 }}>
-                  Our calendar is continuously updated with educational seminars, workshops, outreach programs, and volunteer opportunities. Click on any event for more details and to RSVP.
-                </p>
-                {/* ---- Embed your calendar below ---- */}
-                <div style={{
-                  margin: "36px 0",
-                  borderRadius: 16,
-                  overflow: "hidden",
-                  minHeight: 520,
-                  background: "#f3f8fc",
-                  boxShadow: "0 2px 12px rgba(30,120,180,.08)"
-                }}>
-                  {/* === Calendly Example Embed === */}
-                  <iframe
-                    src="https://calendly.com/your-calendly-username" // Replace with your actual link
-                    width="100%"
-                    height="550"
-                    frameBorder="0"
-                    style={{ minHeight: 520 }}
-                    title="Calendar Embed"
-                  ></iframe>
-                </div>
-                <p style={{ fontSize: 16 }}>
-                  Can’t find an event that fits your schedule? <a href="/contact" style={{ color: "#1c7acb", textDecoration: "underline" }}>Contact us</a> for private workshops or one-on-one sessions.
-                </p>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+
 
       <Footer />
     </>

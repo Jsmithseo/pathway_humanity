@@ -2,7 +2,6 @@ import "@/styles/globals.css";
 import Script from "next/script";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -25,6 +24,13 @@ function MyApp({ Component, pageProps }) {
         }}
       />
       <Component {...pageProps} />
+
+      {/* Global Teal Background */}
+      <style jsx global>{`
+        body {
+          background-color: teal;
+        }
+      `}</style>
     </>
   );
 }
