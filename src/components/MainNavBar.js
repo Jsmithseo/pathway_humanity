@@ -93,6 +93,11 @@ const MainNavBar = () => {
               <a className="nav-link" style={navLinkStyle}>Blog</a>
             </Link>
           </NavItem>
+          <NavItem>
+            <Link href="/contact" passHref legacyBehavior>
+              <a className="nav-link" style={navLinkStyle}>Contact</a>
+            </Link>
+          </NavItem>
         </Nav>
       </Collapse>
     </Navbar>
