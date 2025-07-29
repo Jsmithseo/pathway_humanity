@@ -39,7 +39,7 @@ export default function BlogPage() {
   return (
     <>
       <Head>
-        <title>Blog | ABC Mental Toughness</title>
+        <title>Blog</title>
       </Head>
       <MainNavbar />
       <Container className="py-5">
