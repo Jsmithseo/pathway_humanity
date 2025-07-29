@@ -33,20 +33,27 @@ function AnimatedNumber({ to, duration = 1500, decimals = 0, prefix = "", suffix
   );
 }
 
-// ToggleCard component
+// ToggleCard component with background color
 function ToggleCard({ title, color, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Card className="border-0 shadow h-100">
+    <Card
+      className="border-0 shadow h-100"
+      style={{
+        backgroundColor: color,
+        color: "#fff",
+      }}
+    >
       <CardBody>
-        <h4 className="fw-bold mb-3" style={{ color }}>{title}</h4>
+        <h4 className="fw-bold mb-3" style={{ color: "#fff" }}>{title}</h4>
         <div className={`toggle-content ${isOpen ? "open" : "collapsed"}`}>
           {children}
         </div>
         <Button
           color="link"
           className="p-0 mt-2 fw-bold"
+          style={{ color: "#fff", textDecoration: "underline" }}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? "Show Less ▲" : "Read More ▼"}
@@ -123,7 +130,7 @@ export default function Home() {
                 <b>Comprehensive Mental Illness and Substance Use Disorder Treatment:</b> We provide an integrated and holistic approach to mental health and substance use disorder treatment. Our team comprises highly qualified, board-certified psychiatrists and licensed/certified counselors who are experts in their respective fields. We offer a full spectrum of services, including individualized therapy, group counseling, medication management, and specialized programs for co-occurring disorders. Our treatment plans are tailored to meet the unique needs of each individual, fostering a supportive and confidential environment for healing and recovery.
               </p>
               <p>
-                <b>Evidence-Based Treatment for Underlying Socio-Economic Challenges:</b> Recognizing that mental health and substance use often intersect with socio-economic factors, we offer evidence-based interventions to address these underlying challenges. Our approach includes practical support and resources for issues such as housing instability, unemployment, lack of access to education, and food insecurity. We connect individuals with community resources, provide vocational training and job placement assistance, and offer financial literacy education. By addressing these fundamental needs, we aim to create a stable foundation that supports long-term recovery and overall well-being.
+                <b>Evidence-Based Treatment for Underlying Socio-Economic Challenges:</b> Recognizing that mental health and substance use often intersect with socio-economic factors, we offer evidence-based interventions to address these underlying challenges. Our approach includes practical support and resources for issues such as housing instability, unemployment, lack of access to education, and food insecurity. By addressing these fundamental needs, we aim to create a stable foundation that supports long-term recovery and overall well-being.
               </p>
             </ToggleCard>
           </Col>
@@ -138,24 +145,6 @@ export default function Home() {
               </ul>
               <p>
                 Pathway Humanity provides transitional housing, offering safe, stable, and profoundly supportive environments. Our program is designed to empower individuals and families as they actively work towards achieving lasting self-sufficiency. We understand that the journey to independence requires more than just a roof over one's head; it necessitates a comprehensive approach that nurtures growth, stability, and well-being.
-              </p>
-              <h5 className="mt-3 mb-2" style={{ color: "#2e9701" }}>A Foundation for Lasting Self-Sufficiency</h5>
-              <p>
-                Pathway Humanity is dedicated to providing vital transitional housing, creating safe, stable, and profoundly supportive environments for individuals and families on their journey towards lasting self-sufficiency. We recognize that true independence extends far beyond merely securing a place to live; it encompasses a holistic approach that cultivates personal growth, fosters stability, and enhances overall well-being.
-              </p>
-              <p>
-                Our comprehensive program is meticulously designed to empower residents at every step. We offer more than just a roof over their heads; we provide a structured and nurturing community where individuals can rebuild their lives with dignity and purpose. This includes:
-              </p>
-              <ul>
-                <li><b>Safe and Secure Living Spaces:</b> Our housing units are maintained to the highest standards, offering a sense of security and peace of mind, essential for healing and progress.</li>
-                <li><b>Personalized Support Services:</b> Each resident or family receives individualized attention, including case management, goal setting, and connection to vital community resources.</li>
-                <li><b>Life Skills Development:</b> We offer workshops and training in areas such as financial literacy, job searching, parenting skills, and healthy living, equipping residents with the tools they need to thrive independently.</li>
-                <li><b>Mental Health and Wellness Resources:</b> Recognizing the profound impact of well-being on stability, we facilitate access to counseling, support groups, and stress management techniques.</li>
-                <li><b>Educational and Vocational Opportunities:</b> We assist residents in pursuing educational goals, vocational training, and career development to enhance their long-term economic stability.</li>
-                <li><b>Community Integration:</b> We encourage positive community engagement, fostering a sense of belonging and reducing social isolation.</li>
-              </ul>
-              <p>
-                At Pathway Humanity, we believe in the inherent strength and resilience of every individual. Our transitional housing program is not merely a temporary stop; it is a springboard to a brighter future, empowering individuals and families to break cycles of instability and achieve sustainable independence. We are committed to nurturing an environment where hope flourishes, potential is realized, and self-sufficiency becomes an enduring reality.
               </p>
             </ToggleCard>
           </Col>
@@ -173,19 +162,12 @@ export default function Home() {
               <p>
                 At Pathway Humanity, we are dedicated to fostering significant career growth for our clients. We achieve this through a comprehensive and multi-faceted approach, focusing on key areas that are crucial for professional advancement in today's competitive job market.
               </p>
-              <ul>
-                <li><b>Skill Development & Enhancement:</b> Tailored programs designed to identify and cultivate new skills, ensuring our clients remain competitive.</li>
-                <li><b>Strategic Resume Building:</b> Compelling resumes that align with career aspirations and target industries.</li>
-                <li><b>Effective Interview Preparation:</b> Confidence and techniques for interview excellence, including mock sessions and feedback.</li>
-                <li><b>Targeted Job Search Strategies:</b> Proactive job search methodologies and professional networking.</li>
-                <li><b>Temporary-to-Permanent Job Placement:</b> Connecting clients with roles that lead to long-term stability.</li>
-              </ul>
             </ToggleCard>
           </Col>
 
           {/* Block 4 */}
           <Col md={6}>
-            <ToggleCard title="Strategic Human Resources Consulting" color="#14c9d6">
+            <ToggleCard title="Strategic Human Resources Consulting" color="#8b3dd9">
               <ul>
                 <li>Talent Acquisition & Retention</li>
                 <li>Employee Relations Management</li>
@@ -195,33 +177,7 @@ export default function Home() {
                 <li>Financial literacy education</li>
                 <li>Access to vital community resources</li>
               </ul>
-              <p>
-                Pathway Humanity specializes in comprehensive business-to-business (B2B) human resources consulting services. We empower organizations to thrive through our expertise across a broad spectrum of critical HR functions.
-              </p>
-              <ul>
-                <li><b>Talent Acquisition & Retention:</b> Robust strategies for attracting and engaging top talent.</li>
-                <li><b>Employee Relations Management:</b> Expert support for conflict resolution and performance management.</li>
-                <li><b>Policy Development & Implementation:</b> Crafting and communicating compliant, effective HR policies.</li>
-                <li><b>Organizational Growth & Development:</b> Strategies for sustainable growth, change management, and leadership development.</li>
-              </ul>
             </ToggleCard>
-          </Col>
-        </Row>
-      </Container>
-
-      {/* CALL TO ACTION */}
-      <Container className="py-3 mb-4">
-        <Row>
-          <Col md={8} className="mx-auto text-center">
-            <Card className="border-0 shadow-sm p-4" style={{ background: "#f3f8fc" }}>
-              <h3 className="fw-bold mb-2" style={{ color: "#1c7acb" }}>
-                Clients and Patients: A Beacon of Hope
-              </h3>
-              <p style={{ fontSize: "1.13rem", color: "#232323" }}>
-                Pathway Humanity is more than an organization; we are a beacon of hope and a catalyst for profound personal change. Our integrated approach provides the tools, resources, and unwavering support needed to achieve your full potential. We empower clients to break cycles of adversity and embrace a future filled with dignity, purpose, and self-reliance, contributing positively to society and fostering stronger, more resilient communities.<br /><br />
-                <span className="fw-bold">Our Motto:</span> "Aspire to always put forth the needs of others above our own." This guides every decision, shaping our compassionate, client-centered approach.
-              </p>
-            </Card>
           </Col>
         </Row>
       </Container>
@@ -230,7 +186,7 @@ export default function Home() {
       <section className="research-section">
         <h2 className="research-title" style={{ color: "#32b147" }}>What the Research Says</h2>
         <p className="research-desc">
-          Measurement-Based Care (MBC) revolutionizes mental healthcare by integrating patient data and objective measures into clinical practice. This data-driven approach empowers clinicians and individuals to make informed treatment decisions, continuously monitor progress, and personalize well-being paths. Benefits include enhanced symptom reduction, increased remission rates, and greater patient satisfaction. The evidence is compelling:
+          Measurement-Based Care (MBC) revolutionizes mental healthcare by integrating patient data and objective measures into clinical practice. This data-driven approach empowers clinicians and individuals to make informed treatment decisions, continuously monitor progress, and personalize well-being paths. Benefits include enhanced symptom reduction, increased remission rates, and greater patient satisfaction.
         </p>
         <div className="research-cards">
           {/* Card 1 */}
@@ -249,6 +205,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+
           {/* Card 2 */}
           <div className="research-card stat-blue">
             <div className="stat-top" style={{ background: "#1c7acb" }}>
@@ -265,6 +222,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+
           {/* Card 3 */}
           <div className="research-card stat-green2">
             <div className="stat-top" style={{ background: "#65b32e" }}>
@@ -286,7 +244,7 @@ export default function Home() {
 
       <Footer />
 
-      {/* === SINGLE GLOBAL STYLE BLOCK BELOW === */}
+      {/* === GLOBAL STYLE BLOCK === */}
       <style jsx global>{`
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; line-height: 1.6; }
@@ -294,7 +252,7 @@ export default function Home() {
 
         /* HERO SECTION */
         .hero {
-          min-height: 1000px;
+          min-height: 700px;
           display: flex;
           align-items: center;
           background-image: url('/images/hero_image_home.jpg');
@@ -345,37 +303,37 @@ export default function Home() {
         }
         section { padding: 60px 40px; }
 
-        /* RESEARCH SECTION & CARDS */
+        /* RESEARCH SECTION */
         .research-section {
           max-width: 1240px;
           margin: 0 auto;
-          padding: 20px 20px 60px 20px;
+          padding: 60px 20px 80px 20px;
           text-align: center;
         }
         .research-title {
           font-size: 2.4rem;
-          font-weight: 500;
-          margin-bottom: 14px;
+          font-weight: 600;
+          margin-bottom: 20px;
         }
         .research-desc {
-          font-size: 1.18rem;
+          font-size: 1.15rem;
           color: #232323;
           max-width: 760px;
           margin: 0 auto 60px auto;
+          line-height: 1.7;
         }
         .research-cards {
           display: flex;
-          gap: 36px;
+          gap: 30px;
           justify-content: center;
           flex-wrap: wrap;
         }
         .research-card {
           background: #f3f8fc;
-          border-radius: 0;
-          flex: 1 1 340px;
+          border-radius: 8px;
+          flex: 1 1 320px;
           max-width: 350px;
-          min-width: 250px;
-          min-height: 320px;
+          min-height: 300px;
           display: flex;
           flex-direction: column;
           overflow: hidden;
@@ -389,12 +347,10 @@ export default function Home() {
           font-size: 2.7rem;
           font-weight: 600;
           padding-left: 32px;
-          padding-top: 8px;
         }
         .stat-bottom {
           display: flex;
           align-items: flex-end;
-          padding: 0;
         }
         .stat-green-bottom {
           background: #14c9d6;
@@ -413,22 +369,8 @@ export default function Home() {
           font-size: 1.04rem;
           font-weight: 600;
           text-align: left;
-          padding: 28px 0 22px 20px;
+          padding: 20px 0 20px 20px;
           max-width: 180px;
-        }
-        @media (max-width: 1100px) {
-          .research-cards { gap: 22px; }
-        }
-        @media (max-width: 900px) {
-          .research-cards {
-            flex-direction: column;
-            align-items: center;
-            gap: 28px;
-          }
-          .research-card {
-            max-width: 420px;
-            width: 100%;
-          }
         }
       `}</style>
     </>
