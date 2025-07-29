@@ -117,7 +117,7 @@ export default function Home() {
         <Row className="g-4">
           {/* Block 1 */}
           <Col md={6}>
-            <ToggleCard title="Mental Health & Addiction Recovery" color="#14c9d6">
+            <ToggleCard title="Mental Health & Addiction Recovery" color="#14c9d6!important">
               <ul>
                 <li>
                   <b>Comprehensive mental illness and substance use disorder treatment</b> from highly qualified psychiatrists and licensed/certified counselors.
@@ -202,6 +202,7 @@ export default function Home() {
                 <span className="stat-label">
                   HIGHER OVERALL IMPROVEMENT IN CLINICAL SYMPTOMS
                 </span>
+                <br/>
               </div>
             </div>
           </div>
@@ -236,6 +237,7 @@ export default function Home() {
                 <span className="stat-label">
                   IMPROVED PATIENT ATTENDANCE AND ENGAGEMENT
                 </span>
+                <br/>
               </div>
             </div>
           </div>
@@ -333,7 +335,6 @@ export default function Home() {
     flex-wrap: wrap;
   }
   .research-card {
-    background: #f3f8fc;
     border-radius: 8px;
     flex: 1 1 320px;
     max-width: 350px;
