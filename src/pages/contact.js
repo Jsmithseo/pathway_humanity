@@ -96,7 +96,7 @@ export default function Contact() {
           <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.3rem", textAlign: "center" }}>
             Contact Us
           </h1>
-          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 700, margin: "0 auto" }}>
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 700, margin: "0 auto",fontWeight: "bold"}}>
             Let’s start a conversation about your needs. Reach out and a member of our team will respond promptly.
           </p>
         </Container>
