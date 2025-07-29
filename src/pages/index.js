@@ -96,10 +96,10 @@ export default function Home() {
         <Container>
           <Row className="justify-content-center">
             <Col md={12} lg={12}>
-              <h1 className="fw-bold mb-3" style={{ fontSize: "2.3rem", letterSpacing: 1 }}>
+              <h1 className="fw-bold mb-3" style={{ fontSize: "2.3rem", letterSpacing: 1, Color: "white" }}>
                 Welcome to Pathway Humanity
               </h1>
-              <p style={{ fontSize: "1.2rem", lineHeight: 1.7 }}>
+              <p style={{ fontSize: "1.2rem", lineHeight: 1.7, Color: "white" }}>
                 Pathway Humanity is a unique and transformative organization committed to uplifting individuals from despair to empowered self-sufficiency. We provide comprehensive support for underserved populations, including those battling addiction, experiencing homelessness, struggling with poverty, underrepresented groups, and disabled veterans and civilians.
                 <br /><br />
                 Our mission is rooted in the belief that everyone deserves a brighter future. We are a holistic "one-stop shop," providing continuous, tailored support throughout the entire rehabilitation and empowerment process. From the moment you connect with us, you embark on a journey of growth and transformation in a safe and nurturing environment. We help clients address root causes, develop essential life skills, and gain confidence for successful societal reintegration.

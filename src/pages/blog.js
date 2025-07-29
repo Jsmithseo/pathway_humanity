@@ -22,7 +22,6 @@ const posts = [
   {
     id: 3,
     title: "What is Transitional Housing?",
-    excerpt: "Explore how mental stress impacts young athletes and why emotional regulation and coping strategies are essential for youth sports success.",
     slug: "/blog/blog3",
     image: "/images/blog3.jpg",
     date: "July 15, 2025"
