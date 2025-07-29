@@ -48,7 +48,7 @@ export default function Applicants() {
           <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.3rem", textAlign: "center" }}>
             Applicants
           </h1>
-          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 720, margin: "0 auto" }}>
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 720, margin: "0 auto", fontWeight: "bold"  }}>
             Explore a wide range of career opportunities and find your ideal professional path with ease.
           </p>
         </Container>

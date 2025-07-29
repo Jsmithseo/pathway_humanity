@@ -24,7 +24,7 @@ export default function OpioidAwareness() {
           <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.2rem", textAlign: "center", letterSpacing: ".5px" }}>
             The Opioid Crisis: Raising Awareness
           </h1>
-          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 680, margin: "0 auto" }}>
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 680, margin: "0 auto", fontWeight: "bold" }}>
             Shedding light on addiction, fostering hope, and building a community of redemption.
           </p>
         </Container>

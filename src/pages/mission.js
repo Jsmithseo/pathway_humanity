@@ -25,7 +25,7 @@ export default function Mission() {
           <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.5rem", textAlign: "center" }}>
             Our Mission
           </h1>
-          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 780, margin: "0 auto" }}>
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 780, margin: "0 auto", fontWeight: "bold"  }}>
             Aspire to always put forth the needs of others above our own.  
           </p>
         </Container>

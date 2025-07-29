@@ -24,7 +24,7 @@ export default function Mentorship() {
           <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.3rem", textAlign: "center" }}>
             Mentorship
           </h1>
-          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 740, margin: "0 auto" }}>
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 740, margin: "0 auto", fontWeight: "bold"  }}>
             Empowering through guidance, compassion, and second chances.
           </p>
         </Container>

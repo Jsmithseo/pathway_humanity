@@ -111,7 +111,7 @@ export default function Home() {
 
       {/* SERVICE BLOCKS */}
       <Container className="py-5">
-        <h2 className="fw-bold text-center mb-5" style={{ color: "#32b147" }}>
+        <h2 className="fw-bold text-center mb-5" style={{ color: "#fff" }}>
           Comprehensive Services
         </h2>
         <Row className="g-4">
@@ -184,7 +184,7 @@ export default function Home() {
 
       {/* RESEARCH STATS */}
       <section className="research-section">
-        <h2 className="research-title" style={{ color: "#32b147" }}>What the Research Says</h2>
+        <h2 className="research-title" style={{ color: "#fff" }}>What the Research Says</h2>
         <p className="research-desc">
           Measurement-Based Care (MBC) revolutionizes mental healthcare by integrating patient data and objective measures into clinical practice. This data-driven approach empowers clinicians and individuals to make informed treatment decisions, continuously monitor progress, and personalize well-being paths. Benefits include enhanced symptom reduction, increased remission rates, and greater patient satisfaction.
         </p>
@@ -202,7 +202,7 @@ export default function Home() {
                 <span className="stat-label">
                   HIGHER OVERALL IMPROVEMENT IN CLINICAL SYMPTOMS
                 </span>
-                <br/>
+                 <br/>
               </div>
             </div>
           </div>
@@ -258,7 +258,7 @@ export default function Home() {
     aspect-ratio: 1 / 2;       /* 4:3 aspect ratio */
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* or center, as you prefer */
+    justify-content: flex-end; /* or center, as you prefer */
     background-image: url('/images/hero_image_home.jpg');
     background-position: center;
     background-repeat: no-repeat;

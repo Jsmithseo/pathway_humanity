@@ -48,7 +48,7 @@ export default function CalendarPage() {
           <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.3rem", textAlign: "center" }}>
             Events & Interactive Calendar
           </h1>
-          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 760, margin: "0 auto" }}>
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 760, margin: "0 auto", fontWeight: "bold"  }}>
             Stay connected—explore our latest events, workshops, and community gatherings.
           </p>
         </Container>

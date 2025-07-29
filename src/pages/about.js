@@ -25,7 +25,7 @@ export default function About() {
           <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.3rem", textAlign: "center" }}>
             About Us
           </h1>
-          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 760, margin: "0 auto" }}>
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 760, margin: "0 auto", fontWeight: "bold" }}>
             Pathway Humanity stands as a truly unique and transformative organization, dedicated to uplifting individuals from anguish to empowered self-sufficiency.
           </p>
         </Container>

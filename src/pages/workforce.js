@@ -33,10 +33,10 @@ export default function WorkforceDevelopment() {
         }}
       >
         <Container>
-          <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.4rem", textAlign: "center" }}>
+          <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.4rem", textAlign: "center", fontWeight: "bold"}}>
             Workforce Development Initiatives
           </h1>
-          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 800, margin: "0 auto" }}>
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 800, margin: "0 auto",fontWeight: "bold" }}>
             Nurturing Well-being and Empowering Futures
           </p>
         </Container>
