@@ -43,7 +43,10 @@ export default function BlogPage() {
       </Head>
       <MainNavbar />
       <Container className="py-5">
-        <h1 className="text-center mb-4">Blog</h1>
+        <h1 className="text-center mb-4"
+        style={{
+          color: "#fff"
+        }}>Blog</h1>
         <Row>
           {posts.map((post) => (
             <Col md="4" className="mb-4" key={post.id}>

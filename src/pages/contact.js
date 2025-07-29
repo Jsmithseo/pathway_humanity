@@ -229,10 +229,10 @@ export default function Contact() {
          <Container className="mt-5 mb-5">
         <Row className="justify-content-center text-center">
           <Col md={8}>
-            <h3 className="fw-bold mb-3" style={{ color: "#1c7acb" }}>
+            <h3 className="fw-bold mb-3" style={{ color: "#fff" }}>
               Our Office
             </h3>
-            <p>
+            <p style={{ color: "#fff" }}>
               1320 Willow Pass Road, Suite 624<br />
               Concord, CA 94520<br />
               <b>Phone:</b> (888) 710-7760

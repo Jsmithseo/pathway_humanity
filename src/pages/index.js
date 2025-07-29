@@ -208,7 +208,7 @@ export default function Home() {
 
           {/* Card 2 */}
           <div className="research-card stat-blue">
-            <div className="stat-top" style={{ background: "#1c7acb" }}>
+            <div className="stat-top" style={{ background: "#14c9d6" }}>
               <span className="stat-number" style={{ color: "#fff" }}>
                 <span style={{ fontSize: "2.1rem", marginRight: 4 }}>&#8593;</span>
                 <AnimatedNumber to={3.5} decimals={1} suffix="x" />
@@ -225,7 +225,7 @@ export default function Home() {
 
           {/* Card 3 */}
           <div className="research-card stat-green2">
-            <div className="stat-top" style={{ background: "#65b32e" }}>
+            <div className="stat-top" style={{ background: "#14c9d6" }}>
               <span className="stat-number" style={{ color: "#fff" }}>
                 <span style={{ fontSize: "2.1rem", marginRight: 4 }}>&#8593;</span>
                 <AnimatedNumber to={40} suffix="%" />
@@ -251,15 +251,20 @@ export default function Home() {
 
   /* HERO SECTION */
   .hero {
-    min-height: 700px;
+    max-height: 700px;
+    width: 100%;
+    aspect-ratio: 1 / 2;       /* 4:3 aspect ratio */
     display: flex;
     align-items: center;
+    justify-content: flex-start; /* or center, as you prefer */
     background-image: url('/images/hero_image_home.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #e9f6fa;
+    overflow: hidden;           /* ensure no overflow */
   }
+  
   .hero-content {
     background: rgba(255,255,255,0.85);
     padding: 8px 32px;
@@ -293,6 +298,12 @@ export default function Home() {
   .hero-content .btn:hover {
     background: #005b7a;
   }
+
+
+  .py-5 {
+    padding-top: 0rem !important;
+}
+
 
   section { padding: 60px 40px; }
 
@@ -350,11 +361,11 @@ export default function Home() {
     color: #fff;
   }
   .stat-blue-bottom {
-    background: #1c7acb;
+    background: #14c9d6;
     color: #fff;
   }
   .stat-green2-bottom {
-    background: #65b32e;
+    background: #14c9d6;
     color: #fff;
   }
   .stat-label {
