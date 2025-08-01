@@ -16,7 +16,7 @@ export default function Blog3() {
       <Container className="py-5">
         <h1
           className="mb-4 text-center fw-bold"
-          style={{ fontSize: "2.5rem", lineHeight: "1.3" }}
+          style={{ fontSize: "2.5rem", lineHeight: "1.3", color: "#fff"}}
         >
           What is Transitional Housing?
         </h1>
@@ -27,6 +27,7 @@ export default function Blog3() {
             margin: "0 auto",
             lineHeight: "1.9",
             fontSize: "1.25rem",
+            color: "#fff",
           }}
         >
           <h2 className="mt-4 mb-3" style={{ fontSize: "1.7rem" }}>Introduction</h2>

@@ -16,7 +16,7 @@ export default function Blog2() {
       <Container className="py-5">
         <h1
           className="mb-4 text-center fw-bold"
-          style={{ fontSize: "2.5rem", lineHeight: "1.3" }}
+          style={{ fontSize: "2.5rem", lineHeight: "1.3", color: "#fff", }}
         >
           Mentoring is Important to Helping Our Youth
         </h1>
@@ -27,6 +27,8 @@ export default function Blog2() {
             margin: "0 auto",
             lineHeight: "1.9",
             fontSize: "1.25rem", // Increased base font size
+            color: "#fff",
+            
           }}
         >
           <p>

@@ -1,7 +1,6 @@
-// pages/mentorship.js
-
 import React from "react";
 import { Container, Row, Col, Card, CardBody, Button } from "reactstrap";
+import Link from "next/link";
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
 
@@ -24,7 +23,7 @@ export default function Mentorship() {
           <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.3rem", textAlign: "center" }}>
             Mentorship
           </h1>
-          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 740, margin: "0 auto", fontWeight: "bold"  }}>
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 740, margin: "0 auto", fontWeight: "bold" }}>
             Empowering through guidance, compassion, and second chances.
           </p>
         </Container>
@@ -129,9 +128,11 @@ export default function Mentorship() {
               <p style={{ fontSize: 17 }}>
                 Want to make a difference or need guidance on your journey? Connect with our mentorship team today—your story of transformation can start here.
               </p>
-              <Button color="success" className="fw-bold px-4 rounded-3">
-                CONTACT US
-              </Button>
+              <Link href="/contact" passHref legacyBehavior>
+                <Button color="success" className="fw-bold px-4 rounded-3">
+                  CONTACT US
+                </Button>
+              </Link>
             </Card>
           </Col>
         </Row>
