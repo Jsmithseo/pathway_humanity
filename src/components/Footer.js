@@ -30,11 +30,11 @@ const Footer = () => (
           © 2025 Pathway Humanity SPC. All rights reserved.
         </Col>
         <Col md={6} className="d-flex justify-content-center justify-content-md-end gap-3 small">
-          <a href="#" className="footer-link">Accessibility</a>
+          <a href="/accessibility" className="footer-link">Accessibility</a>
           <span>|</span>
-          <a href="#" className="footer-link">Privacy</a>
+          <a href="/privacy" className="footer-link">Privacy</a>
           <span>|</span>
-          <a href="#" className="footer-link">Terms of Use</a>
+          <a href="/terms-of-use" className="footer-link">Terms of Use</a>
         </Col>
       </Row>
     </Container>

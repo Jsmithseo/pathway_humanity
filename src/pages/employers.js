@@ -1,6 +1,7 @@
 // pages/employers.js
 
 import React from "react";
+import { useRouter } from "next/router";
 import { Container, Row, Col, Card, CardBody, Button } from "reactstrap";
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
@@ -30,6 +31,8 @@ const FEATURES = [
 ];
 
 export default function Employers() {
+  const router = useRouter();
+
   return (
     <>
       <MainNavBar />
@@ -48,7 +51,7 @@ export default function Employers() {
           <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.3rem", textAlign: "center" }}>
             Employers
           </h1>
-          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 720, margin: "0 auto", fontWeight: "bold"  }}>
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 720, margin: "0 auto", fontWeight: "bold" }}>
             Strategic Human Resources Consulting: Cultivating Productive Work Environments
           </p>
         </Container>
@@ -67,18 +70,10 @@ export default function Employers() {
                   Beyond individual support, Pathway Humanity extends its expertise to businesses through our human resources consulting services. We offer tailored solutions designed to foster productive, harmonious, and thriving work environments.
                 </p>
                 <ul style={{ fontSize: 16, marginBottom: 18 }}>
-                  <li>
-                    <b>Talent Acquisition and Retention:</b> We assist businesses in identifying, attracting, and retaining top talent, developing strategies for effective recruitment, onboarding, and employee engagement.
-                  </li>
-                  <li>
-                    <b>Employee Relations Management:</b> We provide guidance and support in managing employee relations, fostering positive communication, conflict resolution, and creating a supportive workplace culture.
-                  </li>
-                  <li>
-                    <b>Policy Development and Implementation:</b> We help organizations develop and implement clear, fair, and compliant HR policies that promote best practices and ensure a safe and respectful work environment.
-                  </li>
-                  <li>
-                    <b>Organizational Growth and Development:</b> We partner with businesses to assess their HR needs, identify areas for improvement, and implement strategies that support organizational growth, efficiency, and overall success.
-                  </li>
+                  <li><b>Talent Acquisition and Retention:</b> We assist businesses in identifying, attracting, and retaining top talent, developing strategies for effective recruitment, onboarding, and employee engagement.</li>
+                  <li><b>Employee Relations Management:</b> We provide guidance and support in managing employee relations, fostering positive communication, conflict resolution, and creating a supportive workplace culture.</li>
+                  <li><b>Policy Development and Implementation:</b> We help organizations develop and implement clear, fair, and compliant HR policies that promote best practices and ensure a safe and respectful work environment.</li>
+                  <li><b>Organizational Growth and Development:</b> We partner with businesses to assess their HR needs, identify areas for improvement, and implement strategies that support organizational growth, efficiency, and overall success.</li>
                 </ul>
                 <p style={{ fontSize: 17 }}>
                   By optimizing their human capital, businesses can achieve their objectives, enhance employee satisfaction, and cultivate a dynamic and productive workforce.
@@ -115,21 +110,14 @@ export default function Employers() {
             <p className="mb-3" style={{ fontSize: 16 }}>
               Connect with us to discover how our HR expertise can help your business attract, retain, and empower the talent you need to thrive.
             </p>
-            <Button color="success" className="fw-bold px-4 rounded-3">
+            <Button
+              color="success"
+              className="fw-bold px-4 rounded-3"
+              onClick={() => router.push("/contact")}
+            >
               CONTACT US
             </Button>
           </Col>
-          {/* <Col md={4} className="text-center p-0">
-            <img
-              src="/about.jpg"
-              alt="Teamwork"
-              style={{
-                maxHeight: 200,
-                width: "auto",
-                objectFit: "contain"
-              }}
-            />
-          </Col> */}
         </Row>
       </Container>
 
