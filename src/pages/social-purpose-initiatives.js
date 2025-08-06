@@ -25,7 +25,7 @@ export default function SocialPurposeInitiatives() {
           <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.3rem", textAlign: "center" }}>
             Social Purpose Initiatives
           </h1>
-          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 760, margin: "0 auto", fontWeight: "bold"  }}>
+          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 760, margin: "0 auto", fontWeight: "bold" }}>
             Transforming lives and communities through advocacy, access, and opportunity.
           </p>
         </Container>

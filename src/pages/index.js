@@ -89,8 +89,8 @@ function ToggleCard({ title, color, children }) {
 
 export default function Home() {
    // HubSpot form IDs
-   const HUBSPOT_PORTAL_ID = "243400623";
-   const HUBSPOT_FORM_ID = "1712ae97-5882-46c9-a06e-8a3daed3511b";
+   const HUBSPOT_PORTAL_ID = "243400623"
+   const HUBSPOT_FORM_ID = "1712ae97-5882-46c9-a06e-8a3daed3511b"
  
    // Newsletter state
    const [newsletter, setNewsletter] = useState({ firstName: "", lastName: "", email: "" });
@@ -114,7 +114,7 @@ export default function Home() {
        context: { pageUri: window.location.href, pageName: document.title },
        legalConsentOptions: {
          consent: {
-           text: "I agree to receive communications from ABC Mental Toughness.",
+           text: "I agree to receive communications from Pathway Humanity.",
            communicationConsent: {
              value: true,
              subscriptionTypeId: 999,
