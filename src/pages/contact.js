@@ -18,22 +18,22 @@ import {
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
 
-const HUBSPOT_PORTAL_ID =  "243400623";
-const HUBSPOT_FORM_ID   = "797c76ae-ca8a-47a3-82dd-d530a6e0c313";
+const HUBSPOT_PORTAL_ID = "243400623";
+const HUBSPOT_FORM_ID = "797c76ae-ca8a-47a3-82dd-d530a6e0c313";
 
 export default function Contact() {
   const [fields, setFields] = useState({
     firstname: "",
-    lastname:  "",
-    email:     "",
-    phone:     "",
-    company:   "",
-    subject:   "",
-    message:   "",
+    lastname: "",
+    email: "",
+    phone: "",
+    company: "",
+    subject: "",
+    message: "",
   });
   const [submitting, setSubmitting] = useState(false);
-  const [submitted,  setSubmitted]  = useState(false);
-  const [error,      setError]      = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFields({ ...fields, [e.target.name]: e.target.value });
@@ -44,54 +44,44 @@ export default function Contact() {
     setError("");
     setSubmitting(true);
 
-    const endpoint =  
-      `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
+    const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
 
-    // build the fields array
     const payload = {
       fields: Object.entries(fields).map(([name, value]) => ({ name, value })),
       context: {
-        pageUri:  window.location.href,
-        pageName: document.title
+        pageUri: window.location.href,
+        pageName: document.title,
       },
-      legalConsentOptions: {
-        consent: {
-          // replace this text with your actual consent language from the form setup
-          text: "I agree to allow ABC Mental Toughness to store and process my submitted data.",
-          communicationConsent: {
-            value: true,
-            subscriptionTypeId: 999, 
-            text: "I agree to receive marketing communications." 
-          }
-        }
-      }
     };
 
     try {
       const res = await fetch(endpoint, {
-        method:  "POST",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
-        body:    JSON.stringify(payload),
+        body: JSON.stringify(payload),
       });
+
+      const body = await res.json();
+      console.error("HubSpot response:", body);
 
       if (res.ok) {
         setSubmitted(true);
         setFields({
           firstname: "",
-          lastname:  "",
-          email:     "",
-          phone:     "",
-          company:   "",
-          subject:   "",
-          message:   "",
+          lastname: "",
+          email: "",
+          phone: "",
+          company: "",
+          subject: "",
+          message: "",
         });
       } else {
-        const { error } = await res.json();
-        setError(error || "Something went wrong. Please try again.");
+        const msg = body.errors?.[0]?.message || JSON.stringify(body);
+        setError(msg);
       }
     } catch (err) {
       console.error(err);
-      setError("Failed to submit form. Please try again.");
+      setError(err.message);
     } finally {
       setSubmitting(false);
     }
@@ -106,17 +96,24 @@ export default function Contact() {
         style={{
           background: `linear-gradient(rgba(42,48,56,.40),rgba(42,48,56,.40)), url('/images/hero_contact.jpg') center/cover no-repeat`,
           minHeight: 800,
-          display:   "flex",
-          alignItems:"center",
-          justifyContent:"center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <Container>
-          <h1 className="text-white fw-bold mb-2" style={{ fontSize: "2.3rem", textAlign: "center" }}>
+          <h1
+            className="text-white fw-bold mb-2"
+            style={{ fontSize: "2.3rem", textAlign: "center" }}
+          >
             Contact Us
           </h1>
-          <p className="text-white fs-5 mb-0 text-center" style={{ maxWidth: 700, margin: "0 auto", fontWeight: "bold" }}>
-            Let’s start a conversation about your needs. A member of our team will respond promptly.
+          <p
+            className="text-white fs-5 mb-0 text-center"
+            style={{ maxWidth: 700, margin: "0 auto", fontWeight: "bold" }}
+          >
+            Let’s start a conversation about your needs. A member of our team will
+            respond promptly.
           </p>
         </Container>
       </div>
@@ -131,12 +128,14 @@ export default function Contact() {
                   Get in Touch
                 </h3>
                 <p style={{ fontSize: 17 }}>
-                  Have a question or want more info? Fill out the form below and we’ll get back to you.
+                  Have a question or want more info? Fill out the form below and
+                  we’ll get back to you.
                 </p>
 
                 {submitted ? (
                   <Alert color="success">
-                    Thank you! Your message has been received. We'll be in touch soon.
+                    Thank you! Your message has been received. We'll be in touch
+                    soon.
                   </Alert>
                 ) : (
                   <Form onSubmit={handleSubmit}>
@@ -246,8 +245,10 @@ export default function Contact() {
           <Col md={8}>
             <h3 className="fw-bold mb-3 text-white">Our Office</h3>
             <p className="text-white">
-              1320 Willow Pass Road, Suite 624<br/>
-              Concord, CA 94520<br/>
+              1320 Willow Pass Road, Suite 624
+              <br />
+              Concord, CA 94520
+              <br />
               <b>Phone:</b> (888) 710-7760
             </p>
           </Col>
