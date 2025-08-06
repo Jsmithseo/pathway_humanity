@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MainNavBar from '../components/MainNavBar';
 import Footer from "../components/Footer";
-import { Container, Row, Col, Card, CardBody, Button } from "reactstrap";
+import { Container, Row, Col, Card, CardBody, Button, Form, FormGroup,Label, Input} from "reactstrap";
 
 // Animated number component
 function AnimatedNumber({ to, duration = 1500, decimals = 0, prefix = "", suffix = "" }) {
@@ -75,6 +75,59 @@ function ToggleCard({ title, color, children }) {
 }
 
 export default function Home() {
+   // HubSpot form IDs
+   const HUBSPOT_PORTAL_ID = "243400623";
+   const HUBSPOT_FORM_ID = "1712ae97-5882-46c9-a06e-8a3daed3511b";
+ 
+   // Newsletter state
+   const [newsletter, setNewsletter] = useState({ firstName: "", lastName: "", email: "" });
+   const [nlStatus, setNlStatus] = useState({ submitting: false, success: false, error: "" });
+ 
+   const handleNlChange = (e) => {
+     setNewsletter({ ...newsletter, [e.target.name]: e.target.value });
+   };
+ 
+   const handleNlSubmit = async (e) => {
+     e.preventDefault();
+     setNlStatus({ submitting: true, success: false, error: "" });
+ 
+     const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
+     const payload = {
+       fields: [
+         { name: "email", value: newsletter.email },
+         { name: "firstname", value: newsletter.firstName },
+         { name: "lastname", value: newsletter.lastName },
+       ],
+       context: { pageUri: window.location.href, pageName: document.title },
+       legalConsentOptions: {
+         consent: {
+           text: "I agree to receive communications from ABC Mental Toughness.",
+           communicationConsent: {
+             value: true,
+             subscriptionTypeId: 999,
+             text: "I agree to receive marketing communications.",
+           },
+         },
+       },
+     };
+ 
+     try {
+       const res = await fetch(endpoint, {
+         method: "POST",
+         headers: { "Content-Type": "application/json" },
+         body: JSON.stringify(payload),
+       });
+       if (res.ok) {
+         setNlStatus({ submitting: false, success: true, error: "" });
+         setNewsletter({ firstName: "", lastName: "", email: "" });
+       } else {
+         setNlStatus({ submitting: false, success: false, error: "Submission failed. Please try again." });
+       }
+     } catch {
+       setNlStatus({ submitting: false, success: false, error: "An error occurred. Please try again." });
+     }
+   };
+ 
   return (
     <>
       <MainNavBar />
@@ -243,6 +296,63 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
+       {/* NEWSLETTER SIGNUP */}
+       <Container className="py-5">
+        <Row className="justify-content-center mb-4">
+          <Col md={8} className="text-center" style={{ color: "#fff" }}>
+            <h2 className="fw-bold">Join Our Newsletter</h2>
+            <p>Get the latest updates, tips, and resources delivered straight to your inbox.</p>
+          </Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col md={8} lg={6}>
+            {nlStatus.success && <Alert color="success">Thank you for subscribing!</Alert>}
+            {nlStatus.error && <Alert color="danger">{nlStatus.error}</Alert>}
+            <Form onSubmit={handleNlSubmit}>
+              <Row>
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="firstName" style={{ color: "#fff" }}>First Name</Label>
+                    <Input
+                      id="firstName" name="firstName"
+                      value={newsletter.firstName}
+                      onChange={handleNlChange}
+                      required placeholder="First Name"
+                    />
+                  </FormGroup>
+                </Col>
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="lastName" style={{ color: "#fff" }}>Last Name</Label>
+                    <Input
+                      id="lastName" name="lastName"
+                      value={newsletter.lastName}
+                      onChange={handleNlChange}
+                      required placeholder="Last Name"
+                    />
+                  </FormGroup>
+                </Col>
+              </Row>
+              <FormGroup>
+                <Label for="email" style={{ color: "#fff" }}>Email Address</Label>
+                <Input
+                  type="email" id="email" name="email"
+                  value={newsletter.email}
+                  onChange={handleNlChange}
+                  required placeholder="you@example.com"
+                />
+              </FormGroup>
+              <div className="text-center">
+                <Button color="primary" disabled={nlStatus.submitting}>
+                  {nlStatus.submitting ? <Spinner size="sm" /> : "Subscribe"}
+                </Button>
+              </div>
+            </Form>
+          </Col>
+        </Row>
+        </Container>
 
       <Footer />
 
