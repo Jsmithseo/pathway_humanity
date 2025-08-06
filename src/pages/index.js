@@ -101,45 +101,46 @@ export default function Home() {
    };
  
    const handleNlSubmit = async (e) => {
-     e.preventDefault();
-     setNlStatus({ submitting: true, success: false, error: "" });
- 
-     const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
-     const payload = {
-       fields: [
-         { name: "email", value: newsletter.email },
-         { name: "firstname", value: newsletter.firstName },
-         { name: "lastname", value: newsletter.lastName },
-       ],
-       context: { pageUri: window.location.href, pageName: document.title },
-       legalConsentOptions: {
-         consent: {
-           text: "I agree to receive communications from Pathway Humanity.",
-           communicationConsent: {
-             value: true,
-             subscriptionTypeId: 999,
-             text: "I agree to receive marketing communications.",
-           },
-         },
-       },
-     };
- 
-     try {
-       const res = await fetch(endpoint, {
-         method: "POST",
-         headers: { "Content-Type": "application/json" },
-         body: JSON.stringify(payload),
-       });
-       if (res.ok) {
-         setNlStatus({ submitting: false, success: true, error: "" });
-         setNewsletter({ firstName: "", lastName: "", email: "" });
-       } else {
-         setNlStatus({ submitting: false, success: false, error: "Submission failed. Please try again." });
-       }
-     } catch {
-       setNlStatus({ submitting: false, success: false, error: "An error occurred. Please try again." });
-     }
-   };
+    e.preventDefault();
+    setNlStatus({ submitting: true, success: false, error: "" });
+  
+    const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
+    const payload = {
+      fields: [
+        { name: "email",     value: newsletter.email     },
+        { name: "firstname", value: newsletter.firstName },
+        { name: "lastname",  value: newsletter.lastName  },
+      ],
+      context: {
+        pageUri: window.location.href,
+        pageName: document.title,
+      },
+      // omit legalConsentOptions for now if you’re not using GDPR fields
+    };
+  
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+  
+      const body = await res.json();                  // ← read the response
+      console.error("HubSpot response:", body);       // ← log it
+  
+      if (res.ok) {
+        setNlStatus({ submitting: false, success: true, error: "" });
+        setNewsletter({ firstName: "", lastName: "", email: "" });
+      } else {
+        // show the HubSpot error message
+        setNlStatus({ submitting: false, success: false, error: body?.errors?.[0]?.message || "Bad Request" });
+      }
+    } catch (err) {
+      console.error(err);
+      setNlStatus({ submitting: false, success: false, error: err.message });
+    }
+  };
+  
  
   return (
     <>
