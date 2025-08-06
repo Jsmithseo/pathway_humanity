@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 import MainNavBar from '../components/MainNavBar';
 import Footer from "../components/Footer";
-import { Container, Row, Col, Card, CardBody, Button, Form, FormGroup,Label, Input} from "reactstrap";
+import { 
+  
+  Container,
+  Row,
+  Col,
+  Card,
+  CardBody,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Alert,
+  Spinner}from "reactstrap";
 
 // Animated number component
 function AnimatedNumber({ to, duration = 1500, decimals = 0, prefix = "", suffix = "" }) {
