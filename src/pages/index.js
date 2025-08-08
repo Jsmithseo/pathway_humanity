@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MainNavBar from '../components/MainNavBar';
 import Footer from "../components/Footer";
+import ReCAPTCHA from "react-google-recaptcha";
 import { 
   
   Container,
@@ -91,10 +92,12 @@ export default function Home() {
    // HubSpot form IDs
    const HUBSPOT_PORTAL_ID = "243400623"
    const HUBSPOT_FORM_ID = "1712ae97-5882-46c9-a06e-8a3daed3511b"
+   const RECAPTCHA_SITE_KEY = "6Le6LZ8rAAAAAP5pomMk_zAJkeu1SgtYtGtzB_Q6"
  
    // Newsletter state
    const [newsletter, setNewsletter] = useState({ firstName: "", lastName: "", email: "" });
    const [nlStatus, setNlStatus] = useState({ submitting: false, success: false, error: "" });
+   const [recaptchaToken, setRecaptchaToken] = useState(null);
  
    const handleNlChange = (e) => {
      setNewsletter({ ...newsletter, [e.target.name]: e.target.value });
@@ -102,6 +105,11 @@ export default function Home() {
  
    const handleNlSubmit = async (e) => {
     e.preventDefault();
+    // require captcha
+    if (!recaptchaToken) {
+      setNlStatus({ submitting: false, success: false, error: "Please complete the captcha." });
+      return;
+    }
     setNlStatus({ submitting: true, success: false, error: "" });
   
     const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
@@ -114,6 +122,7 @@ export default function Home() {
       context: {
         pageUri: window.location.href,
         pageName: document.title,
+        recaptchaToken
       },
       // omit legalConsentOptions for now if you’re not using GDPR fields
     };
@@ -131,6 +140,7 @@ export default function Home() {
       if (res.ok) {
         setNlStatus({ submitting: false, success: true, error: "" });
         setNewsletter({ firstName: "", lastName: "", email: "" });
+        setRecaptchaToken(null);
       } else {
         // show the HubSpot error message
         setNlStatus({ submitting: false, success: false, error: body?.errors?.[0]?.message || "Bad Request" });
@@ -358,6 +368,12 @@ export default function Home() {
                   required placeholder="you@example.com"
                 />
               </FormGroup>
+              <div className="d-flex justify-content-center my-3">
+                <ReCAPTCHA
+                  sitekey={RECAPTCHA_SITE_KEY}
+                  onChange={token => setRecaptchaToken(token)}
+                />
+              </div>
               <div className="text-center">
                 <Button color="primary" disabled={nlStatus.submitting}>
                   {nlStatus.submitting ? <Spinner size="sm" /> : "Subscribe"}
