@@ -92,7 +92,7 @@ export default function Home() {
    // HubSpot form IDs
    const HUBSPOT_PORTAL_ID = "243400623"
    const HUBSPOT_FORM_ID = "1712ae97-5882-46c9-a06e-8a3daed3511b"
-   const RECAPTCHA_SITE_KEY = "6Le6LZ8rAAAAAP5pomMk_zAJkeu1SgtYtGtzB_Q6"
+   const RECAPTCHA_SITE_KEY = "6LeQUZ8rAAAAAGSsXvs6u2QdeamqIiofil95StUo"
  
    // Newsletter state
    const [newsletter, setNewsletter] = useState({ firstName: "", lastName: "", email: "" });
