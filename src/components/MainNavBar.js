@@ -39,13 +39,13 @@ const MainNavBar = () => {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ms-auto align-items-center" navbar>
           <NavItem>
-            <Link href="/mission" passHref legacyBehavior>
-              <a className="nav-link" style={navLinkStyle}>Mission</a>
+            <Link href="/mission" className="nav-link" style={navLinkStyle}>
+              Mission
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="/clinicians" passHref legacyBehavior>
-              <a className="nav-link" style={navLinkStyle}>Schedule with Our Clinicians</a>
+            <Link href="/clinicians" className="nav-link" style={navLinkStyle}>
+              Schedule with Our Clinicians
             </Link>
           </NavItem>
 
@@ -56,30 +56,30 @@ const MainNavBar = () => {
             </DropdownToggle>
             <DropdownMenu end>
               <DropdownItem>
-                <Link href="/workforce" passHref legacyBehavior>
-                  <a className="dropdown-item">Workforce Development Initiatives</a>
+                <Link href="/workforce" className="dropdown-item">
+                  Workforce Development Initiatives
                 </Link>
               </DropdownItem>
               <DropdownItem>
-                <Link href="/social-purpose-initiatives" passHref legacyBehavior>
-                  <a className="dropdown-item">Social Purpose Initiatives</a>
+                <Link href="/social-purpose-initiatives" className="dropdown-item">
+                  Social Purpose Initiatives
                 </Link>
               </DropdownItem>
               <DropdownItem>
-                <Link href="/mentorship-program" passHref legacyBehavior>
-                  <a className="dropdown-item">Mentorship Program</a>
+                <Link href="/mentorship-program" className="dropdown-item">
+                  Mentorship Program
                 </Link>
               </DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
           <NavItem>
-            <Link href="/applicants" passHref legacyBehavior>
-              <a className="nav-link" style={navLinkStyle}>Applicants</a>
+            <Link href="/applicants" className="nav-link" style={navLinkStyle}>
+              Applicants
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="/employers" passHref legacyBehavior>
-              <a className="nav-link" style={navLinkStyle}>Employers</a>
+            <Link href="/employers" className="nav-link" style={navLinkStyle}>
+              Employers
             </Link>
           </NavItem>
 
@@ -90,26 +90,26 @@ const MainNavBar = () => {
             </DropdownToggle>
             <DropdownMenu end>
               <DropdownItem>
-                <Link href="/calendar" passHref legacyBehavior>
-                  <a className="dropdown-item">Calendar Page</a>
+                <Link href="/calendar" className="dropdown-item">
+                  Calendar Page
                 </Link>
               </DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
 
           <NavItem>
-            <Link href="/about" passHref legacyBehavior>
-              <a className="nav-link" style={navLinkStyle}>About Us</a>
+            <Link href="/about" className="nav-link" style={navLinkStyle}>
+              About Us
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="/blog" passHref legacyBehavior>
-              <a className="nav-link" style={navLinkStyle}>Blog</a>
+            <Link href="/blog" className="nav-link" style={navLinkStyle}>
+              Blog
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="/contact" passHref legacyBehavior>
-              <a className="nav-link" style={navLinkStyle}>Contact</a>
+            <Link href="/contact" className="nav-link" style={navLinkStyle}>
+              Contact
               
             </Link>
           </NavItem>

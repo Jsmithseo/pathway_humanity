@@ -10,7 +10,6 @@ export default function About() {
   return (
     <>
       <MainNavBar />
-
       {/* HERO SECTION */}
       <div
         style={{
@@ -30,7 +29,6 @@ export default function About() {
           </p>
         </Container>
       </div>
-
       {/* MAIN CONTENT CARD */}
       <Container className="my-5">
         <Row className="gy-4 justify-content-center">
@@ -57,7 +55,6 @@ export default function About() {
           </Col>
         </Row>
       </Container>
-
       {/* CLOSING CALL TO ACTION */}
       <Container className="my-5">
         <Row className="align-items-center g-0" style={{ background: "#f7fafd", borderRadius: 16, overflow: "hidden" }}>
@@ -68,7 +65,9 @@ export default function About() {
             <p className="mb-3" style={{ fontSize: 16 }}>
               Whether you need support or want to help others transform their lives, Pathway Humanity is here for you. Reach out to learn more or get involved.
             </p>
-            <Link href="/contact" passHref legacyBehavior>
+            <Link href="/contact">
+              {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
+              }
               <Button color="success" className="fw-bold px-4 rounded-3">
                 CONTACT US
               </Button>
@@ -87,7 +86,6 @@ export default function About() {
           </Col> */}
         </Row>
       </Container>
-
       <Footer />
     </>
   );
