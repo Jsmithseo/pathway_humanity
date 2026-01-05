@@ -22,7 +22,6 @@ const posts = [
     image: "/images/blog14.jpg", // put your 414x275 img here when you upload it
     date: "January 5 2026",
   },
-  
   {
     id: 13,
     title: "Helping Young Adults Navigate Anxiety in the Digital Age",
