@@ -16,6 +16,13 @@ import {
 
 const posts = [
   {
+    id: 16,
+    title: "Building Confidence When Life Feels Unstable",
+    slug: "/blog/blog18",
+    image: "/images/blog16.jpg", // put your 414x275 img here when you upload it
+    date: "January 26 2026",
+  },
+  {
     id: 15,
     title: "Reset Your Nervous System: Simple Tools for Stressful Days",
     slug: "/blog/blog17",
