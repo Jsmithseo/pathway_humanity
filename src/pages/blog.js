@@ -16,6 +16,13 @@ import {
 
 const posts = [
   {
+    id: 17,
+    title: "Build Better Habits When You’re Overwhelmed",
+    slug: "/blog/blog19",
+    image: "/images/blog17.jpg", // put your 414x275 img here when you upload it
+    date: "Febuary 9 2026",
+  },
+  {
     id: 16,
     title: "Building Confidence When Life Feels Unstable",
     slug: "/blog/blog18",
