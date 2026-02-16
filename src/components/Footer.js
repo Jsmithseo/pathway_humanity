@@ -27,7 +27,7 @@ const Footer = () => (
       <hr style={{ borderColor: "#000" }} />
       <Row className="align-items-center text-center text-md-start">
         <Col md={6} className="small">
-          © 2025 Pathway Humanity SPC. All rights reserved.
+          © 2026 Pathway Humanity SPC. All rights reserved.
         </Col>
         <Col md={6} className="d-flex justify-content-center justify-content-md-end gap-3 small">
           <a href="/accessibility" className="footer-link">Accessibility</a>
