@@ -188,8 +188,18 @@ export default function Home() {
                 <b>Comprehensive Mental Illness and Substance Use Disorder Treatment:</b> We provide an integrated and holistic approach...
               </p>
               <p>
-                <b>Evidence-Based Treatment for Underlying Socio-Economic Challenges:</b> Recognizing that mental health and substance use often intersect with socio-economic factors...
+                <b>Evidence-Based Treatment for Underlying Socio-Economic Challenges:</b> Recognizing that mental health and substance use often intersect with socio-economic factors.
               </p>
+              <p>Intensive Outpatient & Outpatient Services (IOP)
+- Certification Number: 070060AP
+ 
+Recovery and Treatment Services 
+- License and Certification Number: 010117AP & 010117BP
+DHCS Level of Care Designations:
+- 3.1 Clinically Managed Low-Intensity Residential Services
+- 3.3 Clinically Managed Population-Specific High-Intensity Residential Services
+- 3.5 Clinically Managed High-Intensity Residential Services
+- Population: Males and Females</p>
             </ToggleCard>
           </Col>
 

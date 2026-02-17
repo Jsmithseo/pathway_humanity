@@ -55,6 +55,12 @@ const MainNavBar = () => {
               Programs
             </DropdownToggle>
             <DropdownMenu end>
+            <DropdownItem>
+                <Link href="/residential" className="dropdown-item">
+                Residential Treatment & Outpatient Services
+                </Link>
+              </DropdownItem>
+            
               <DropdownItem>
                 <Link href="/workforce" className="dropdown-item">
                   Workforce Development Initiatives
