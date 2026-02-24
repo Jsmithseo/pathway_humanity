@@ -180,16 +180,6 @@ export default function Home() {
         <Row className="g-4">
           <Col md={6}>
             <ToggleCard title="Mental Health & Addiction Recovery" color="#14c9d6">
-              <ul>
-                <li><b>Comprehensive mental illness and substance use disorder treatment</b> from highly qualified psychiatrists and licensed/certified counselors.</li>
-                <li><b>Evidence-based treatment</b> for underlying socio-economic challenges.</li>
-              </ul>
-              <p>
-                <b>Comprehensive Mental Illness and Substance Use Disorder Treatment:</b> We provide an integrated and holistic approach...
-              </p>
-              <p>
-                <b>Evidence-Based Treatment for Underlying Socio-Economic Challenges:</b> Recognizing that mental health and substance use often intersect with socio-economic factors.
-              </p>
               <p>Intensive Outpatient & Outpatient Services (IOP)
 - Certification Number: 070060AP
  
