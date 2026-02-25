@@ -180,16 +180,29 @@ export default function Home() {
         <Row className="g-4">
           <Col md={6}>
             <ToggleCard title="Mental Health & Addiction Recovery" color="#14c9d6">
-              <p>Intensive Outpatient & Outpatient Services (IOP)
-- Certification Number: 070060AP
- 
-Recovery and Treatment Services 
-- License and Certification Number: 010117AP & 010117BP
-DHCS Level of Care Designations:
-- 3.1 Clinically Managed Low-Intensity Residential Services
-- 3.3 Clinically Managed Population-Specific High-Intensity Residential Services
-- 3.5 Clinically Managed High-Intensity Residential Services
-- Population: Males and Females</p>
+              <ul>
+
+<li>Comprehensive mental illness and substance use disorder treatment from highly qualified psychiatrists and licensed/certified counselors.</li>
+<li>Evidence-based treatment for underlying socio-economic challenges</li>
+</ul>
+<h5>Accreditation and Licensing</h5>
+Licensed and Certified by The California Department of Health Care Services (DHCS)
+<br/>
+<br/>
+<h5>DHCS Level of Care Designations:</h5>
+<ul>
+<li>3.1 Clinically Managed Low Intensity Residential Services</li>
+<li>3.3 Clinically Managed Population-Specific High-Intensity Residential Services</li>
+<li>3.5 Clinically Managed High-Intensity Residential Services</li>
+</ul>
+<h5>Service Certifications:</h5>
+<ul>
+<li>Intensive Outpatient (IOP) & Outpatient Services: Certification Number: 070060AP</li>
+<li>Recovery and Treatment Services: License and Certification Numbers: 010117AP & 01011BP</li>
+</ul>
+<h6>Population Served: <b>Males and Females</b></h6>
+
+
             </ToggleCard>
           </Col>
 
