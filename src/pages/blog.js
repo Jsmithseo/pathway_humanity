@@ -16,6 +16,13 @@ import {
 
 const posts = [
   {
+    id: 18,
+    title: "The 30-Minute Reset: A Simple Routine to Get Back on Track",
+    slug: "/blog/blog20",
+    image: "/images/blog18.jpg", // put your 414x275 img here when you upload it
+    date: "March 9 2026",
+  },
+  {
     id: 17,
     title: "Build Better Habits When You’re Overwhelmed",
     slug: "/blog/blog19",

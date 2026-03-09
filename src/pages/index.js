@@ -200,7 +200,7 @@ Licensed and Certified by The California Department of Health Care Services (DHC
 <li>Intensive Outpatient (IOP) & Outpatient Services: Certification Number: 070060AP</li>
 <li>Recovery and Treatment Services: License and Certification Numbers: 010117AP & 01011BP</li>
 </ul>
-<h6>Population Served: <b>Males and Females</b></h6>
+<h6>Population Served: <b>Males and Females</b></h6 >
 
 
             </ToggleCard>
