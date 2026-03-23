@@ -15,6 +15,14 @@ import {
 } from "reactstrap";
 
 const posts = [
+
+  {
+    id: 19,
+    title: "A low-pressure way to start when your brain says, “not today.",
+    slug: "/blog/blog21",
+    image: "/images/blog19.jpg", // put your 414x275 img here when you upload it
+    date: "March 9 2026",
+  },
   {
     id: 18,
     title: "The 30-Minute Reset: A Simple Routine to Get Back on Track",
