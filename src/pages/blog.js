@@ -17,11 +17,19 @@ import {
 const posts = [
 
   {
+    id: 20,
+    title: "When Everything Feels Urgent: How to Calm Down and Choose Your Next Step",
+    slug: "/blog/blog22",
+    image: "/images/blog20.jpg", // put your 414x275 img here when you upload it
+    date: "April 7 2026",
+  },
+
+  {
     id: 19,
     title: "A low-pressure way to start when your brain says, “not today.",
     slug: "/blog/blog21",
     image: "/images/blog19.jpg", // put your 414x275 img here when you upload it
-    date: "March 9 2026",
+    date: "March 20 2026",
   },
   {
     id: 18,
