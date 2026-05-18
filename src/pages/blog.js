@@ -17,6 +17,13 @@ import {
 const posts = [
 
   {
+    id: 21,
+    title: "When Everything Feels Urgent: How to Calm Down and Choose Your Next Step",
+    slug: "/blog/blog23",
+    image: "/images/blog21.jpg", // put your 414x275 img here when you upload it
+    date: "May 18 2026",
+  },
+  {
     id: 20,
     title: "When Everything Feels Urgent: How to Calm Down and Choose Your Next Step",
     slug: "/blog/blog22",
