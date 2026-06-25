@@ -58,7 +58,7 @@ export default function PathwayHumanity() {
           <Row>
            
             <Col lg={{ size: 10, offset: 1 }}>
-            <h2>Mentorship Pathway to Purpose - Building Futures for our Youth</h2>
+            <h2 style={{tColor: "white" }}>Mentorship Pathway to Purpose - Building Futures for our Youth</h2>
             <br></br>
               <h2>Key Information</h2>
               <ul className="bullets">
@@ -111,21 +111,27 @@ export default function PathwayHumanity() {
                 sharing experience around skills development, work-life balance, and industry challenges.
               </p>
 
-              <div className="cta">
-                <p className="cta-title">Take the First Step</p>
-                <p>
-                  To participate in this highly sought-after program, please reach out directly. All inquiries and
-                  expressions of interest should be emailed to:
-                </p>
-                <p>
-                  <a className="cta-link" href="mailto:info@pathwayhumanity.com">info@pathwayhumanity.com</a>
-                </p>
-                <p>
-                  A representative from Pathway Humanity will follow up promptly with details on the application process,
-                  program structure, and timelines. Don’t miss this chance to invest in your future—or give back to the
-                  next generation of leaders.
-                </p>
-              </div>
+              <div className="cta" style={{ color: "black" }}>
+  <p className="cta-title">Take the First Step</p>
+  <p>
+    To participate in this highly sought-after program, please reach out directly. All inquiries and
+    expressions of interest should be emailed to:
+  </p>
+  <p>
+    <a
+      className="cta-link"
+      href="mailto:info@pathwayhumanity.com"
+      style={{ color: "black" }}
+    >
+      info@pathwayhumanity.com
+    </a>
+  </p>
+  <p>
+    A representative from Pathway Humanity will follow up promptly with details on the application process,
+    program structure, and timelines. Don’t miss this chance to invest in your future—or give back to the
+    next generation of leaders.
+  </p>
+</div>
             </Col>
           </Row>
         </Container>
@@ -231,7 +237,7 @@ export default function PathwayHumanity() {
         .content {
           background: var(--paper);
           padding: 56px 0 72px;
-          color: var(--ink);
+          color: #fff;
         }
         h2 {
           font-size: 1.5rem;
