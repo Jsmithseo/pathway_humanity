@@ -1,12 +1,20 @@
-// pages/calendar.js
-
 import React from "react";
 import { Container, Row, Col, Card, CardBody, Button, Badge } from "reactstrap";
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
 
-// Example event data (expand this array as needed)
+
 const EVENTS = [
+  {
+    title: "Juneteenth at Todos Santos Square",
+    date: "June 27, 2025",
+    time: "11:30 AM - 5:30 PM",
+    location: "Todos Santos Square, 2175 Willow Pass Road, Concord, CA 94520",
+    description:
+      "We are a featured vendor for Juneteenth at Todos Santos Square in Downtown Concord to fight against substance use disorder addiction and recruit for our at-risk youth mentorship program.",
+    cta: "Learn More",
+    link: "/juneteenth"
+  },
   {
     title: "Opioid Awareness Walk",
     date: "August 12, 2025",
@@ -90,3 +98,4 @@ export default function CalendarPage() {
     </>
   );
 }
+
