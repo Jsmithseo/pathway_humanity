@@ -15,6 +15,13 @@ import {
 } from "reactstrap";
 
 const posts = [
+  {
+    id: 22,
+    title: "Men’s Mental Health Month: Why Support, Honesty, and Community Matter",
+    slug: "/blog/blog24",
+    image: "/images/blog22.jpg", // put your 414x275 img here when you upload it
+    date: "June 29 2026",
+  },
 
   {
     id: 21,
