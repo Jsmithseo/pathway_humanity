@@ -16,6 +16,13 @@ import {
 
 const posts = [
   {
+    id: 23,
+    title: "Digital Literacy: Preparing Youth and Adults for Today’s Workforce",
+    slug: "/blog/blog24",
+    image: "/images/blog23.jpg", // put your 414x275 img here when you upload it
+    date: "July 10 2026",
+  },
+  {
     id: 22,
     title: "Men’s Mental Health Month: Why Support, Honesty, and Community Matter",
     slug: "/blog/blog24",
