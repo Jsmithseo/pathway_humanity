@@ -18,7 +18,7 @@ const posts = [
   {
     id: 23,
     title: "Digital Literacy: Preparing Youth and Adults for Today’s Workforce",
-    slug: "/blog/blog24",
+    slug: "/blog/blog25",
     image: "/images/blog23.jpg", // put your 414x275 img here when you upload it
     date: "July 10 2026",
   },
