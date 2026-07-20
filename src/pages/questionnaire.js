@@ -1,560 +1,469 @@
 import React, { useState } from "react";
+import Head from "next/head";
 import {
   Container,
   Row,
   Col,
   Card,
   CardBody,
-  Button,
   Form,
   FormGroup,
   Label,
   Input,
+  Button,
+  Alert,
 } from "reactstrap";
+
 import MainNavBar from "../components/MainNavBar";
 import Footer from "../components/Footer";
 
-export default function SupportQuestionnaire() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    ageRange: "",
-    city: "",
-    contactPreference: "",
-    currentSituation: [],
-    primaryChallenges: [],
-    urgencyLevel: "",
-    currentSupport: "",
-    employmentStatus: "",
-    housingStatus: "",
-    recoveryInterest: "",
-    mentorshipInterest: "",
-    goals30: "",
-    goals90: "",
-    barriers: "",
-    idealSupport: "",
-    notes: "",
+const initialFormData = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  city: "",
+  preferredContactMethod: "",
+  currentSituation: "",
+  challenges: [],
+  currentSupport: "",
+};
+
+export default function MentorshipQuestionnaire() {
+  const [formData, setFormData] = useState(initialFormData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({
+    type: "",
+    message: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
+  const challengeOptions = [
+    "Stress or anxiety",
+    "Depression or low motivation",
+    "Substance use concerns",
+    "Unemployment or underemployment",
+    "Lack of structure or direction",
+    "Isolation or lack of support",
+    "Difficulty staying consistent",
+    "Transportation barriers",
+    "Financial stress",
+  ];
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData((previousData) => ({
+      ...previousData,
       [name]: value,
     }));
   };
 
-  const handleCheckboxChange = (e, field) => {
-    const { value, checked } = e.target;
+  const handleChallengeChange = (event) => {
+    const { value, checked } = event.target;
 
-    setFormData((prev) => ({
-      ...prev,
-      [field]: checked
-        ? [...prev[field], value]
-        : prev[field].filter((item) => item !== value),
+    setFormData((previousData) => ({
+      ...previousData,
+      challenges: checked
+        ? [...previousData.challenges, value]
+        : previousData.challenges.filter(
+            (challenge) => challenge !== value
+          ),
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Questionnaire submitted:", formData);
-    alert("Thank you. Your information has been submitted and our team will use it to prepare a personalized support plan.");
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    setIsSubmitting(true);
+    setSubmitStatus({
+      type: "",
+      message: "",
+    });
+
+    try {
+      const response = await fetch("/api/mentorship-questionnaire", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("The questionnaire could not be submitted.");
+      }
+
+      setSubmitStatus({
+        type: "success",
+        message:
+          "Thank you. Your questionnaire has been submitted successfully.",
+      });
+
+      setFormData(initialFormData);
+    } catch (error) {
+      console.error("Questionnaire submission error:", error);
+
+      setSubmitStatus({
+        type: "danger",
+        message:
+          "We were unable to submit your questionnaire. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <>
+      <Head>
+        <title>Mentorship Questionnaire | Pathway Humanity</title>
+
+        <meta
+          name="description"
+          content="Tell Pathway Humanity about your current situation and the type of mentorship or support you need."
+        />
+      </Head>
+
       <MainNavBar />
 
-      <div
+      <main
         style={{
-          background:
-            "linear-gradient(rgba(28,55,81,.55),rgba(19,45,66,.55)), url('images/hero_image8.jpg') center/cover no-repeat",
-          minHeight: 560,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          backgroundColor: "#f5f7f7",
+          minHeight: "100vh",
+          padding: "80px 0",
         }}
       >
         <Container>
-          <h1
-            className="text-white fw-bold mb-3 text-center"
-            style={{ fontSize: "2.4rem" }}
-          >
-            Client Support Questionnaire
-          </h1>
-          <p
-            className="text-white fs-5 mb-0 text-center"
-            style={{ maxWidth: 820, margin: "0 auto", fontWeight: "bold" }}
-          >
-            Complete this questionnaire so our team can better understand your
-            needs and create a personalized plan for support, stability, and
-            forward progress.
-          </p>
-        </Container>
-      </div>
+          <Row className="justify-content-center">
+            <Col lg="9" xl="8">
+              <div className="text-center mb-5">
+                <p
+                  className="text-uppercase fw-bold mb-2"
+                  style={{
+                    color: "#178b8b",
+                    letterSpacing: "1.5px",
+                  }}
+                >
+                  Mentorship Questionnaire
+                </p>
 
-      <Container className="my-5">
-        <Row className="justify-content-center">
-          <Col lg={10}>
-            <Card className="shadow-sm border-0 rounded-4">
-              <CardBody className="p-4 p-md-5">
-                <h3 className="fw-bold mb-3" style={{ color: "#1c7acb" }}>
+                <h1 className="fw-bold mb-3">
                   Tell Us About Your Current Situation
-                </h3>
-                <p style={{ fontSize: 17, marginBottom: 28 }}>
+                </h1>
+
+                <p
+                  className="mx-auto mb-0"
+                  style={{
+                    color: "#5f6868",
+                    fontSize: "1.05rem",
+                    lineHeight: "1.8",
+                    maxWidth: "720px",
+                  }}
+                >
                   This form helps Pathway Humanity understand where you are,
                   what support you may need, and what kind of plan would be most
                   helpful for your next steps. Please answer as honestly as you
                   feel comfortable.
                 </p>
+              </div>
 
-                <Form onSubmit={handleSubmit}>
-                  <Row>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Label>First Name</Label>
-                        <Input
-                          type="text"
-                          name="firstName"
-                          value={formData.firstName}
-                          onChange={handleChange}
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Label>Last Name</Label>
-                        <Input
-                          type="text"
-                          name="lastName"
-                          value={formData.lastName}
-                          onChange={handleChange}
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
+              <Card
+                className="border-0"
+                style={{
+                  borderRadius: "18px",
+                  boxShadow: "0 12px 35px rgba(0, 0, 0, 0.08)",
+                }}
+              >
+                <CardBody className="p-4 p-md-5">
+                  {submitStatus.message && (
+                    <Alert color={submitStatus.type}>
+                      {submitStatus.message}
+                    </Alert>
+                  )}
 
-                  <Row>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Label>Email Address</Label>
-                        <Input
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Label>Phone Number</Label>
-                        <Input
-                          type="text"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
+                  <Form onSubmit={handleSubmit}>
+                    <Row>
+                      <Col md="6">
+                        <FormGroup>
+                          <Label for="firstName">First Name</Label>
 
-                  <Row>
-                    <Col md={4}>
-                      <FormGroup>
-                        <Label>Age Range</Label>
-                        <Input
-                          type="select"
-                          name="ageRange"
-                          value={formData.ageRange}
-                          onChange={handleChange}
-                        >
-                          <option value="">Select one</option>
-                          <option>Under 18</option>
-                          <option>18–24</option>
-                          <option>25–34</option>
-                          <option>35–44</option>
-                          <option>45–54</option>
-                          <option>55+</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
-                    <Col md={4}>
-                      <FormGroup>
-                        <Label>City</Label>
-                        <Input
-                          type="text"
-                          name="city"
-                          value={formData.city}
-                          onChange={handleChange}
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col md={4}>
-                      <FormGroup>
-                        <Label>Preferred Contact Method</Label>
-                        <Input
-                          type="select"
-                          name="contactPreference"
-                          value={formData.contactPreference}
-                          onChange={handleChange}
-                        >
-                          <option value="">Select one</option>
-                          <option>Email</option>
-                          <option>Phone Call</option>
-                          <option>Text Message</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
-                  </Row>
-
-                  <hr className="my-4" />
-
-                  <h5 className="fw-bold mb-3" style={{ color: "#1c7acb" }}>
-                    What best describes your current situation?
-                  </h5>
-                  <Row className="mb-3">
-                    {[
-                      "I am looking for mentorship and guidance",
-                      "I am working through mental health challenges",
-                      "I am in recovery or need substance use support",
-                      "I need help with job readiness or employment",
-                      "I need help with housing or stable living",
-                      "I am rebuilding after a major life transition",
-                      "I am supporting a loved one and need guidance",
-                    ].map((item) => (
-                      <Col md={6} key={item}>
-                        <FormGroup check className="mb-2">
                           <Input
-                            type="checkbox"
-                            value={item}
-                            onChange={(e) =>
-                              handleCheckboxChange(e, "currentSituation")
-                            }
-                          />{" "}
-                          <Label check>{item}</Label>
+                            id="firstName"
+                            name="firstName"
+                            type="text"
+                            value={formData.firstName}
+                            onChange={handleChange}
+                            required
+                          />
                         </FormGroup>
                       </Col>
-                    ))}
-                  </Row>
 
-                  <h5 className="fw-bold mb-3 mt-4" style={{ color: "#1c7acb" }}>
-                    What are the biggest challenges you are facing right now?
-                  </h5>
-                  <Row className="mb-3">
-                    {[
-                      "Stress or anxiety",
-                      "Depression or low motivation",
-                      "Substance use concerns",
-                      "Unemployment or underemployment",
-                      "Lack of structure or direction",
-                      "Housing instability",
-                      "Isolation or lack of support",
-                      "Difficulty staying consistent",
-                      "Transportation barriers",
-                      "Financial stress",
-                    ].map((item) => (
-                      <Col md={6} key={item}>
-                        <FormGroup check className="mb-2">
+                      <Col md="6">
+                        <FormGroup>
+                          <Label for="lastName">Last Name</Label>
+
                           <Input
-                            type="checkbox"
-                            value={item}
-                            onChange={(e) =>
-                              handleCheckboxChange(e, "primaryChallenges")
-                            }
-                          />{" "}
-                          <Label check>{item}</Label>
+                            id="lastName"
+                            name="lastName"
+                            type="text"
+                            value={formData.lastName}
+                            onChange={handleChange}
+                            required
+                          />
                         </FormGroup>
                       </Col>
-                    ))}
-                  </Row>
+                    </Row>
 
-                  <Row>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Label>How urgent is your need for support?</Label>
-                        <Input
-                          type="select"
-                          name="urgencyLevel"
-                          value={formData.urgencyLevel}
-                          onChange={handleChange}
-                        >
-                          <option value="">Select one</option>
-                          <option>I need support as soon as possible</option>
-                          <option>I would like support within the next few weeks</option>
-                          <option>I am exploring options and planning ahead</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Label>Do you currently have support in place?</Label>
-                        <Input
-                          type="select"
-                          name="currentSupport"
-                          value={formData.currentSupport}
-                          onChange={handleChange}
-                        >
-                          <option value="">Select one</option>
-                          <option>Yes, strong support</option>
-                          <option>Some support, but not enough</option>
-                          <option>No, I need support</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
-                  </Row>
+                    <Row>
+                      <Col md="6">
+                        <FormGroup>
+                          <Label for="email">Email Address</Label>
 
-                  <hr className="my-4" />
+                          <Input
+                            id="email"
+                            name="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                          />
+                        </FormGroup>
+                      </Col>
 
-                  <h5 className="fw-bold mb-3" style={{ color: "#228d6e" }}>
-                    Stability and Growth
-                  </h5>
+                      <Col md="6">
+                        <FormGroup>
+                          <Label for="phone">Phone Number</Label>
 
-                  <Row>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Label>Current Employment Status</Label>
-                        <Input
-                          type="select"
-                          name="employmentStatus"
-                          value={formData.employmentStatus}
-                          onChange={handleChange}
-                        >
-                          <option value="">Select one</option>
-                          <option>Employed full-time</option>
-                          <option>Employed part-time</option>
-                          <option>Unemployed and actively looking</option>
-                          <option>Unemployed and need help getting started</option>
-                          <option>Student</option>
-                          <option>Other</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Label>Current Housing Status</Label>
-                        <Input
-                          type="select"
-                          name="housingStatus"
-                          value={formData.housingStatus}
-                          onChange={handleChange}
-                        >
-                          <option value="">Select one</option>
-                          <option>Stable housing</option>
-                          <option>Temporary housing</option>
-                          <option>Living with friends or family</option>
-                          <option>Housing is uncertain</option>
-                          <option>I would like help exploring housing support</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
-                  </Row>
+                          <Input
+                            id="phone"
+                            name="phone"
+                            type="tel"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            required
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
 
-                  <Row>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Label>Are you interested in recovery-related support?</Label>
-                        <Input
-                          type="select"
-                          name="recoveryInterest"
-                          value={formData.recoveryInterest}
-                          onChange={handleChange}
-                        >
-                          <option value="">Select one</option>
-                          <option>Yes</option>
-                          <option>No</option>
-                          <option>Maybe / I would like to learn more</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                      <FormGroup>
-                        <Label>Are you interested in mentorship or coaching?</Label>
-                        <Input
-                          type="select"
-                          name="mentorshipInterest"
-                          value={formData.mentorshipInterest}
-                          onChange={handleChange}
-                        >
-                          <option value="">Select one</option>
-                          <option>Yes</option>
-                          <option>No</option>
-                          <option>Maybe / I would like to learn more</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
-                  </Row>
+                    <Row>
+                      <Col md="6">
+                        <FormGroup>
+                          <Label for="city">City</Label>
 
-                  <hr className="my-4" />
+                          <Input
+                            id="city"
+                            name="city"
+                            type="text"
+                            value={formData.city}
+                            onChange={handleChange}
+                            required
+                          />
+                        </FormGroup>
+                      </Col>
 
-                  <h5 className="fw-bold mb-3" style={{ color: "#d17a17" }}>
-                    Goals and Plan Building
-                  </h5>
+                      <Col md="6">
+                        <FormGroup>
+                          <Label for="preferredContactMethod">
+                            Preferred Contact Method
+                          </Label>
 
-                  <FormGroup>
-                    <Label>
-                      What would you most like to improve in the next 30 days?
-                    </Label>
-                    <Input
-                      type="textarea"
-                      rows="4"
-                      name="goals30"
-                      value={formData.goals30}
-                      onChange={handleChange}
-                      placeholder="Examples: find stable work, create a healthier routine, get support for recovery, reduce stress, improve housing stability"
-                    />
-                  </FormGroup>
+                          <Input
+                            id="preferredContactMethod"
+                            name="preferredContactMethod"
+                            type="select"
+                            value={formData.preferredContactMethod}
+                            onChange={handleChange}
+                            required
+                          >
+                            <option value="">Select one</option>
+                            <option value="Phone call">Phone call</option>
+                            <option value="Text message">Text message</option>
+                            <option value="Email">Email</option>
+                          </Input>
+                        </FormGroup>
+                      </Col>
+                    </Row>
 
-                  <FormGroup>
-                    <Label>
-                      What would progress look like for you over the next 90 days?
-                    </Label>
-                    <Input
-                      type="textarea"
-                      rows="4"
-                      name="goals90"
-                      value={formData.goals90}
-                      onChange={handleChange}
-                    />
-                  </FormGroup>
+                    <hr className="my-4" />
 
-                  <FormGroup>
-                    <Label>
-                      What barriers have made it difficult to move forward?
-                    </Label>
-                    <Input
-                      type="textarea"
-                      rows="4"
-                      name="barriers"
-                      value={formData.barriers}
-                      onChange={handleChange}
-                    />
-                  </FormGroup>
+                    <FormGroup>
+                      <Label
+                        for="currentSituation"
+                        className="fw-bold"
+                        style={{ fontSize: "1.05rem" }}
+                      >
+                        What best describes your current situation?
+                      </Label>
 
-                  <FormGroup>
-                    <Label>
-                      What kind of support would feel most helpful right now?
-                    </Label>
-                    <Input
-                      type="textarea"
-                      rows="4"
-                      name="idealSupport"
-                      value={formData.idealSupport}
-                      onChange={handleChange}
-                      placeholder="Examples: a step-by-step plan, accountability, counseling referrals, job support, mentorship, housing guidance"
-                    />
-                  </FormGroup>
+                      <Input
+                        id="currentSituation"
+                        name="currentSituation"
+                        type="select"
+                        value={formData.currentSituation}
+                        onChange={handleChange}
+                        required
+                      >
+                        <option value="">Select one</option>
 
-                  <FormGroup>
-                    <Label>Anything else you would like us to know?</Label>
-                    <Input
-                      type="textarea"
-                      rows="4"
-                      name="notes"
-                      value={formData.notes}
-                      onChange={handleChange}
-                    />
-                  </FormGroup>
+                        <option value="I am looking for mentorship and guidance">
+                          I am looking for mentorship and guidance
+                        </option>
 
-                  <Card
-                    className="border-0 rounded-4 mt-4"
-                    style={{ background: "#f3f8fc" }}
-                  >
-                    <CardBody>
-                      <h5 className="fw-bold mb-2" style={{ color: "#1c7acb" }}>
-                        What happens next?
-                      </h5>
-                      <p className="mb-0" style={{ fontSize: 16 }}>
-                        After you submit this questionnaire, our team will review
-                        your responses and use them to create a personalized plan
-                        with recommended next steps, support options, and areas of
-                        focus.
+                        <option value="I am in recovery or need substance use support">
+                          I am in recovery or need substance use support
+                        </option>
+
+                        <option value="I need help with job readiness or employment">
+                          I need help with job readiness or employment
+                        </option>
+
+                        <option value="I need help with housing or stable living">
+                          I need help with housing or stable living
+                        </option>
+
+                        <option value="I am rebuilding after a major life transition">
+                          I am rebuilding after a major life transition
+                        </option>
+                      </Input>
+                    </FormGroup>
+
+                    <FormGroup className="mt-4">
+                      <Label
+                        className="fw-bold"
+                        style={{ fontSize: "1.05rem" }}
+                      >
+                        What are the biggest challenges you are facing right
+                        now?
+                      </Label>
+
+                      <p className="text-muted small">
+                        Select all that apply.
                       </p>
-                    </CardBody>
-                  </Card>
 
-                  <div className="text-center mt-4">
-                    <Button
-                      color="primary"
-                      size="lg"
-                      className="fw-bold px-5 rounded-3"
-                      style={{ backgroundColor: "#1c7acb", borderColor: "#1c7acb" }}
+                      <div
+                        style={{
+                          display: "grid",
+                          gridTemplateColumns:
+                            "repeat(auto-fit, minmax(260px, 1fr))",
+                          gap: "12px",
+                        }}
+                      >
+                        {challengeOptions.map((challenge, index) => (
+                          <div
+                            key={challenge}
+                            style={{
+                              border: "1px solid #dce3e3",
+                              borderRadius: "10px",
+                              padding: "12px 14px",
+                            }}
+                          >
+                            <FormGroup check className="mb-0">
+                              <Input
+                                id={`challenge-${index}`}
+                                type="checkbox"
+                                value={challenge}
+                                checked={formData.challenges.includes(
+                                  challenge
+                                )}
+                                onChange={handleChallengeChange}
+                              />
+
+                              <Label
+                                check
+                                for={`challenge-${index}`}
+                                style={{ cursor: "pointer" }}
+                              >
+                                {challenge}
+                              </Label>
+                            </FormGroup>
+                          </div>
+                        ))}
+                      </div>
+                    </FormGroup>
+
+                    <FormGroup className="mt-4">
+                      <Label
+                        for="currentSupport"
+                        className="fw-bold"
+                        style={{ fontSize: "1.05rem" }}
+                      >
+                        Do you currently have support in place?
+                      </Label>
+
+                      <Input
+                        id="currentSupport"
+                        name="currentSupport"
+                        type="select"
+                        value={formData.currentSupport}
+                        onChange={handleChange}
+                        required
+                      >
+                        <option value="">Select one</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="Some support, but I need more">
+                          Some support, but I need more
+                        </option>
+                        <option value="I am not sure">
+                          I am not sure
+                        </option>
+                      </Input>
+                    </FormGroup>
+
+                    <div
+                      className="mt-5 p-4"
+                      style={{
+                        backgroundColor: "#eef7f7",
+                        borderLeft: "4px solid #178b8b",
+                        borderRadius: "10px",
+                      }}
                     >
-                      SUBMIT QUESTIONNAIRE
+                      <h2
+                        className="fw-bold mb-2"
+                        style={{ fontSize: "1.3rem" }}
+                      >
+                        What happens next?
+                      </h2>
+
+                      <p className="mb-0" style={{ lineHeight: "1.7" }}>
+                        Once you hit submit, our team will look over your
+                        answers and put together a personalized game plan just
+                        for you. We’ll include clear next steps and specific
+                        areas we can work on together to help you reach your
+                        goals!
+                      </p>
+                    </div>
+
+                    <Button
+                      type="submit"
+                      className="w-100 mt-4 py-3 fw-bold border-0"
+                      disabled={
+                        isSubmitting || formData.challenges.length === 0
+                      }
+                      style={{
+                        backgroundColor: "#178b8b",
+                        borderRadius: "10px",
+                        fontSize: "1.05rem",
+                      }}
+                    >
+                      {isSubmitting
+                        ? "Submitting..."
+                        : "Submit Questionnaire"}
                     </Button>
-                  </div>
-                </Form>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
 
-      <Container className="my-5">
-        <Row className="g-4 justify-content-center">
-          <Col md={4}>
-            <Card
-              className="shadow-sm border-0 text-center h-100"
-              style={{ background: "#f3f8fc" }}
-            >
-              <CardBody>
-                <div style={{ fontSize: 42, color: "#1c7acb", marginBottom: 12 }}>
-                  🧭
-                </div>
-                <h6 className="fw-bold mb-2" style={{ color: "#1c7acb" }}>
-                  Clarity
-                </h6>
-                <p style={{ fontSize: 15 }}>
-                  Help us understand your needs so we can identify the right next
-                  steps.
-                </p>
-              </CardBody>
-            </Card>
-          </Col>
-
-          <Col md={4}>
-            <Card
-              className="shadow-sm border-0 text-center h-100"
-              style={{ background: "#e8f7ea" }}
-            >
-              <CardBody>
-                <div style={{ fontSize: 42, color: "#228d6e", marginBottom: 12 }}>
-                  🤝
-                </div>
-                <h6 className="fw-bold mb-2" style={{ color: "#228d6e" }}>
-                  Support
-                </h6>
-                <p style={{ fontSize: 15 }}>
-                  Our team uses your answers to guide support, resources, and
-                  personalized planning.
-                </p>
-              </CardBody>
-            </Card>
-          </Col>
-
-          <Col md={4}>
-            <Card
-              className="shadow-sm border-0 text-center h-100"
-              style={{ background: "#f7e6d1" }}
-            >
-              <CardBody>
-                <div style={{ fontSize: 42, color: "#d17a17", marginBottom: 12 }}>
-                  🚀
-                </div>
-                <h6 className="fw-bold mb-2" style={{ color: "#d17a17" }}>
-                  Next Steps
-                </h6>
-                <p style={{ fontSize: 15 }}>
-                  The goal is to move from uncertainty to a realistic plan for
-                  progress.
-                </p>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+                    {formData.challenges.length === 0 && (
+                      <p className="text-muted text-center small mt-2 mb-0">
+                        Please select at least one current challenge.
+                      </p>
+                    )}
+                  </Form>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </main>
 
       <Footer />
     </>
