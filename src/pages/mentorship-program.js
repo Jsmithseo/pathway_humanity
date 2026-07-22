@@ -111,12 +111,44 @@ export default function PathwayHumanity() {
                 sharing experience around skills development, work-life balance, and industry challenges.
               </p>
 
-              <div className="cta" style={{ color: "black" }}>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <Container>
+      <div className="cta" style={{ color: "black" }}>
   <p className="cta-title">Take the First Step</p>
+
   <p>
-    To participate in this highly sought-after program, please reach out directly. All inquiries and
-    expressions of interest should be emailed to:
+    Ready to begin your mentorship journey? The first step is completing our
+    Mentorship Questionnaire so we can learn more about your current situation
+    and begin building a personalized plan for your next steps.
   </p>
+
+  <p>
+    <a
+      className="cta-link"
+      href="https://www.pathwayhumanity.com/questionnaire"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ color: "black", fontWeight: "700", fontSize: "1.1rem" }}
+    >
+      Complete the Mentorship Questionnaire →
+    </a>
+  </p>
+
+  <p>
+    After submitting your questionnaire, a member of the Pathway Humanity team
+    will review your responses and follow up with personalized recommendations,
+    program details, and the next steps in the mentorship process.
+  </p>
+
+  <hr />
+
+  <p>
+    Questions? Feel free to contact us anytime at:
+  </p>
+
   <p>
     <a
       className="cta-link"
@@ -126,17 +158,8 @@ export default function PathwayHumanity() {
       info@pathwayhumanity.com
     </a>
   </p>
-  <p>
-    A representative from Pathway Humanity will follow up promptly with details on the application process,
-    program structure, and timelines. Don’t miss this chance to invest in your future—or give back to the
-    next generation of leaders.
-  </p>
 </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
+</Container>
       {/* ADDRESS STRIP */}
       <section className="address-strip" aria-label="Organization address">
         <Container>
