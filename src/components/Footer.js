@@ -20,6 +20,7 @@ const Footer = () => (
             <li><a href="/social-purpose-initiatives" className="footer-link">Social Purpose Initiatives</a></li>
             <li><a href="/applicants" className="footer-link">Applicants</a></li>
             <li><a href="/employers" className="footer-link">Employers</a></li>
+            <li><a href="/jobs" className="footer-link">Jobs</a></li>
           </ul>
         </Col>
 
