@@ -43,11 +43,11 @@ const MainNavBar = () => {
               Mission
             </Link>
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
             <Link href="/clinicians" className="nav-link" style={navLinkStyle}>
               Schedule with Our Clinicians
             </Link>
-          </NavItem>
+          </NavItem> */}
 
                     {/* Events Dropdown */}
                     <UncontrolledDropdown nav inNavbar>
