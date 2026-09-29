@@ -16,6 +16,13 @@ import {
 
 const posts = [
   {
+    id: 24,
+    title: "Mental Health and Workforce Readiness: Building Confidence During Life Transitions",
+    slug: "/blog/blog26",
+    image: "/images/blog24.png",
+    date: "September 28, 2026",
+  },
+  {
     id: 23,
     title: "Digital Literacy: Preparing Youth and Adults for Today’s Workforce",
     slug: "/blog/blog25",
