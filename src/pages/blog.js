@@ -16,6 +16,13 @@ import {
 
 const posts = [
   {
+    id: 25,
+    title: "Mental Health and Belonging: The Power of Community Support",
+    slug: "/blog/blog27",
+    image: "/images/blog24.png",
+    date: "October 15, 2026",
+  },
+  {
     id: 24,
     title: "Mental Health and Workforce Readiness: Building Confidence During Life Transitions",
     slug: "/blog/blog26",
