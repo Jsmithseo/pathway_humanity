@@ -19,7 +19,7 @@ const posts = [
     id: 25,
     title: "Mental Health and Belonging: The Power of Community Support",
     slug: "/blog/blog27",
-    image: "/images/blog24.png",
+    image: "/images/blog27.png",
     date: "October 15, 2026",
   },
   {

@@ -22,7 +22,7 @@ export default function MentalHealthAndBelonging() {
         <meta property="og:type" content="article" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={desc} />
-        <meta property="og:image" content="/images/blog24.png" />
+        <meta property="og:image" content="/images/blog27.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <MainNavbar />
