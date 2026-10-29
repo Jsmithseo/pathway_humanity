@@ -16,6 +16,13 @@ import {
 
 const posts = [
   {
+    id: 26,
+    title: "A Check-In Can Change the Day: Building Everyday Mental Health Support",
+    slug: "/blog/blog28",
+    image: "/images/blog28.jpg",
+    date: "October 29, 2026",
+  },
+  {
     id: 25,
     title: "Mental Health and Belonging: The Power of Community Support",
     slug: "/blog/blog27",
