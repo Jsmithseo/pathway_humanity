@@ -27,6 +27,7 @@ export default function EverydayMentalHealthSupport() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={desc} />
+        <meta name="twitter:image" content="/images/blog28.jpg" />
       </Head>
 
       <MainNavbar />
@@ -60,6 +61,18 @@ export default function EverydayMentalHealthSupport() {
             color: "#fff",
           }}
         >
+          <img
+            src="/images/blog28.jpg"
+            alt="Two people having a supportive conversation"
+            style={{
+              display: "block",
+              width: "100%",
+              height: "auto",
+              borderRadius: "0.5rem",
+              marginBottom: "2rem",
+            }}
+          />
+
           <p>
             Mental health support is often pictured as a big, formal moment: a
             therapy appointment, a crisis, or a major conversation. Those resources
